@@ -1,0 +1,179 @@
+.container {
+  width: 300px;
+  border-right: 1px solid var(--border-color);
+  padding: 10px;
+  height: 100vh;
+  overflow-y: scroll;
+  background: var(--sidebar-background);
+  transition: all 0.3s ease;
+}
+@media (max-width: 768px) {
+  .container {
+    position: fixed;
+    left: -300px;
+    transition: left 0.3s;
+    z-index: 1000;
+  }
+
+  .container.open {
+    position: fixed;
+    left: -300px;
+    width: 300px;
+    height: 100vh;
+    background: var(--sidebar-background);
+    transition: left 0.3s;
+    z-index: 1002;
+  }
+}
+
+.link {
+  display: block;
+  padding: 10px 15px;
+  margin-bottom: 5px;
+  text-decoration: none;
+  color: var(--text-color);
+  background-color: transparent;
+  border-radius: 8px;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
+}
+.sidebar-item.active .link {
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 8px;
+  font-weight: bold;
+}
+.link:hover {
+  background-color: var(--background-secondary);
+  color: var(--primary-color);
+}
+
+.searchInput {
+  width: 100%;
+  max-width: 600px;
+  margin: 10px 0px;
+  height: 30px;
+  padding: 0 15px;
+  border: 1px solid #cccccc;
+  border-radius: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  outline: none;
+  font-size: 16px;
+  color: #333;
+  background-color: #fff;
+  transition: all 0.3s ease-in-out;
+}
+
+.searchInput::placeholder {
+  color: #999999;
+}
+
+.searchInput:focus {
+  border-color: #79d28f;
+  box-shadow: 0 0 8px rgba(121, 210, 143, 0.5);
+}
+
+.sidebarOpen-search {
+  margin-top: 20px;
+}
+
+/* ///////////////// */
+
+.header {
+  min-height: 64px;
+  border-bottom: 1px solid #ddd;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.overlayOpen {
+  opacity: 1;
+  z-index: 999;
+  visibility: visible;
+}
+
+.overlayHidden {
+  opacity: 0;
+  z-index: -1;
+  visibility: hidden;
+  transition: 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+
+.drawer {
+  top: 0;
+  flex: 1 0 auto;
+  height: 100%;
+  display: flex;
+  outline: 0;
+  z-index: 1200;
+  position: fixed;
+  overflow-y: auto;
+  flex-direction: column;
+
+  background-color: #ffffff;
+  width: 250px;
+  flex-shrink: 0;
+  padding: 18px;
+  transition:
+    box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    transform 225ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+}
+
+.hidden {
+  visibility: hidden;
+  width: 240px;
+  transform: translateX(240px);
+  flex-shrink: 0;
+  transition: 325ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+}
+.animate {
+  visibility: visible;
+  transform: none;
+  box-shadow:
+    0 8px 10px -5px rgba(0, 0, 0, 0.2),
+    0px 16px 24px 2px rgba(0, 0, 0, 0.14),
+    0px 6px 30px 5px rgba(0, 0, 0, 0.12);
+}
+.left {
+  left: 0;
+  right: auto;
+}
+.profile-section {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: #f4f4f4;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  justify-content: space-between;
+}
+
+.profile-section div {
+  display: flex;
+  align-items: center;
+}
+
+.profile-section .username,
+.profile-section .role {
+  margin-left: 10px;
+}
+
+.profile-section .username {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.profile-section .role {
+  font-size: 14px;
+  color: #555;
+}

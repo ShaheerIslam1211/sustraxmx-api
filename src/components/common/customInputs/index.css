@@ -1,0 +1,5 @@
+/* CSS */
+.custom-input:focus {
+  border-color: var(--primary-color); /* Primary color focus border */
+  transition: border-color 0.3s ease;
+}

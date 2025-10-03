@@ -1,0 +1,52 @@
+.profileMainContainer {
+  padding: 20px 20px !important;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.profile-title {
+  font-size: 24px;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 16px;
+  margin-bottom: 24px;
+  color: var(--text-color);
+  transition:
+    border-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.ant-btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  display: block;
+  width: 100%;
+}
+
+/* Optional: You can add media queries to handle responsive layouts */
+@media (max-width: 768px) {
+  .profile-card {
+    padding: 16px;
+  }
+
+  .profile-title {
+    font-size: 20px;
+  }
+}
+
+.profile-input h4 {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  padding-top: 5px;
+  font-size: 15px;
+  color: var(--text-color);
+  transition: color 0.3s ease;
+}
+.profile-input p {
+  color: var(--text-secondary);
+  font-size: 13px;
+  transition: color 0.3s ease;
+}

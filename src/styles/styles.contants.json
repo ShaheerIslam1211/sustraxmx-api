@@ -1,0 +1,12 @@
+{
+  "colors": {
+    "lightGray": "#A9A9A9",
+    "largeTitle": ""
+  },
+
+  "fontSize": {
+    "smallFont": "10px",
+    "mediumFont": "16px",
+    "largeFont": ""
+  }
+}

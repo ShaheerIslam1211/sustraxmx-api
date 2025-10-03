@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"
+    />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    <meta
+      name="description"
+      content="Leading tool for carbon footprint management."
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+    <title>SustraxMX API</title>
+  </head>
+
+  <body>
+    <!--Gtranslate Plugin-->
+
+    <div style="display: none">
+      <div class="gtranslate_wrapper"></div>
+    </div>
+    <script>
+      window.gtranslateSettings = {
+        default_language: "en",
+        native_language_names: true,
+        wrapper_selector: ".gtranslate_wrapper",
+      };
+    </script>
+    <script
+      src="https://cdn.gtranslate.net/widgets/latest/dropdown.js"
+      defer
+    ></script>
+    <!--Other-->
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+  </body>
+
+  <!--MICROSOFT CLARITY SCRIPT -->
+  <script type="text/javascript">
+    (function (c, l, a, r, i, t, y) {
+      c[a] =
+        c[a] ||
+        function () {
+          (c[a].q = c[a].q || []).push(arguments);
+        };
+      t = l.createElement(r);
+      t.async = 1;
+      t.src = "https://www.clarity.ms/tag/" + i;
+      y = l.getElementsByTagName(r)[0];
+      y.parentNode.insertBefore(t, y);
+    })(window, document, "clarity", "script", "mcdm9ds5r4");
+    // Custom function to set Clarity tags
+    window.setClarityTag = function (tag, value) {
+      console.log("Setting custom tag for clarity{tag, value}:", tag, value);
+      if (window.clarity && typeof window.clarity === "function") {
+        window.clarity("set", tag, value);
+      } else {
+        alert("Clarity tag couldn't be set");
+      }
+    };
+  </script>
+
+  <script>
+    function sendHeight() {
+      let height = 2200;
+      const contentElement = document.getElementById("sustraxmx_content");
+      if (!contentElement) return;
+      height = contentElement.scrollHeight;
+      if (window.location.href.includes("offset")) {
+        height = 930;
+      }
+      window.parent.postMessage({ height: height }, "*");
+    }
+
+    setInterval(() => {
+      sendHeight();
+    }, 100);
+  </script>
+
+  <script>
+    // select picker used by iframe parent
+    function selectValue(className, value) {
+      // Get the select element with the specified class name
+      const select = document.querySelector(`select.${className}`);
+
+      if (select) {
+        // Set the selected value
+        select.value = value;
+
+        // Trigger a change event if necessary
+        const event = new Event("change");
+        select.dispatchEvent(event);
+        console.log("select changed");
+        select.click();
+      } else {
+        console.error("No select element found with the specified class name.");
+      }
+    }
+  </script>
+</html>

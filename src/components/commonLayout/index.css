@@ -1,0 +1,36 @@
+/* Common Layout Styles */
+.main-content {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+  min-height: calc(100vh - 60px); /* Adjust based on header height */
+}
+
+/* Overlay for mobile sidebar */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 998;
+  transition: opacity 0.3s ease;
+}
+
+.overlayHidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.overlayOpen {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Dark mode specific adjustments */
+:root[data-theme="dark"] .overlay {
+  background-color: rgba(0, 0, 0, 0.7);
+}

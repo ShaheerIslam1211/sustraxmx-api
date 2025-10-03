@@ -1,0 +1,107 @@
+.categoryDetailsWrapper {
+  border: 1px dotted var(--border-color);
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: 20px;
+  background-color: var(--card-background);
+}
+
+.categoryTitleContainer {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+.category-title-icon {
+  display: flex;
+  align-items: center;
+}
+
+.titleBorder {
+  background-color: var(--border-color);
+  width: 99%;
+  height: 1px;
+  margin-top: 20px;
+  margin-left: 4px;
+}
+.apiDetailsContainer {
+  margin: 20px;
+}
+
+.categoryDetailsWrapper {
+  padding: 20px;
+}
+
+.category-title-icon {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.titleBorder {
+  height: 2px;
+  background-color: var(--border-color);
+  margin-bottom: 10px;
+}
+
+.categoryInstructions h4 {
+  margin-bottom: 5px;
+  color: var(--text-color);
+}
+.categoryInstruction-Description {
+  color: var(--text-secondary);
+  font-size: 12px;
+}
+
+.categoryFormWrapper {
+  margin-top: 20px;
+  background-color: var(--background-secondary);
+}
+
+.formItem {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--border-color);
+}
+.inputDescription {
+  margin-top: 15px;
+  color: var(--text-secondary);
+  font-size: 13px;
+}
+
+.formTextLabel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.formItem label {
+  width: 100%;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: var(--text-color);
+}
+.categoryTitle {
+  font-size: 24px;
+  color: var(--text-color);
+}
+.categoryInputLabel {
+  font-size: 14px;
+  color: var(--text-color);
+}
+@media (max-width: 768px) {
+  .categoryTitle {
+    font-size: 22px;
+  }
+  .categoryInputLabel {
+    font-size: 12px;
+  }
+  .inputDescription {
+    margin-top: 5px;
+    font-size: 12px;
+  }
+}
+
+.categoryFormInputs {
+  margin-bottom: 10px;
+}

@@ -1,0 +1,125 @@
+.login-container {
+  background-color: var(--background-color);
+  padding: 20px 20px;
+  height: 100vh;
+  color: var(--text-color);
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+.loginMainRow {
+  margin-top: 100px;
+}
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: flex-start;
+}
+.loginTextContainer {
+  padding: 30px 0px;
+  width: 400px;
+}
+.loginText {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 30px;
+  margin-bottom: 12px;
+  color: var(--text-color);
+  transition: color 0.3s ease;
+}
+.loginDescription {
+  font-size: 14px;
+  margin-top: 10px;
+  color: var(--text-secondary);
+  transition: color 0.3s ease;
+}
+.loginSustraxApiTxt {
+  font-size: 30px;
+  color: var(--primary-color);
+  transition: color 0.3s ease;
+}
+.formInputs {
+  width: 430px;
+  padding: 20px 0px;
+}
+.formInput {
+  width: 100%;
+  padding: 20px 20px;
+  border-radius: 20px;
+  border: 1px solid var(--border-color);
+  outline: none;
+  background-color: var(--input-background);
+  margin-bottom: 20px;
+  color: var(--text-color);
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
+}
+.formInput::placeholder {
+  color: var(--text-secondary);
+  transition: color 0.3s ease;
+}
+
+.loginBtn {
+  width: 100%;
+  background-color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+.login-image {
+  /* margin-top: 20px; */
+  width: 100%;
+}
+.registerLink {
+  margin-top: 20px;
+  text-align: center;
+}
+.linkText {
+  color: var(--primary-color);
+  transition: color 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .loginMainRow {
+    margin-top: 0px;
+  }
+  .formInputs {
+    padding: 10px 0px;
+    width: 100%;
+  }
+  .formInput {
+    padding: 15px 15px;
+  }
+  .loginBtn {
+    padding: 10px 10px;
+  }
+  .loginText {
+    font-size: 18px !important;
+  }
+  .loginSustraxApiTxt {
+    font-size: 22px !important;
+  }
+  .loginTextContainer {
+    width: 100%;
+  }
+  .registerLink {
+    margin-top: 0px !important;
+  }
+  .loginText {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+  .image-column {
+    margin-top: 80px;
+  }
+}
