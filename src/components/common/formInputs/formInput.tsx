@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Input, Space } from "antd";
-import "./FormInput.css";
+import "./formInput.css";
 
 interface Credentials {
   username: string;
