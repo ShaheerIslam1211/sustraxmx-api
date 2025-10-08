@@ -4,8 +4,39 @@ import { getAuth } from "firebase-admin/auth";
 import { getStorage } from "firebase-admin/storage";
 import type { ServiceAccount } from "firebase-admin";
 
-// Import the service account credentials
-import serviceAccount from "../../../fb-creds.json";
+// Create service account object from environment variables
+const createServiceAccount = (): ServiceAccount => {
+  const privateKey = process.env.FIREBASE_PRIVATE_KEY?.replace(/\\n/g, "\n");
+
+  if (
+    !privateKey ||
+    !process.env.FIREBASE_CLIENT_EMAIL ||
+    !process.env.FIREBASE_PROJECT_ID
+  ) {
+    throw new Error(
+      "Missing required Firebase environment variables. Please check your .env file."
+    );
+  }
+
+  return {
+    type: "service_account",
+    project_id: process.env.FIREBASE_PROJECT_ID,
+    private_key_id: process.env.FIREBASE_PRIVATE_KEY_ID,
+    private_key: privateKey,
+    client_email: process.env.FIREBASE_CLIENT_EMAIL,
+    client_id: process.env.FIREBASE_CLIENT_ID,
+    auth_uri:
+      process.env.FIREBASE_AUTH_URI ||
+      "https://accounts.google.com/o/oauth2/auth",
+    token_uri:
+      process.env.FIREBASE_TOKEN_URI || "https://oauth2.googleapis.com/token",
+    auth_provider_x509_cert_url:
+      process.env.FIREBASE_AUTH_PROVIDER_X509_CERT_URL ||
+      "https://www.googleapis.com/oauth2/v1/certs",
+    client_x509_cert_url: process.env.FIREBASE_CLIENT_X509_CERT_URL,
+    universe_domain: process.env.FIREBASE_UNIVERSE_DOMAIN || "googleapis.com",
+  } as ServiceAccount;
+};
 
 // Initialize Firebase Admin SDK
 let adminApp: any;
@@ -13,10 +44,14 @@ let adminApp: any;
 try {
   // Check if Firebase Admin is already initialized
   if (getApps().length === 0) {
+    const serviceAccount = createServiceAccount();
+    const projectId =
+      process.env.FIREBASE_PROJECT_ID || "carboncalculator-bf757";
+
     adminApp = initializeApp({
-      credential: cert(serviceAccount as ServiceAccount),
-      projectId: process.env.FIREBASE_PROJECT_ID || "carboncalculator-bf757",
-      storageBucket: `${process.env.FIREBASE_PROJECT_ID || "carboncalculator-bf757"}.appspot.com`,
+      credential: cert(serviceAccount),
+      projectId: projectId,
+      storageBucket: `${projectId}.appspot.com`,
     });
   } else {
     adminApp = getApps()[0];
@@ -46,7 +81,10 @@ export class FirebaseAdmin {
       }
       return null;
     } catch (error) {
-      console.error(`Error getting document ${docId} from ${collection}:`, error);
+      console.error(
+        `Error getting document ${docId} from ${collection}:`,
+        error
+      );
       throw error;
     }
   }
@@ -71,7 +109,10 @@ export class FirebaseAdmin {
    */
   static async setDocument(collection: string, docId: string, data: any) {
     try {
-      await adminDb.collection(collection).doc(docId).set(data, { merge: true });
+      await adminDb
+        .collection(collection)
+        .doc(docId)
+        .set(data, { merge: true });
       return { success: true, id: docId };
     } catch (error) {
       console.error(`Error setting document ${docId} in ${collection}:`, error);
@@ -87,7 +128,10 @@ export class FirebaseAdmin {
       await adminDb.collection(collection).doc(docId).delete();
       return { success: true, id: docId };
     } catch (error) {
-      console.error(`Error deleting document ${docId} from ${collection}:`, error);
+      console.error(
+        `Error deleting document ${docId} from ${collection}:`,
+        error
+      );
       throw error;
     }
   }
@@ -96,9 +140,9 @@ export class FirebaseAdmin {
    * Query documents with conditions
    */
   static async queryDocuments(
-    collection: string, 
-    field: string, 
-    operator: any, 
+    collection: string,
+    field: string,
+    operator: any,
     value: any,
     limit?: number
   ) {
