@@ -2,4 +2,4 @@
  * FormInput Component Barrel Export
  */
 
-export { UserAuthInputs, CustomInput, SingleInput } from './FormInput';
+export { UserAuthInputs, CustomInput, SingleInput } from "./formInput";
