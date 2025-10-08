@@ -1,0 +1,1049 @@
+
+
+contentScript.bundle.js:1 🦄 helloworld from content script and hot reloading
+contentScript.bundle.js:1 url:: http://localhost:3000/form?name=electricity
+contentScript.bundle.js:1 ### window load event listener added
+contentScript.bundle.js:1 url:: http://localhost:3000/form?name=electricity
+contentScript.bundle.js:1 ### onPageLoad
+contentScript.bundle.js:1 {url: 'http://localhost:3000/form?name=electricity'}
+contentScript.bundle.js:1 url:: http://localhost:3000/form?name=electricity
+contentScript.bundle.js:1 url:: http://localhost:3000/form?name=electricity
+index.tsx:31 Warning: [antd: Dropdown] `overlay` is deprecated. Please use `menu` instead.
+overrideMethod @ hook.js:608
+error @ intercept-console-error.ts:44
+warning @ warning.js:30
+call @ warning.js:51
+warningOnce @ warning.js:58
+_warning @ warning.js:12
+typeWarning @ warning.js:46
+typeWarning.deprecated @ warning.js:51
+(anonymous) @ dropdown.js:72
+Dropdown @ dropdown.js:71
+react_stack_bottom_frame @ react-dom-client.development.js:23583
+renderWithHooks @ react-dom-client.development.js:6792
+updateFunctionComponent @ react-dom-client.development.js:9246
+beginWork @ react-dom-client.development.js:10857
+runWithFiberInDEV @ react-dom-client.development.js:871
+performUnitOfWork @ react-dom-client.development.js:15726
+workLoopSync @ react-dom-client.development.js:15546
+renderRootSync @ react-dom-client.development.js:15526
+performWorkOnRoot @ react-dom-client.development.js:14990
+performWorkOnRootViaSchedulerTask @ react-dom-client.development.js:16815
+performWorkUntilDeadline @ scheduler.development.js:45
+<Dropdown>
+exports.jsxDEV @ react-jsx-dev-runtime.development.js:323
+UserDropdown @ index.tsx:31
+react_stack_bottom_frame @ react-dom-client.development.js:23583
+renderWithHooksAgain @ react-dom-client.development.js:6892
+renderWithHooks @ react-dom-client.development.js:6804
+updateFunctionComponent @ react-dom-client.development.js:9246
+beginWork @ react-dom-client.development.js:10857
+runWithFiberInDEV @ react-dom-client.development.js:871
+performUnitOfWork @ react-dom-client.development.js:15726
+workLoopSync @ react-dom-client.development.js:15546
+renderRootSync @ react-dom-client.development.js:15526
+performWorkOnRoot @ react-dom-client.development.js:14990
+performWorkOnRootViaSchedulerTask @ react-dom-client.development.js:16815
+performWorkUntilDeadline @ scheduler.development.js:45
+<UserDropdown>
+exports.jsxDEV @ react-jsx-dev-runtime.development.js:323
+Header @ Header.tsx:69
+react_stack_bottom_frame @ react-dom-client.development.js:23583
+renderWithHooksAgain @ react-dom-client.development.js:6892
+renderWithHooks @ react-dom-client.development.js:6804
+updateFunctionComponent @ react-dom-client.development.js:9246
+beginWork @ react-dom-client.development.js:10857
+runWithFiberInDEV @ react-dom-client.development.js:871
+performUnitOfWork @ react-dom-client.development.js:15726
+workLoopSync @ react-dom-client.development.js:15546
+renderRootSync @ react-dom-client.development.js:15526
+performWorkOnRoot @ react-dom-client.development.js:14990
+performWorkOnRootViaSchedulerTask @ react-dom-client.development.js:16815
+performWorkUntilDeadline @ scheduler.development.js:45
+<Header>
+exports.jsxDEV @ react-jsx-dev-runtime.development.js:323
+CommonLayout @ index.tsx:23
+react_stack_bottom_frame @ react-dom-client.development.js:23583
+renderWithHooksAgain @ react-dom-client.development.js:6892
+renderWithHooks @ react-dom-client.development.js:6804
+updateFunctionComponent @ react-dom-client.development.js:9246
+beginWork @ react-dom-client.development.js:10857
+runWithFiberInDEV @ react-dom-client.development.js:871
+performUnitOfWork @ react-dom-client.development.js:15726
+workLoopSync @ react-dom-client.development.js:15546
+renderRootSync @ react-dom-client.development.js:15526
+performWorkOnRoot @ react-dom-client.development.js:14990
+performWorkOnRootViaSchedulerTask @ react-dom-client.development.js:16815
+performWorkUntilDeadline @ scheduler.development.js:45
+<CommonLayout>
+exports.jsxDEV @ react-jsx-dev-runtime.development.js:323
+FormPage @ page.tsx:9
+react_stack_bottom_frame @ react-dom-client.development.js:23583
+renderWithHooksAgain @ react-dom-client.development.js:6892
+renderWithHooks @ react-dom-client.development.js:6804
+updateFunctionComponent @ react-dom-client.development.js:9246
+beginWork @ react-dom-client.development.js:10857
+runWithFiberInDEV @ react-dom-client.development.js:871
+performUnitOfWork @ react-dom-client.development.js:15726
+workLoopSync @ react-dom-client.development.js:15546
+renderRootSync @ react-dom-client.development.js:15526
+performWorkOnRoot @ react-dom-client.development.js:14990
+performWorkOnRootViaSchedulerTask @ react-dom-client.development.js:16815
+performWorkUntilDeadline @ scheduler.development.js:45
+<FormPage>
+exports.jsx @ react-jsx-runtime.development.js:323
+ClientPageRoot @ client-page.tsx:60
+react_stack_bottom_frame @ react-dom-client.development.js:23583
+renderWithHooksAgain @ react-dom-client.development.js:6892
+renderWithHooks @ react-dom-client.development.js:6804
+updateFunctionComponent @ react-dom-client.development.js:9246
+beginWork @ react-dom-client.development.js:10806
+runWithFiberInDEV @ react-dom-client.development.js:871
+performUnitOfWork @ react-dom-client.development.js:15726
+workLoopSync @ react-dom-client.development.js:15546
+renderRootSync @ react-dom-client.development.js:15526
+performWorkOnRoot @ react-dom-client.development.js:14990
+performWorkOnRootViaSchedulerTask @ react-dom-client.development.js:16815
+performWorkUntilDeadline @ scheduler.development.js:45
+"use client"
+Function.all @ VM203 <anonymous>:1
+Function.all @ VM203 <anonymous>:1
+initializeElement @ react-server-dom-turbopack-client.browser.development.js:1332
+"use server"
+ResponseInstance @ react-server-dom-turbopack-client.browser.development.js:2030
+createResponseFromOptions @ react-server-dom-turbopack-client.browser.development.js:3083
+exports.createFromReadableStream @ react-server-dom-turbopack-client.browser.development.js:3460
+__TURBOPACK__module__evaluation__ @ app-index.tsx:156
+(anonymous) @ dev-base.ts:241
+runModuleExecutionHooks @ dev-base.ts:275
+instantiateModule @ dev-base.ts:235
+getOrInstantiateModuleFromParent @ dev-base.ts:162
+commonJsRequire @ runtime-utils.ts:366
+(anonymous) @ app-next-turbopack.ts:11
+(anonymous) @ app-bootstrap.ts:76
+loadScriptsInSequence @ app-bootstrap.ts:22
+appBootstrap @ app-bootstrap.ts:58
+__TURBOPACK__module__evaluation__ @ app-next-turbopack.ts:10
+(anonymous) @ dev-base.ts:241
+runModuleExecutionHooks @ dev-base.ts:275
+instantiateModule @ dev-base.ts:235
+getOrInstantiateRuntimeModule @ dev-base.ts:128
+registerChunk @ runtime-backend-dom.ts:57
+await in registerChunk
+registerChunk @ dev-base.ts:1146
+(anonymous) @ dev-backend-dom.ts:126
+(anonymous) @ dev-backend-dom.ts:126
+client-forms-service.ts:93 Fetching dynamic forms data from Firebase...
+client-forms-service.ts:93 Fetching dynamic forms data from Firebase...
+client-forms-service.ts:97 Successfully fetched data from Firebase: {fuel: {…}, naturalgas: {…}, cars: {…}, freighting: {…}, waste: {…}, …}
+client-forms-service.ts:97 Successfully fetched data from Firebase: {fuel: {…}, naturalgas: {…}, cars: {…}, freighting: {…}, waste: {…}, …}
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+emission-factors-service.ts:28 Returning mock emission factors for development
+client-forms-service.ts:93 Fetching dynamic forms data from Firebase...
+emission-factors-service.ts:28 Returning mock emission factors for development
+emission-factors-service.ts:28 Returning mock emission factors for development
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+UnifiedFormHandler.tsx:96 Warning: Instance created by `useForm` is not connected to any Form element. Forget to pass `form` prop?
+overrideMethod @ hook.js:608
+error @ intercept-console-error.ts:44
+warning @ warning.js:30
+call @ warning.js:51
+warningOnce @ warning.js:58
+(anonymous) @ useForm.js:160
+setTimeout
+(anonymous) @ useForm.js:157
+(anonymous) @ useForm.js:442
+UnifiedFormHandler.useEffect @ UnifiedFormHandler.tsx:96
+react_stack_bottom_frame @ react-dom-client.development.js:23668
+runWithFiberInDEV @ react-dom-client.development.js:871
+commitHookEffectListMount @ react-dom-client.development.js:12344
+commitHookPassiveMountEffects @ react-dom-client.development.js:12465
+commitPassiveMountOnFiber @ react-dom-client.development.js:14386
+recursivelyTraversePassiveMountEffects @ react-dom-client.development.js:14359
+commitPassiveMountOnFiber @ react-dom-client.development.js:14513
+recursivelyTraversePassiveMountEffects @ react-dom-client.development.js:14359
+commitPassiveMountOnFiber @ react-dom-client.development.js:14379
+recursivelyTraversePassiveMountEffects @ react-dom-client.development.js:14359
+commitPassiveMountOnFiber @ react-dom-client.development.js:14513
+recursivelyTraversePassiveMountEffects @ react-dom-client.development.js:14359
+commitPassiveMountOnFiber @ react-dom-client.development.js:14379
+recursivelyTraversePassiveMountEffects @ react-dom-client.development.js:14359
+commitPassiveMountOnFiber @ react-dom-client.development.js:14513
+recursivelyTraversePassiveMountEffects @ react-dom-client.development.js:14359
+commitPassiveMountOnFiber @ react-dom-client.development.js:14513
+recursivelyTraversePassiveMountEffects @ react-dom-client.development.js:14359
+commitPassiveMountOnFiber @ react-dom-client.development.js:14379
+recursivelyTraversePassiveMountEffects @ react-dom-client.development.js:14359
+commitPassiveMountOnFiber @ react-dom-client.development.js:14513
+recursivelyTraversePassiveMountEffects @ react-dom-client.development.js:14359
+commitPassiveMountOnFiber @ react-dom-client.development.js:14379
+recursivelyTraversePassiveMountEffects @ react-dom-client.development.js:14359
+commitPassiveMountOnFiber @ react-dom-client.development.js:14513
+recursivelyTraversePassiveMountEffects @ react-dom-client.development.js:14359
+commitPassiveMountOnFiber @ react-dom-client.development.js:14513
+recursivelyTraversePassiveMountEffects @ react-dom-client.development.js:14359
+commitPassiveMountOnFiber @ react-dom-client.development.js:14513
+recursivelyTraversePassiveMountEffects @ react-dom-client.development.js:14359
+commitPassiveMountOnFiber @ react-dom-client.development.js:14379
+recursivelyTraversePassiveMountEffects @ react-dom-client.development.js:14359
+commitPassiveMountOnFiber @ react-dom-client.development.js:14379
+recursivelyTraversePassiveMountEffects @ react-dom-client.development.js:14359
+commitPassiveMountOnFiber @ react-dom-client.development.js:14379
+recursivelyTraversePassiveMountEffects @ react-dom-client.development.js:14359
+commitPassiveMountOnFiber @ react-dom-client.development.js:14379
+recursivelyTraversePassiveMountEffects @ react-dom-client.development.js:14359
+commitPassiveMountOnFiber @ react-dom-client.development.js:14513
+recursivelyTraversePassiveMountEffects @ react-dom-client.development.js:14359
+commitPassiveMountOnFiber @ react-dom-client.development.js:14513
+recursivelyTraversePassiveMountEffects @ react-dom-client.development.js:14359
+commitPassiveMountOnFiber @ react-dom-client.development.js:14379
+recursivelyTraversePassiveMountEffects @ react-dom-client.development.js:14359
+commitPassiveMountOnFiber @ react-dom-client.development.js:14389
+recursivelyTraversePassiveMountEffects @ react-dom-client.development.js:14359
+commitPassiveMountOnFiber @ react-dom-client.development.js:14379
+recursivelyTraversePassiveMountEffects @ react-dom-client.development.js:14359
+commitPassiveMountOnFiber @ react-dom-client.development.js:14379
+recursivelyTraversePassiveMountEffects @ react-dom-client.development.js:14359
+commitPassiveMountOnFiber @ react-dom-client.development.js:14379
+recursivelyTraversePassiveMountEffects @ react-dom-client.development.js:14359
+commitPassiveMountOnFiber @ react-dom-client.development.js:14379
+recursivelyTraversePassiveMountEffects @ react-dom-client.development.js:14359
+commitPassiveMountOnFiber @ react-dom-client.development.js:14389
+recursivelyTraversePassiveMountEffects @ react-dom-client.development.js:14359
+commitPassiveMountOnFiber @ react-dom-client.development.js:14379
+recursivelyTraversePassiveMountEffects @ react-dom-client.development.js:14359
+commitPassiveMountOnFiber @ react-dom-client.development.js:14379
+recursivelyTraversePassiveMountEffects @ react-dom-client.development.js:14359
+commitPassiveMountOnFiber @ react-dom-client.development.js:14513
+recursivelyTraversePassiveMountEffects @ react-dom-client.development.js:14359
+commitPassiveMountOnFiber @ react-dom-client.development.js:14513
+recursivelyTraversePassiveMountEffects @ react-dom-client.development.js:14359
+commitPassiveMountOnFiber @ react-dom-client.development.js:14379
+recursivelyTraversePassiveMountEffects @ react-dom-client.development.js:14359
+commitPassiveMountOnFiber @ react-dom-client.development.js:14379
+recursivelyTraversePassiveMountEffects @ react-dom-client.development.js:14359
+commitPassiveMountOnFiber @ react-dom-client.development.js:14513
+recursivelyTraversePassiveMountEffects @ react-dom-client.development.js:14359
+commitPassiveMountOnFiber @ react-dom-client.development.js:14513
+recursivelyTraversePassiveMountEffects @ react-dom-client.development.js:14359
+commitPassiveMountOnFiber @ react-dom-client.development.js:14379
+recursivelyTraversePassiveMountEffects @ react-dom-client.development.js:14359
+commitPassiveMountOnFiber @ react-dom-client.development.js:14389
+recursivelyTraversePassiveMountEffects @ react-dom-client.development.js:14359
+commitPassiveMountOnFiber @ react-dom-client.development.js:14379
+recursivelyTraversePassiveMountEffects @ react-dom-client.development.js:14359
+commitPassiveMountOnFiber @ react-dom-client.development.js:14389
+recursivelyTraversePassiveMountEffects @ react-dom-client.development.js:14359
+commitPassiveMountOnFiber @ react-dom-client.development.js:14379
+recursivelyTraversePassiveMountEffects @ react-dom-client.development.js:14359
+commitPassiveMountOnFiber @ react-dom-client.development.js:14379
+recursivelyTraversePassiveMountEffects @ react-dom-client.development.js:14359
+commitPassiveMountOnFiber @ react-dom-client.development.js:14379
+recursivelyTraversePassiveMountEffects @ react-dom-client.development.js:14359
+commitPassiveMountOnFiber @ react-dom-client.development.js:14389
+recursivelyTraversePassiveMountEffects @ react-dom-client.development.js:14359
+commitPassiveMountOnFiber @ react-dom-client.development.js:14379
+recursivelyTraversePassiveMountEffects @ react-dom-client.development.js:14359
+commitPassiveMountOnFiber @ react-dom-client.development.js:14379
+recursivelyTraversePassiveMountEffects @ react-dom-client.development.js:14359
+commitPassiveMountOnFiber @ react-dom-client.development.js:14513
+recursivelyTraversePassiveMountEffects @ react-dom-client.development.js:14359
+commitPassiveMountOnFiber @ react-dom-client.development.js:14513
+recursivelyTraversePassiveMountEffects @ react-dom-client.development.js:14359
+commitPassiveMountOnFiber @ react-dom-client.development.js:14379
+recursivelyTraversePassiveMountEffects @ react-dom-client.development.js:14359
+commitPassiveMountOnFiber @ react-dom-client.development.js:14379
+recursivelyTraversePassiveMountEffects @ react-dom-client.development.js:14359
+commitPassiveMountOnFiber @ react-dom-client.development.js:14513
+recursivelyTraversePassiveMountEffects @ react-dom-client.development.js:14359
+commitPassiveMountOnFiber @ react-dom-client.development.js:14513
+recursivelyTraversePassiveMountEffects @ react-dom-client.development.js:14359
+commitPassiveMountOnFiber @ react-dom-client.development.js:14379
+recursivelyTraversePassiveMountEffects @ react-dom-client.development.js:14359
+commitPassiveMountOnFiber @ react-dom-client.development.js:14513
+recursivelyTraversePassiveMountEffects @ react-dom-client.development.js:14359
+commitPassiveMountOnFiber @ react-dom-client.development.js:14379
+recursivelyTraversePassiveMountEffects @ react-dom-client.development.js:14359
+commitPassiveMountOnFiber @ react-dom-client.development.js:14513
+recursivelyTraversePassiveMountEffects @ react-dom-client.development.js:14359
+commitPassiveMountOnFiber @ react-dom-client.development.js:14379
+recursivelyTraversePassiveMountEffects @ react-dom-client.development.js:14359
+commitPassiveMountOnFiber @ react-dom-client.development.js:14389
+recursivelyTraversePassiveMountEffects @ react-dom-client.development.js:14359
+commitPassiveMountOnFiber @ react-dom-client.development.js:14513
+recursivelyTraversePassiveMountEffects @ react-dom-client.development.js:14359
+commitPassiveMountOnFiber @ react-dom-client.development.js:14513
+recursivelyTraversePassiveMountEffects @ react-dom-client.development.js:14359
+commitPassiveMountOnFiber @ react-dom-client.development.js:14379
+recursivelyTraversePassiveMountEffects @ react-dom-client.development.js:14359
+commitPassiveMountOnFiber @ react-dom-client.development.js:14513
+recursivelyTraversePassiveMountEffects @ react-dom-client.development.js:14359
+commitPassiveMountOnFiber @ react-dom-client.development.js:14513
+recursivelyTraversePassiveMountEffects @ react-dom-client.development.js:14359
+commitPassiveMountOnFiber @ react-dom-client.development.js:14379
+recursivelyTraversePassiveMountEffects @ react-dom-client.development.js:14359
+commitPassiveMountOnFiber @ react-dom-client.development.js:14379
+recursivelyTraversePassiveMountEffects @ react-dom-client.development.js:14359
+commitPassiveMountOnFiber @ react-dom-client.development.js:14379
+recursivelyTraversePassiveMountEffects @ react-dom-client.development.js:14359
+commitPassiveMountOnFiber @ react-dom-client.development.js:14513
+recursivelyTraversePassiveMountEffects @ react-dom-client.development.js:14359
+commitPassiveMountOnFiber @ react-dom-client.development.js:14379
+recursivelyTraversePassiveMountEffects @ react-dom-client.development.js:14359
+commitPassiveMountOnFiber @ react-dom-client.development.js:14379
+recursivelyTraversePassiveMountEffects @ react-dom-client.development.js:14359
+commitPassiveMountOnFiber @ react-dom-client.development.js:14379
+recursivelyTraversePassiveMountEffects @ react-dom-client.development.js:14359
+commitPassiveMountOnFiber @ react-dom-client.development.js:14513
+recursivelyTraversePassiveMountEffects @ react-dom-client.development.js:14359
+commitPassiveMountOnFiber @ react-dom-client.development.js:14513
+recursivelyTraversePassiveMountEffects @ react-dom-client.development.js:14359
+commitPassiveMountOnFiber @ react-dom-client.development.js:14513
+recursivelyTraversePassiveMountEffects @ react-dom-client.development.js:14359
+commitPassiveMountOnFiber @ react-dom-client.development.js:14379
+recursivelyTraversePassiveMountEffects @ react-dom-client.development.js:14359
+commitPassiveMountOnFiber @ react-dom-client.development.js:14379
+recursivelyTraversePassiveMountEffects @ react-dom-client.development.js:14359
+commitPassiveMountOnFiber @ react-dom-client.development.js:14389
+recursivelyTraversePassiveMountEffects @ react-dom-client.development.js:14359
+commitPassiveMountOnFiber @ react-dom-client.development.js:14379
+recursivelyTraversePassiveMountEffects @ react-dom-client.development.js:14359
+commitPassiveMountOnFiber @ react-dom-client.development.js:14389
+recursivelyTraversePassiveMountEffects @ react-dom-client.development.js:14359
+commitPassiveMountOnFiber @ react-dom-client.development.js:14379
+recursivelyTraversePassiveMountEffects @ react-dom-client.development.js:14359
+commitPassiveMountOnFiber @ react-dom-client.development.js:14379
+recursivelyTraversePassiveMountEffects @ react-dom-client.development.js:14359
+commitPassiveMountOnFiber @ react-dom-client.development.js:14389
+recursivelyTraversePassiveMountEffects @ react-dom-client.development.js:14359
+commitPassiveMountOnFiber @ react-dom-client.development.js:14379
+recursivelyTraversePassiveMountEffects @ react-dom-client.development.js:14359
+commitPassiveMountOnFiber @ react-dom-client.development.js:14513
+recursivelyTraversePassiveMountEffects @ react-dom-client.development.js:14359
+commitPassiveMountOnFiber @ react-dom-client.development.js:14513
+recursivelyTraversePassiveMountEffects @ react-dom-client.development.js:14359
+commitPassiveMountOnFiber @ react-dom-client.development.js:14513
+recursivelyTraversePassiveMountEffects @ react-dom-client.development.js:14359
+commitPassiveMountOnFiber @ react-dom-client.development.js:14513
+recursivelyTraversePassiveMountEffects @ react-dom-client.development.js:14359
+commitPassiveMountOnFiber @ react-dom-client.development.js:14513
+recursivelyTraversePassiveMountEffects @ react-dom-client.development.js:14359
+commitPassiveMountOnFiber @ react-dom-client.development.js:14513
+recursivelyTraversePassiveMountEffects @ react-dom-client.development.js:14359
+commitPassiveMountOnFiber @ react-dom-client.development.js:14379
+recursivelyTraversePassiveMountEffects @ react-dom-client.development.js:14359
+commitPassiveMountOnFiber @ react-dom-client.development.js:14389
+recursivelyTraversePassiveMountEffects @ react-dom-client.development.js:14359
+commitPassiveMountOnFiber @ react-dom-client.development.js:14379
+recursivelyTraversePassiveMountEffects @ react-dom-client.development.js:14359
+commitPassiveMountOnFiber @ react-dom-client.development.js:14379
+recursivelyTraversePassiveMountEffects @ react-dom-client.development.js:14359
+commitPassiveMountOnFiber @ react-dom-client.development.js:14379
+recursivelyTraversePassiveMountEffects @ react-dom-client.development.js:14359
+commitPassiveMountOnFiber @ react-dom-client.development.js:14513
+recursivelyTraversePassiveMountEffects @ react-dom-client.development.js:14359
+commitPassiveMountOnFiber @ react-dom-client.development.js:14379
+recursivelyTraversePassiveMountEffects @ react-dom-client.development.js:14359
+commitPassiveMountOnFiber @ react-dom-client.development.js:14379
+recursivelyTraversePassiveMountEffects @ react-dom-client.development.js:14359
+commitPassiveMountOnFiber @ react-dom-client.development.js:14513
+recursivelyTraversePassiveMountEffects @ react-dom-client.development.js:14359
+commitPassiveMountOnFiber @ react-dom-client.development.js:14513
+recursivelyTraversePassiveMountEffects @ react-dom-client.development.js:14359
+commitPassiveMountOnFiber @ react-dom-client.development.js:14398
+<UnifiedFormHandler>
+exports.jsxDEV @ react-jsx-dev-runtime.development.js:323
+ApiDetails @ index.tsx:281
+react_stack_bottom_frame @ react-dom-client.development.js:23583
+renderWithHooksAgain @ react-dom-client.development.js:6892
+renderWithHooks @ react-dom-client.development.js:6804
+updateFunctionComponent @ react-dom-client.development.js:9246
+beginWork @ react-dom-client.development.js:10857
+runWithFiberInDEV @ react-dom-client.development.js:871
+performUnitOfWork @ react-dom-client.development.js:15726
+workLoopSync @ react-dom-client.development.js:15546
+renderRootSync @ react-dom-client.development.js:15526
+performWorkOnRoot @ react-dom-client.development.js:14990
+performWorkOnRootViaSchedulerTask @ react-dom-client.development.js:16815
+performWorkUntilDeadline @ scheduler.development.js:45
+<ApiDetails>
+exports.jsxDEV @ react-jsx-dev-runtime.development.js:323
+FormPage @ page.tsx:10
+react_stack_bottom_frame @ react-dom-client.development.js:23583
+renderWithHooksAgain @ react-dom-client.development.js:6892
+renderWithHooks @ react-dom-client.development.js:6804
+updateFunctionComponent @ react-dom-client.development.js:9246
+beginWork @ react-dom-client.development.js:10857
+runWithFiberInDEV @ react-dom-client.development.js:871
+performUnitOfWork @ react-dom-client.development.js:15726
+workLoopSync @ react-dom-client.development.js:15546
+renderRootSync @ react-dom-client.development.js:15526
+performWorkOnRoot @ react-dom-client.development.js:14990
+performWorkOnRootViaSchedulerTask @ react-dom-client.development.js:16815
+performWorkUntilDeadline @ scheduler.development.js:45
+<FormPage>
+exports.jsx @ react-jsx-runtime.development.js:323
+ClientPageRoot @ client-page.tsx:60
+react_stack_bottom_frame @ react-dom-client.development.js:23583
+renderWithHooksAgain @ react-dom-client.development.js:6892
+renderWithHooks @ react-dom-client.development.js:6804
+updateFunctionComponent @ react-dom-client.development.js:9246
+beginWork @ react-dom-client.development.js:10806
+runWithFiberInDEV @ react-dom-client.development.js:871
+performUnitOfWork @ react-dom-client.development.js:15726
+workLoopSync @ react-dom-client.development.js:15546
+renderRootSync @ react-dom-client.development.js:15526
+performWorkOnRoot @ react-dom-client.development.js:14990
+performWorkOnRootViaSchedulerTask @ react-dom-client.development.js:16815
+performWorkUntilDeadline @ scheduler.development.js:45
+"use client"
+Function.all @ VM203 <anonymous>:1
+Function.all @ VM203 <anonymous>:1
+initializeElement @ react-server-dom-turbopack-client.browser.development.js:1332
+"use server"
+ResponseInstance @ react-server-dom-turbopack-client.browser.development.js:2030
+createResponseFromOptions @ react-server-dom-turbopack-client.browser.development.js:3083
+exports.createFromReadableStream @ react-server-dom-turbopack-client.browser.development.js:3460
+__TURBOPACK__module__evaluation__ @ app-index.tsx:156
+(anonymous) @ dev-base.ts:241
+runModuleExecutionHooks @ dev-base.ts:275
+instantiateModule @ dev-base.ts:235
+getOrInstantiateModuleFromParent @ dev-base.ts:162
+commonJsRequire @ runtime-utils.ts:366
+(anonymous) @ app-next-turbopack.ts:11
+(anonymous) @ app-bootstrap.ts:76
+loadScriptsInSequence @ app-bootstrap.ts:22
+appBootstrap @ app-bootstrap.ts:58
+__TURBOPACK__module__evaluation__ @ app-next-turbopack.ts:10
+(anonymous) @ dev-base.ts:241
+runModuleExecutionHooks @ dev-base.ts:275
+instantiateModule @ dev-base.ts:235
+getOrInstantiateRuntimeModule @ dev-base.ts:128
+registerChunk @ runtime-backend-dom.ts:57
+await in registerChunk
+registerChunk @ dev-base.ts:1146
+(anonymous) @ dev-backend-dom.ts:126
+(anonymous) @ dev-backend-dom.ts:126
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+index.tsx:134 undefined
+index.tsx:49 Auth Debug - user: UserImpl {providerId: 'firebase', proactiveRefresh: ProactiveRefresh, reloadUserInfo: {…}, reloadListener: null, uid: 'M8u7iizG4sS25zHfChyZpPFenb23', …}
+index.tsx:50 Auth Debug - userDoc: null
+hook.js:608 Error: Maximum update depth exceeded. This can happen when a component repeatedly calls setState inside componentWillUpdate or componentDidUpdate. React limits the number of nested updates to prevent infinite loops.
+    at getRootForUpdatedFiber (react-dom-client.development.js:3891:11)
+    at enqueueConcurrentHookUpdate (react-dom-client.development.js:3851:14)
+    at dispatchSetStateInternal (react-dom-client.development.js:8248:18)
+    at dispatchSetState (react-dom-client.development.js:8208:7)
+    at EllipsisMeasure.useLayoutEffect (Ellipsis.js:103:7)
+    at useLayoutEffect.useInternalLayoutEffect (useLayoutEffect.js:11:12)
+    at Object.react_stack_bottom_frame (react-dom-client.development.js:23668:20)
+    at runWithFiberInDEV (react-dom-client.development.js:871:30)
+    at commitHookEffectListMount (react-dom-client.development.js:12344:29)
+    at commitHookLayoutEffects (react-dom-client.development.js:12294:11)
+    at commitLayoutEffectOnFiber (react-dom-client.development.js:13049:13)
+    at recursivelyTraverseLayoutEffects (react-dom-client.development.js:14120:11)
+    at commitLayoutEffectOnFiber (react-dom-client.development.js:13163:11)
+    at recursivelyTraverseLayoutEffects (react-dom-client.development.js:14120:11)
+    at commitLayoutEffectOnFiber (react-dom-client.development.js:13047:11)
+    at recursivelyTraverseLayoutEffects (react-dom-client.development.js:14120:11)
+    at commitLayoutEffectOnFiber (react-dom-client.development.js:13047:11)
+    at recursivelyTraverseLayoutEffects (react-dom-client.development.js:14120:11)
+    at commitLayoutEffectOnFiber (react-dom-client.development.js:13052:11)
+    at recursivelyTraverseLayoutEffects (react-dom-client.development.js:14120:11)
+    at commitLayoutEffectOnFiber (react-dom-client.development.js:13047:11)
+    at recursivelyTraverseLayoutEffects (react-dom-client.development.js:14120:11)
+    at commitLayoutEffectOnFiber (react-dom-client.development.js:13047:11)
+    at recursivelyTraverseLayoutEffects (react-dom-client.development.js:14120:11)
+    at commitLayoutEffectOnFiber (react-dom-client.development.js:13047:11)
+    at recursivelyTraverseLayoutEffects (react-dom-client.development.js:14120:11)
+    at commitLayoutEffectOnFiber (react-dom-client.development.js:13047:11)
+    at recursivelyTraverseLayoutEffects (react-dom-client.development.js:14120:11)
+    at commitLayoutEffectOnFiber (react-dom-client.development.js:13163:11)
+    at recursivelyTraverseLayoutEffects (react-dom-client.development.js:14120:11)
+    at commitLayoutEffectOnFiber (react-dom-client.development.js:13163:11)
+    at recursivelyTraverseLayoutEffects (react-dom-client.development.js:14120:11)
+    at commitLayoutEffectOnFiber (react-dom-client.development.js:13047:11)
+    at recursivelyTraverseLayoutEffects (react-dom-client.development.js:14120:11)
+    at commitLayoutEffectOnFiber (react-dom-client.development.js:13254:11)
+    at recursivelyTraverseLayoutEffects (react-dom-client.development.js:14120:11)
+    at commitLayoutEffectOnFiber (react-dom-client.development.js:13163:11)
+    at recursivelyTraverseLayoutEffects (react-dom-client.development.js:14120:11)
+    at commitLayoutEffectOnFiber (react-dom-client.development.js:13047:11)
+    at recursivelyTraverseLayoutEffects (react-dom-client.development.js:14120:11)
+    at commitLayoutEffectOnFiber (react-dom-client.development.js:13163:11)
+    at recursivelyTraverseLayoutEffects (react-dom-client.development.js:14120:11)
+    at commitLayoutEffectOnFiber (react-dom-client.development.js:13163:11)
+    at recursivelyTraverseLayoutEffects (react-dom-client.development.js:14120:11)
+    at commitLayoutEffectOnFiber (react-dom-client.development.js:13047:11)
+    at recursivelyTraverseLayoutEffects (react-dom-client.development.js:14120:11)
+    at commitLayoutEffectOnFiber (react-dom-client.development.js:13163:11)
+    at recursivelyTraverseLayoutEffects (react-dom-client.development.js:14120:11)
+    at commitLayoutEffectOnFiber (react-dom-client.development.js:13163:11)
+    at recursivelyTraverseLayoutEffects (react-dom-client.development.js:14120:11)
+
+The above error occurred in the <EllipsisMeasure> component. It was handled by the <ErrorBoundary> error boundary.
+overrideMethod @ hook.js:608
+onCaughtError @ error-boundary-callbacks.ts:90
+logCaughtError @ react-dom-client.development.js:8527
+runWithFiberInDEV @ react-dom-client.development.js:871
+inst.componentDidCatch.update.callback @ react-dom-client.development.js:8574
+callCallback @ react-dom-client.development.js:6553
+commitCallbacks @ react-dom-client.development.js:6573
+runWithFiberInDEV @ react-dom-client.development.js:871
+commitClassCallbacks @ react-dom-client.development.js:12506
+commitLayoutEffectOnFiber @ react-dom-client.development.js:13124
+recursivelyTraverseLayoutEffects @ react-dom-client.development.js:14120
+commitLayoutEffectOnFiber @ react-dom-client.development.js:13254
+recursivelyTraverseLayoutEffects @ react-dom-client.development.js:14120
+commitLayoutEffectOnFiber @ react-dom-client.development.js:13254
+recursivelyTraverseLayoutEffects @ react-dom-client.development.js:14120
+commitLayoutEffectOnFiber @ react-dom-client.development.js:13047
+recursivelyTraverseLayoutEffects @ react-dom-client.development.js:14120
+commitLayoutEffectOnFiber @ react-dom-client.development.js:13254
+recursivelyTraverseLayoutEffects @ react-dom-client.development.js:14120
+commitLayoutEffectOnFiber @ react-dom-client.development.js:13254
+recursivelyTraverseLayoutEffects @ react-dom-client.development.js:14120
+commitLayoutEffectOnFiber @ react-dom-client.development.js:13047
+recursivelyTraverseLayoutEffects @ react-dom-client.development.js:14120
+commitLayoutEffectOnFiber @ react-dom-client.development.js:13047
+recursivelyTraverseLayoutEffects @ react-dom-client.development.js:14120
+commitLayoutEffectOnFiber @ react-dom-client.development.js:13047
+recursivelyTraverseLayoutEffects @ react-dom-client.development.js:14120
+commitLayoutEffectOnFiber @ react-dom-client.development.js:13254
+recursivelyTraverseLayoutEffects @ react-dom-client.development.js:14120
+commitLayoutEffectOnFiber @ react-dom-client.development.js:13047
+recursivelyTraverseLayoutEffects @ react-dom-client.development.js:14120
+commitLayoutEffectOnFiber @ react-dom-client.development.js:13047
+recursivelyTraverseLayoutEffects @ react-dom-client.development.js:14120
+commitLayoutEffectOnFiber @ react-dom-client.development.js:13047
+recursivelyTraverseLayoutEffects @ react-dom-client.development.js:14120
+commitLayoutEffectOnFiber @ react-dom-client.development.js:13163
+recursivelyTraverseLayoutEffects @ react-dom-client.development.js:14120
+commitLayoutEffectOnFiber @ react-dom-client.development.js:13163
+recursivelyTraverseLayoutEffects @ react-dom-client.development.js:14120
+commitLayoutEffectOnFiber @ react-dom-client.development.js:13254
+recursivelyTraverseLayoutEffects @ react-dom-client.development.js:14120
+commitLayoutEffectOnFiber @ react-dom-client.development.js:13047
+recursivelyTraverseLayoutEffects @ react-dom-client.development.js:14120
+commitLayoutEffectOnFiber @ react-dom-client.development.js:13047
+recursivelyTraverseLayoutEffects @ react-dom-client.development.js:14120
+commitLayoutEffectOnFiber @ react-dom-client.development.js:13052
+recursivelyTraverseLayoutEffects @ react-dom-client.development.js:14120
+commitLayoutEffectOnFiber @ react-dom-client.development.js:13047
+recursivelyTraverseLayoutEffects @ react-dom-client.development.js:14120
+commitLayoutEffectOnFiber @ react-dom-client.development.js:13052
+recursivelyTraverseLayoutEffects @ react-dom-client.development.js:14120
+commitLayoutEffectOnFiber @ react-dom-client.development.js:13047
+recursivelyTraverseLayoutEffects @ react-dom-client.development.js:14120
+commitLayoutEffectOnFiber @ react-dom-client.development.js:13047
+recursivelyTraverseLayoutEffects @ react-dom-client.development.js:14120
+commitLayoutEffectOnFiber @ react-dom-client.development.js:13052
+recursivelyTraverseLayoutEffects @ react-dom-client.development.js:14120
+commitLayoutEffectOnFiber @ react-dom-client.development.js:13047
+recursivelyTraverseLayoutEffects @ react-dom-client.development.js:14120
+commitLayoutEffectOnFiber @ react-dom-client.development.js:13254
+recursivelyTraverseLayoutEffects @ react-dom-client.development.js:14120
+commitLayoutEffectOnFiber @ react-dom-client.development.js:13254
+recursivelyTraverseLayoutEffects @ react-dom-client.development.js:14120
+commitLayoutEffectOnFiber @ react-dom-client.development.js:13254
+recursivelyTraverseLayoutEffects @ react-dom-client.development.js:14120
+commitLayoutEffectOnFiber @ react-dom-client.development.js:13254
+recursivelyTraverseLayoutEffects @ react-dom-client.development.js:14120
+commitLayoutEffectOnFiber @ react-dom-client.development.js:13254
+recursivelyTraverseLayoutEffects @ react-dom-client.development.js:14120
+commitLayoutEffectOnFiber @ react-dom-client.development.js:13254
+recursivelyTraverseLayoutEffects @ react-dom-client.development.js:14120
+commitLayoutEffectOnFiber @ react-dom-client.development.js:13047
+recursivelyTraverseLayoutEffects @ react-dom-client.development.js:14120
+commitLayoutEffectOnFiber @ react-dom-client.development.js:13052
+recursivelyTraverseLayoutEffects @ react-dom-client.development.js:14120
+commitLayoutEffectOnFiber @ react-dom-client.development.js:13047
+recursivelyTraverseLayoutEffects @ react-dom-client.development.js:14120
+commitLayoutEffectOnFiber @ react-dom-client.development.js:13047
+recursivelyTraverseLayoutEffects @ react-dom-client.development.js:14120
+commitLayoutEffectOnFiber @ react-dom-client.development.js:13047
+recursivelyTraverseLayoutEffects @ react-dom-client.development.js:14120
+commitLayoutEffectOnFiber @ react-dom-client.development.js:13254
+recursivelyTraverseLayoutEffects @ react-dom-client.development.js:14120
+commitLayoutEffectOnFiber @ react-dom-client.development.js:13047
+recursivelyTraverseLayoutEffects @ react-dom-client.development.js:14120
+commitLayoutEffectOnFiber @ react-dom-client.development.js:13047
+recursivelyTraverseLayoutEffects @ react-dom-client.development.js:14120
+commitLayoutEffectOnFiber @ react-dom-client.development.js:13254
+recursivelyTraverseLayoutEffects @ react-dom-client.development.js:14120
+commitLayoutEffectOnFiber @ react-dom-client.development.js:13254
+recursivelyTraverseLayoutEffects @ react-dom-client.development.js:14120
+commitLayoutEffectOnFiber @ react-dom-client.development.js:13129
+flushLayoutEffects @ react-dom-client.development.js:16155
+commitRoot @ react-dom-client.development.js:15996
+commitRootWhenReady @ react-dom-client.development.js:15227
+performWorkOnRoot @ react-dom-client.development.js:15146
+performSyncWorkOnRoot @ react-dom-client.development.js:16830
+flushSyncWorkAcrossRoots_impl @ react-dom-client.development.js:16676
+flushSpawnedWork @ react-dom-client.development.js:16273
+commitRoot @ react-dom-client.development.js:15997
+commitRootWhenReady @ react-dom-client.development.js:15227
+performWorkOnRoot @ react-dom-client.development.js:15146
+performWorkOnRootViaSchedulerTask @ react-dom-client.development.js:16815
+performWorkUntilDeadline @ scheduler.development.js:45
+ErrorBoundary.tsx:29 ErrorBoundary caught an error: Error: Maximum update depth exceeded. This can happen when a component repeatedly calls setState inside componentWillUpdate or componentDidUpdate. React limits the number of nested updates to prevent infinite loops.
+    at getRootForUpdatedFiber (react-dom-client.development.js:3891:11)
+    at enqueueConcurrentHookUpdate (react-dom-client.development.js:3851:14)
+    at dispatchSetStateInternal (react-dom-client.development.js:8248:18)
+    at dispatchSetState (react-dom-client.development.js:8208:7)
+    at EllipsisMeasure.useLayoutEffect (Ellipsis.js:103:7)
+    at useLayoutEffect.useInternalLayoutEffect (useLayoutEffect.js:11:12)
+    at Object.react_stack_bottom_frame (react-dom-client.development.js:23668:20)
+    at runWithFiberInDEV (react-dom-client.development.js:871:30)
+    at commitHookEffectListMount (react-dom-client.development.js:12344:29)
+    at commitHookLayoutEffects (react-dom-client.development.js:12294:11)
+    at commitLayoutEffectOnFiber (react-dom-client.development.js:13049:13)
+    at recursivelyTraverseLayoutEffects (react-dom-client.development.js:14120:11)
+    at commitLayoutEffectOnFiber (react-dom-client.development.js:13163:11)
+    at recursivelyTraverseLayoutEffects (react-dom-client.development.js:14120:11)
+    at commitLayoutEffectOnFiber (react-dom-client.development.js:13047:11)
+    at recursivelyTraverseLayoutEffects (react-dom-client.development.js:14120:11)
+    at commitLayoutEffectOnFiber (react-dom-client.development.js:13047:11)
+    at recursivelyTraverseLayoutEffects (react-dom-client.development.js:14120:11)
+    at commitLayoutEffectOnFiber (react-dom-client.development.js:13052:11)
+    at recursivelyTraverseLayoutEffects (react-dom-client.development.js:14120:11)
+    at commitLayoutEffectOnFiber (react-dom-client.development.js:13047:11)
+    at recursivelyTraverseLayoutEffects (react-dom-client.development.js:14120:11)
+    at commitLayoutEffectOnFiber (react-dom-client.development.js:13047:11)
+    at recursivelyTraverseLayoutEffects (react-dom-client.development.js:14120:11)
+    at commitLayoutEffectOnFiber (react-dom-client.development.js:13047:11)
+    at recursivelyTraverseLayoutEffects (react-dom-client.development.js:14120:11)
+    at commitLayoutEffectOnFiber (react-dom-client.development.js:13047:11)
+    at recursivelyTraverseLayoutEffects (react-dom-client.development.js:14120:11)
+    at commitLayoutEffectOnFiber (react-dom-client.development.js:13163:11)
+    at recursivelyTraverseLayoutEffects (react-dom-client.development.js:14120:11)
+    at commitLayoutEffectOnFiber (react-dom-client.development.js:13163:11)
+    at recursivelyTraverseLayoutEffects (react-dom-client.development.js:14120:11)
+    at commitLayoutEffectOnFiber (react-dom-client.development.js:13047:11)
+    at recursivelyTraverseLayoutEffects (react-dom-client.development.js:14120:11)
+    at commitLayoutEffectOnFiber (react-dom-client.development.js:13254:11)
+    at recursivelyTraverseLayoutEffects (react-dom-client.development.js:14120:11)
+    at commitLayoutEffectOnFiber (react-dom-client.development.js:13163:11)
+    at recursivelyTraverseLayoutEffects (react-dom-client.development.js:14120:11)
+    at commitLayoutEffectOnFiber (react-dom-client.development.js:13047:11)
+    at recursivelyTraverseLayoutEffects (react-dom-client.development.js:14120:11)
+    at commitLayoutEffectOnFiber (react-dom-client.development.js:13163:11)
+    at recursivelyTraverseLayoutEffects (react-dom-client.development.js:14120:11)
+    at commitLayoutEffectOnFiber (react-dom-client.development.js:13163:11)
+    at recursivelyTraverseLayoutEffects (react-dom-client.development.js:14120:11)
+    at commitLayoutEffectOnFiber (react-dom-client.development.js:13047:11)
+    at recursivelyTraverseLayoutEffects (react-dom-client.development.js:14120:11)
+    at commitLayoutEffectOnFiber (react-dom-client.development.js:13163:11)
+    at recursivelyTraverseLayoutEffects (react-dom-client.development.js:14120:11)
+    at commitLayoutEffectOnFiber (react-dom-client.development.js:13163:11)
+    at recursivelyTraverseLayoutEffects (react-dom-client.development.js:14120:11) {componentStack: '\n    at EllipsisMeasure (http://localhost:3000/_ne…nks/82438_next_dist_client_0dd1b71b._.js:9899:11)'}
+overrideMethod @ hook.js:608
+error @ intercept-console-error.ts:44
+componentDidCatch @ ErrorBoundary.tsx:29
+react_stack_bottom_frame @ react-dom-client.development.js:23638
+inst.componentDidCatch.update.callback @ react-dom-client.development.js:8585
+callCallback @ react-dom-client.development.js:6553
+commitCallbacks @ react-dom-client.development.js:6573
+runWithFiberInDEV @ react-dom-client.development.js:871
+commitClassCallbacks @ react-dom-client.development.js:12506
+commitLayoutEffectOnFiber @ react-dom-client.development.js:13124
+recursivelyTraverseLayoutEffects @ react-dom-client.development.js:14120
+commitLayoutEffectOnFiber @ react-dom-client.development.js:13254
+recursivelyTraverseLayoutEffects @ react-dom-client.development.js:14120
+commitLayoutEffectOnFiber @ react-dom-client.development.js:13254
+recursivelyTraverseLayoutEffects @ react-dom-client.development.js:14120
+commitLayoutEffectOnFiber @ react-dom-client.development.js:13047
+recursivelyTraverseLayoutEffects @ react-dom-client.development.js:14120
+commitLayoutEffectOnFiber @ react-dom-client.development.js:13254
+recursivelyTraverseLayoutEffects @ react-dom-client.development.js:14120
+commitLayoutEffectOnFiber @ react-dom-client.development.js:13254
+recursivelyTraverseLayoutEffects @ react-dom-client.development.js:14120
+commitLayoutEffectOnFiber @ react-dom-client.development.js:13047
+recursivelyTraverseLayoutEffects @ react-dom-client.development.js:14120
+commitLayoutEffectOnFiber @ react-dom-client.development.js:13047
+recursivelyTraverseLayoutEffects @ react-dom-client.development.js:14120
+commitLayoutEffectOnFiber @ react-dom-client.development.js:13047
+recursivelyTraverseLayoutEffects @ react-dom-client.development.js:14120
+commitLayoutEffectOnFiber @ react-dom-client.development.js:13254
+recursivelyTraverseLayoutEffects @ react-dom-client.development.js:14120
+commitLayoutEffectOnFiber @ react-dom-client.development.js:13047
+recursivelyTraverseLayoutEffects @ react-dom-client.development.js:14120
+commitLayoutEffectOnFiber @ react-dom-client.development.js:13047
+recursivelyTraverseLayoutEffects @ react-dom-client.development.js:14120
+commitLayoutEffectOnFiber @ react-dom-client.development.js:13047
+recursivelyTraverseLayoutEffects @ react-dom-client.development.js:14120
+commitLayoutEffectOnFiber @ react-dom-client.development.js:13163
+recursivelyTraverseLayoutEffects @ react-dom-client.development.js:14120
+commitLayoutEffectOnFiber @ react-dom-client.development.js:13163
+recursivelyTraverseLayoutEffects @ react-dom-client.development.js:14120
+commitLayoutEffectOnFiber @ react-dom-client.development.js:13254
+recursivelyTraverseLayoutEffects @ react-dom-client.development.js:14120
+commitLayoutEffectOnFiber @ react-dom-client.development.js:13047
+recursivelyTraverseLayoutEffects @ react-dom-client.development.js:14120
+commitLayoutEffectOnFiber @ react-dom-client.development.js:13047
+recursivelyTraverseLayoutEffects @ react-dom-client.development.js:14120
+commitLayoutEffectOnFiber @ react-dom-client.development.js:13052
+recursivelyTraverseLayoutEffects @ react-dom-client.development.js:14120
+commitLayoutEffectOnFiber @ react-dom-client.development.js:13047
+recursivelyTraverseLayoutEffects @ react-dom-client.development.js:14120
+commitLayoutEffectOnFiber @ react-dom-client.development.js:13052
+recursivelyTraverseLayoutEffects @ react-dom-client.development.js:14120
+commitLayoutEffectOnFiber @ react-dom-client.development.js:13047
+recursivelyTraverseLayoutEffects @ react-dom-client.development.js:14120
+commitLayoutEffectOnFiber @ react-dom-client.development.js:13047
+recursivelyTraverseLayoutEffects @ react-dom-client.development.js:14120
+commitLayoutEffectOnFiber @ react-dom-client.development.js:13052
+recursivelyTraverseLayoutEffects @ react-dom-client.development.js:14120
+commitLayoutEffectOnFiber @ react-dom-client.development.js:13047
+recursivelyTraverseLayoutEffects @ react-dom-client.development.js:14120
+commitLayoutEffectOnFiber @ react-dom-client.development.js:13254
+recursivelyTraverseLayoutEffects @ react-dom-client.development.js:14120
+commitLayoutEffectOnFiber @ react-dom-client.development.js:13254
+recursivelyTraverseLayoutEffects @ react-dom-client.development.js:14120
+commitLayoutEffectOnFiber @ react-dom-client.development.js:13254
+recursivelyTraverseLayoutEffects @ react-dom-client.development.js:14120
+commitLayoutEffectOnFiber @ react-dom-client.development.js:13254
+recursivelyTraverseLayoutEffects @ react-dom-client.development.js:14120
+commitLayoutEffectOnFiber @ react-dom-client.development.js:13254
+recursivelyTraverseLayoutEffects @ react-dom-client.development.js:14120
+commitLayoutEffectOnFiber @ react-dom-client.development.js:13254
+recursivelyTraverseLayoutEffects @ react-dom-client.development.js:14120
+commitLayoutEffectOnFiber @ react-dom-client.development.js:13047
+recursivelyTraverseLayoutEffects @ react-dom-client.development.js:14120
+commitLayoutEffectOnFiber @ react-dom-client.development.js:13052
+recursivelyTraverseLayoutEffects @ react-dom-client.development.js:14120
+commitLayoutEffectOnFiber @ react-dom-client.development.js:13047
+recursivelyTraverseLayoutEffects @ react-dom-client.development.js:14120
+commitLayoutEffectOnFiber @ react-dom-client.development.js:13047
+recursivelyTraverseLayoutEffects @ react-dom-client.development.js:14120
+commitLayoutEffectOnFiber @ react-dom-client.development.js:13047
+recursivelyTraverseLayoutEffects @ react-dom-client.development.js:14120
+commitLayoutEffectOnFiber @ react-dom-client.development.js:13254
+recursivelyTraverseLayoutEffects @ react-dom-client.development.js:14120
+commitLayoutEffectOnFiber @ react-dom-client.development.js:13047
+recursivelyTraverseLayoutEffects @ react-dom-client.development.js:14120
+commitLayoutEffectOnFiber @ react-dom-client.development.js:13047
+recursivelyTraverseLayoutEffects @ react-dom-client.development.js:14120
+commitLayoutEffectOnFiber @ react-dom-client.development.js:13254
+recursivelyTraverseLayoutEffects @ react-dom-client.development.js:14120
+commitLayoutEffectOnFiber @ react-dom-client.development.js:13254
+recursivelyTraverseLayoutEffects @ react-dom-client.development.js:14120
+commitLayoutEffectOnFiber @ react-dom-client.development.js:13129
+flushLayoutEffects @ react-dom-client.development.js:16155
+commitRoot @ react-dom-client.development.js:15996
+commitRootWhenReady @ react-dom-client.development.js:15227
+performWorkOnRoot @ react-dom-client.development.js:15146
+performSyncWorkOnRoot @ react-dom-client.development.js:16830
+flushSyncWorkAcrossRoots_impl @ react-dom-client.development.js:16676
+flushSpawnedWork @ react-dom-client.development.js:16273
+commitRoot @ react-dom-client.development.js:15997
+commitRootWhenReady @ react-dom-client.development.js:15227
+performWorkOnRoot @ react-dom-client.development.js:15146
+performWorkOnRootViaSchedulerTask @ react-dom-client.development.js:16815
+performWorkUntilDeadline @ scheduler.development.js:45
+client-forms-service.ts:97 Successfully fetched data from Firebase: {fuel: {…}, naturalgas: {…}, cars: {…}, freighting: {…}, waste: {…}, …}

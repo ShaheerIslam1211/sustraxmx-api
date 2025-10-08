@@ -8,7 +8,7 @@ import { useResponsive } from "../../customHooks/responsive";
 import "./index.css";
 import { Helmet } from "react-helmet";
 import texts from "../../mockData/texts";
-import { CustomInput } from "../common/formInputs/formInput";
+import { CustomInput } from "../common/formInputs";
 import CustomTabs from "../common/customTabs/CustomTab";
 
 interface TabData {
@@ -23,7 +23,7 @@ const UserProfile: React.FC = () => {
   const [firstName, setFirstName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [isFormEdited, setIsFormEdited] = useState<boolean>(false);
-  const { isMobile } = useResponsive();
+  const { isMobile: _isMobile } = useResponsive();
 
   useEffect(() => {
     if (user) {

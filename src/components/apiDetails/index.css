@@ -105,3 +105,57 @@
 .categoryFormInputs {
   margin-bottom: 10px;
 }
+
+/* Execute Query Button Styles */
+.execute-button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  padding: 20px 0;
+  border-top: 1px solid var(--border-color);
+}
+
+.execute-query-button {
+  background: linear-gradient(135deg, #52c41a 0%, #389e0d 100%);
+  border: none;
+  border-radius: 8px;
+  height: 48px;
+  padding: 0 32px;
+  font-size: 16px;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(82, 196, 26, 0.3);
+  transition: all 0.3s ease;
+}
+
+.execute-query-button:hover {
+  background: linear-gradient(135deg, #389e0d 0%, #237804 100%);
+  box-shadow: 0 6px 16px rgba(82, 196, 26, 0.4);
+  transform: translateY(-2px);
+}
+
+.execute-query-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(82, 196, 26, 0.3);
+}
+
+.execute-query-button:disabled {
+  background: linear-gradient(135deg, #d9d9d9 0%, #bfbfbf 100%);
+  box-shadow: none;
+  transform: none;
+}
+
+@media (max-width: 768px) {
+  .execute-button-container {
+    margin-top: 20px;
+    padding: 15px 0;
+  }
+
+  .execute-query-button {
+    height: 44px;
+    padding: 0 24px;
+    font-size: 14px;
+    width: 100%;
+    max-width: 280px;
+  }
+}

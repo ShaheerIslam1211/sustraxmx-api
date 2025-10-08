@@ -1,9 +1,6 @@
 import React, { useState } from "react";
-import { Input } from "antd";
-import { isAuthenticated } from "../../../helpers/authHelper";
-import "./formInput.css";
-
-const { Group } = Input;
+import { Input, Space } from "antd";
+import "./FormInput.css";
 
 interface Credentials {
   username: string;
@@ -33,8 +30,8 @@ export const UserAuthInputs: React.FC<UserAuthInputsProps> = ({
   };
 
   return (
-    <Group compact>
-      <Input
+    <Space.Compact>
+      {/* <Input
         addonBefore="Basic"
         value={username}
         placeholder="Username"
@@ -46,8 +43,8 @@ export const UserAuthInputs: React.FC<UserAuthInputsProps> = ({
         value={password}
         onChange={handlePasswordChange}
         style={{ width: "calc(50% - 2px)" }}
-      />
-    </Group>
+      /> */}
+    </Space.Compact>
   );
 };
 

@@ -19,7 +19,7 @@ const nextConfig = {
   },
   poweredByHeader: false,
   reactStrictMode: true,
-  swcMinify: true,
+  // swcMinify: true,
   async redirects() {
     return [
       {

@@ -9,6 +9,8 @@ export const headerContent = {
   helpCenterText: "Help center",
 };
 
+// Legacy DummyUrl - now replaced by API_CONFIG in lib/config.ts
+// Keeping for backward compatibility, but use getDisplayUrl() from config instead
 export const DummyUrl = "xyz.com/";
 
 // export const mockCodeSnippets = {

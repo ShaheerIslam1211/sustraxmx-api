@@ -35,7 +35,7 @@ export interface EmissionData {
 
 export interface ApiData {
   title: string;
-  method: 'GET' | 'POST' | 'PUT' | 'DELETE' | 'PATCH';
+  method: "GET" | "POST" | "PUT" | "DELETE" | "PATCH";
   endpoint: string;
   description: string;
   baseUrl: string;
@@ -72,7 +72,7 @@ export interface ThemeConfig {
 export interface FormField {
   name: string;
   label: string;
-  type: 'text' | 'email' | 'password' | 'number' | 'select' | 'textarea';
+  type: "text" | "email" | "password" | "number" | "select" | "textarea";
   required?: boolean;
   placeholder?: string;
   options?: Array<{ label: string; value: string | number }>;

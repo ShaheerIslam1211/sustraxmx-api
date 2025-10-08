@@ -7,5 +7,5 @@
 
 /* Customizing Ant Design Spin component to have a green color */
 .green-spinner .ant-spin-dot i {
-  background-color: green;
+  background-color: var(--primary-color);
 }
