@@ -11,8 +11,8 @@ interface CustomInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
 const CustomInput: React.FC<CustomInputProps> = ({
   backgroundColor = "transparent",
   borderRadius = "4px",
-  border = "1px solid #ccc",
-  focusBorderColor = "#00cc00",
+  border = "1px solid var(--border-color)",
+  focusBorderColor = "var(--primary-color)",
   ...restProps
 }) => {
   const inputStyle = {

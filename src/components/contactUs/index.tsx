@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import React, { useState } from "react";
 import { Row, Col, message, Input, Button } from "antd";
@@ -6,8 +6,8 @@ import { Helmet } from "react-helmet";
 import texts from "../../mockData/texts";
 import "./index.css";
 import { useResponsive } from "../../customHooks/responsive";
-import { addContactMessage } from "../../firebase/contactMessage.firebase";
-import { CustomInput } from "../common/formInputs/formInput";
+import { addContactMessage } from "../../lib/firebase/contactMessage.firebase";
+import { CustomInput } from "../common/formInputs";
 
 interface FormData {
   name: string;
@@ -29,11 +29,15 @@ const ContactUs: React.FC = () => {
     message: "",
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): void => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ): void => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>): Promise<void> => {
+  const handleSubmit = async (
+    event: React.FormEvent<HTMLFormElement>
+  ): Promise<void> => {
     event.preventDefault();
     if (!formData.name || !formData.email || !formData.message) {
       message.error("Please fill all fields");
@@ -74,7 +78,7 @@ const ContactUs: React.FC = () => {
   ];
 
   const { TextArea } = Input;
-  
+
   return (
     <main style={{ padding: isMobile ? "0px" : "50px", width: "100%" }}>
       <Helmet>
@@ -111,13 +115,13 @@ const ContactUs: React.FC = () => {
                         margin: "10px 0px",
                         height: "30px",
                         padding: "0 15px",
-                        border: "1px solid #d9d9d9",
+                        border: "1px solid var(--border-color)",
                         borderRadius: "4px",
                         boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
                         outline: "none",
                         fontSize: "16px",
-                        color: "rgba(0, 0, 0, 0.88)",
-                        backgroundColor: "#fff",
+                        color: "var(--text-color)",
+                        backgroundColor: "var(--card-background)",
                         transition: "all 0.3s ease-in-out",
                       }}
                     />
@@ -137,11 +141,7 @@ const ContactUs: React.FC = () => {
                   />
                 </div>
               </div>
-              <Button 
-                className="sendBtn" 
-                type="primary" 
-                htmlType="submit"
-              >
+              <Button className="sendBtn" type="primary" htmlType="submit">
                 {texts.contactUs.contactForm.btn}
               </Button>
             </form>
@@ -154,11 +154,13 @@ const ContactUs: React.FC = () => {
               <h2>{texts.contactUs.AddressBox.title}</h2>
             </header>
             <div className="addressBoxLists">
-              {texts.contactUs.AddressBox.listItems.map((listItm: string, index: number) => (
-                <ul key={index} className="addressLists">
-                  <li className="addressList">{listItm}</li>
-                </ul>
-              ))}
+              {texts.contactUs.AddressBox.listItems.map(
+                (listItm: string, index: number) => (
+                  <ul key={index} className="addressLists">
+                    <li className="addressList">{listItm}</li>
+                  </ul>
+                )
+              )}
             </div>
           </section>
         </Col>

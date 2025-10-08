@@ -2,8 +2,6 @@ import React from "react";
 import { Tabs } from "antd";
 import "./index.css";
 
-const { TabPane } = Tabs;
-
 interface TabData {
   key: string;
   label: string;
@@ -16,15 +14,19 @@ interface CustomTabsProps {
   tabsData: TabData[];
 }
 
-const CustomTabs: React.FC<CustomTabsProps> = ({ activeKey, onChange, tabsData }) => {
+const CustomTabs: React.FC<CustomTabsProps> = ({
+  activeKey,
+  onChange,
+  tabsData,
+}) => {
+  const items = tabsData.map(({ key, label, content }) => ({
+    key,
+    label,
+    children: content,
+  }));
+
   return (
-    <Tabs defaultActiveKey={activeKey} onChange={onChange}>
-      {tabsData.map(({ key, label, content }) => (
-        <TabPane tab={label} key={key}>
-          {content}
-        </TabPane>
-      ))}
-    </Tabs>
+    <Tabs defaultActiveKey={activeKey} onChange={onChange} items={items} />
   );
 };
 

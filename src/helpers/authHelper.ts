@@ -8,14 +8,14 @@ export const handleLogout = (): void => {
     .then(() => {
       message.success("You have been logged out.");
     })
-    .catch(error => {
+    .catch(_error => {
       message.error("Failed to log out.");
     });
 };
 
 export const isAuthenticated = (
-  username: string,
-  password: string
+  _username: string,
+  _password: string
 ): boolean => {
   return true;
 };

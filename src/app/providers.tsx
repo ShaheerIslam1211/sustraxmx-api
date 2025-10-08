@@ -2,9 +2,11 @@
 
 import { ConfigProvider, theme } from "antd";
 import { ThemeProvider, useTheme } from "next-themes";
-import { AuthProvider } from "../context/AuthContext";
-import { EmissionDataProvider } from "../context/EmissionDataContext";
-import { ApiDataProvider } from "../context/ApiDataContext";
+import {
+  AuthProvider,
+  EmissionDataProvider,
+  ApiDataProvider,
+} from "../context";
 import ErrorBoundary from "../components/common/ErrorBoundary";
 import { Inter } from "next/font/google";
 import { useEffect, useState } from "react";

@@ -1,0 +1,166 @@
+/* Button Component Styles */
+
+.custom-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  border: 1px solid transparent;
+  text-decoration: none;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.custom-button:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+/* Variants */
+.custom-button--primary {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+.custom-button--primary:hover {
+  background-color: var(--primary-color-dark);
+  border-color: var(--primary-color-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(82, 196, 26, 0.3);
+}
+
+.custom-button--secondary {
+  background-color: var(--background-secondary);
+  color: var(--text-color);
+  border-color: var(--border-color);
+}
+
+.custom-button--secondary:hover {
+  background-color: var(--background-tertiary);
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+
+.custom-button--outline {
+  background-color: transparent;
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.custom-button--outline:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.custom-button--ghost {
+  background-color: transparent;
+  color: var(--text-color);
+  border-color: transparent;
+}
+
+.custom-button--ghost:hover {
+  background-color: var(--background-secondary);
+  color: var(--primary-color);
+}
+
+.custom-button--danger {
+  background-color: var(--error-color);
+  color: white;
+  border-color: var(--error-color);
+}
+
+.custom-button--danger:hover {
+  background-color: var(--error-color-dark);
+  border-color: var(--error-color-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(255, 77, 79, 0.3);
+}
+
+.custom-button--success {
+  background-color: var(--success-color);
+  color: white;
+  border-color: var(--success-color);
+}
+
+.custom-button--success:hover {
+  background-color: var(--success-color-dark);
+  border-color: var(--success-color-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(82, 196, 26, 0.3);
+}
+
+/* Sizes */
+.custom-button--small {
+  padding: 4px 12px;
+  font-size: 12px;
+  height: 28px;
+}
+
+.custom-button--medium {
+  padding: 8px 16px;
+  font-size: 14px;
+  height: 36px;
+}
+
+.custom-button--large {
+  padding: 12px 24px;
+  font-size: 16px;
+  height: 44px;
+}
+
+/* States */
+.custom-button--loading {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.custom-button--disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+  background-color: var(--background-disabled) !important;
+  color: var(--text-disabled) !important;
+  border-color: var(--border-disabled) !important;
+}
+
+.custom-button--full-width {
+  width: 100%;
+}
+
+/* Dark theme adjustments */
+[data-theme="dark"] .custom-button--secondary {
+  background-color: var(--background-secondary);
+  color: var(--text-color);
+}
+
+[data-theme="dark"] .custom-button--secondary:hover {
+  background-color: var(--background-tertiary);
+}
+
+[data-theme="dark"] .custom-button--ghost {
+  color: var(--text-color);
+}
+
+[data-theme="dark"] .custom-button--ghost:hover {
+  background-color: var(--background-secondary);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .custom-button--large {
+    padding: 10px 20px;
+    font-size: 14px;
+    height: 40px;
+  }
+
+  .custom-button--medium {
+    padding: 6px 14px;
+    font-size: 13px;
+    height: 32px;
+  }
+}

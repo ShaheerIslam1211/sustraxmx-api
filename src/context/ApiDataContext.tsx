@@ -6,7 +6,7 @@ import { ApiData } from "../types";
 
 interface ApiDataContextType {
   currentApiDetails: ApiData | undefined;
-  setApiDetails: (endpoint: string) => void;
+  setApiDetails: (_endpoint: string) => void;
   apis: ApiData[];
   selectedApiEndpoint: string;
 }
@@ -32,7 +32,7 @@ export const ApiDataProvider: React.FC<ApiDataProviderProps> = ({
     ApiData | undefined
   >();
   const [selectedApiEndpoint, setSelectedApiEndpoint] = useState<string>("");
-  const [apis, setApis] = useState<ApiData[]>(apiData as ApiData[]);
+  const [apis, _setApis] = useState<ApiData[]>(apiData as ApiData[]);
 
   const setApiDetails = (endpoint: string): void => {
     const details = apiData.find(api => api.endpoint === endpoint) as
