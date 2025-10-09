@@ -5,16 +5,39 @@
 
 // API Configuration
 export const API_CONFIG = {
-  BASE_URL: process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:3000",
-  TIMEOUT: 10000,
-  RETRY_ATTEMPTS: 3,
+  BASE_URL: process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:5173",
+  TIMEOUT: parseInt(process.env.NEXT_PUBLIC_API_TIMEOUT || "10000", 10),
+  RETRY_ATTEMPTS: parseInt(
+    process.env.NEXT_PUBLIC_API_RETRY_ATTEMPTS || "3",
+    10
+  ),
   ENDPOINTS: {
     CALCULATE: "/api/calculate",
     FORMS: "/api/forms",
     FUEL: "/api/fuel/calculate",
     DEBUG: "/api/debug/firebase",
   },
+  // Helper methods
+  getCalculationUrl: (category: string): string => {
+    const endpoint =
+      API_CONFIG.ENDPOINTS[category as keyof typeof API_CONFIG.ENDPOINTS] ||
+      `/api/${category}/calculate`;
+    return `${API_CONFIG.BASE_URL}${endpoint}`;
+  },
+  getDisplayUrl: (category: string): string => {
+    const endpoint =
+      API_CONFIG.ENDPOINTS[category as keyof typeof API_CONFIG.ENDPOINTS] ||
+      `/api/${category}/calculate`;
+    return `${API_CONFIG.BASE_URL}${endpoint}`;
+  },
 } as const;
+
+// Export endpoints separately for convenience
+export const API_ENDPOINTS = API_CONFIG.ENDPOINTS;
+
+// Export helper methods separately for convenience
+export const getCalculationUrl = API_CONFIG.getCalculationUrl;
+export const getDisplayUrl = API_CONFIG.getDisplayUrl;
 
 // Firebase Configuration
 export const FIREBASE_CONFIG = {
@@ -28,11 +51,12 @@ export const FIREBASE_CONFIG = {
 
 // Application Constants
 export const APP_CONFIG = {
-  NAME: "SustraxMX API Playground",
-  VERSION: "2.0.0",
-  DESCRIPTION: "Interactive API playground for testing SustraxMX endpoints",
-  AUTHOR: "SustraxMX Team",
+  NAME: process.env.NEXT_PUBLIC_APP_NAME || "Sustraxmx API",
+  VERSION: process.env.NEXT_PUBLIC_APP_VERSION || "2.0.0",
+  DESCRIPTION: "Interactive API for testing Sustraxmx endpoints",
+  AUTHOR: "Sustraxmx Team",
   SUPPORT_EMAIL: "support@sustraxmx.com",
+  URL: process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000",
 } as const;
 
 // UI Constants
@@ -120,10 +144,16 @@ export const ROUTES = {
 
 // Feature Flags
 export const FEATURE_FLAGS = {
-  ENABLE_DEBUG: process.env.NODE_ENV === "development",
-  ENABLE_ANALYTICS: process.env.NODE_ENV === "production",
-  ENABLE_PWA: true,
-  ENABLE_DARK_MODE: true,
+  ENABLE_DEBUG:
+    process.env.NEXT_PUBLIC_ENABLE_DEBUG === "true" ||
+    process.env.NODE_ENV === "development",
+  ENABLE_ANALYTICS:
+    process.env.NEXT_PUBLIC_ENABLE_ANALYTICS === "true" ||
+    process.env.NODE_ENV === "production",
+  ENABLE_PWA: process.env.NEXT_PUBLIC_ENABLE_PWA === "true",
+  ENABLE_DARK_MODE: process.env.NEXT_PUBLIC_ENABLE_DARK_MODE === "true",
+  DEV_MODE: process.env.NEXT_PUBLIC_DEV_MODE === "true",
+  SHOW_DEBUG_TOOLS: process.env.NEXT_PUBLIC_SHOW_DEBUG_TOOLS === "true",
 } as const;
 
 // Re-export emission categories

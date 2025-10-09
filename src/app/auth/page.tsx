@@ -6,12 +6,10 @@ import { ConfigProvider, theme } from "antd";
 import { useAuth } from "../../context/AuthContext";
 import { useIsIframed } from "../../hooks/useIsIframed";
 import { useIsMobile } from "../../hooks/useIsMobile";
-import {
-  LoginForm,
-  SignupForm,
-  CompleteRegistrationForm,
-  AuthCodeForm,
-} from "../../components/auth";
+import LoginForm from "../../components/auth/LoginForm";
+import SignupForm from "../../components/auth/SignupForm";
+import CompleteRegistrationForm from "../../components/auth/CompleteRegistrationForm";
+import AuthCodeForm from "../../components/auth/AuthCodeForm";
 import "./auth.css";
 import { Logo } from "@/components/common/Logo/logo";
 

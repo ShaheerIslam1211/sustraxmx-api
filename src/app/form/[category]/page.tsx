@@ -2,7 +2,7 @@
 
 import React from "react";
 import { useParams } from "next/navigation";
-import CommonLayout from "../../../components/commonLayout";
+import CommonLayout from "../../../components/commonLayout/CommonLayout";
 import DynamicFormV2 from "../../../components/forms/DynamicFormV2";
 
 const CategoryFormPage: React.FC = () => {
