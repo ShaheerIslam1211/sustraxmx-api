@@ -8,7 +8,7 @@ import { EnvironmentOutlined } from "@ant-design/icons";
 import AuthorizationBlock from "../authorizationBlock/authorizationBlock";
 import { generateCodeSnippets, CodeSnippets } from "../../js-helper/helpers";
 import { API_CONFIG, getDisplayUrl } from "../../lib/constants";
-import UnifiedFormHandlerV2 from "../forms/UnifiedFormHandlerV2";
+import UnifiedFormHandlerV2 from "../forms/unifiedFormHandlerV2";
 import {
   parseBackendError,
   extractErrorDetails,
