@@ -50,56 +50,55 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, setIsOpen }) => {
     </Menu>
   );
 
-  if (isOpen) {
+  if (isMobile) {
     return (
-      <div className={`drawer ${isOpen && "animate"} left`}>
-        <div className="sidebarOpen-search">
-          {isMobile && user && (
-            <div className="profile-section">
-              <Avatar icon={<UserOutlined />} />
-              <div className="">
-                <div className="username">{user.displayName}</div>
-                <div className="role">Admin</div>
-              </div>
-              <Dropdown className="dropdown" overlay={menu} trigger={["click"]}>
-                <a onClick={e => e.preventDefault()}>
-                  <DownOutlined />
-                </a>
-              </Dropdown>
-            </div>
-          )}
-          <CustomInput
-            placeholder="Search..."
-            value={search}
-            onChange={handleSearchChange}
-          />
-        </div>
-        <ul
-          style={{ listStyle: "none", marginTop: isMobile ? 5 : 20 }}
-          className="list"
-        >
-          {filteredEmissions.map(key => (
-            <li
-              key={key}
-              className={`sidebar-item ${isActive(key) ? "active" : ""}`}
-            >
-              <Link
-                href={`/form?name=${key}`}
-                className="link"
-                onClick={() => handleEmissionClick(key)}
+      <>
+        {/* Overlay for mobile */}
+        <div
+          className={`sidebar-overlay ${isOpen ? "open" : ""}`}
+          onClick={() => setIsOpen(false)}
+        />
+        <div className={`container mobile-container ${isOpen ? "open" : ""}`}>
+          <div className="mobile-header">
+            <h3 className="mobile-title">Navigation</h3>
+          </div>
+          <div className="mobile-search">
+            <CustomInput
+              placeholder="Search forms..."
+              value={search}
+              onChange={handleSearchChange}
+            />
+          </div>
+          <ul className="mobile-nav-list">
+            {filteredEmissions.map(key => (
+              <li
+                key={key}
+                className={`mobile-nav-item ${isActive(key) ? "active" : ""}`}
               >
-                {emissionData[key].title}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </div>
+                <Link
+                  href={`/form?name=${key}`}
+                  className="mobile-nav-link"
+                  onClick={() => {
+                    handleEmissionClick(key);
+                    setIsOpen(false); // Close mobile menu after selection
+                  }}
+                >
+                  {emissionData[key].title}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </>
     );
   }
 
   return (
-    <aside className={`container`}>
-      <CustomInput placeholder="jump to..." onChange={handleSearchChange} />
+    <aside className="container">
+      <CustomInput
+        placeholder="Search forms..."
+        onChange={handleSearchChange}
+      />
       <ul style={{ listStyle: "none", marginTop: 20 }} className="list">
         {filteredEmissions.map(key => (
           <li

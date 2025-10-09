@@ -86,8 +86,9 @@ export default function Providers({ children }: ProvidersProps) {
     <ThemeProvider
       attribute="class"
       defaultTheme="light"
-      enableSystem
-      disableTransitionOnChange
+      enableSystem={false}
+      disableTransitionOnChange={false}
+      storageKey="sustrax-theme"
     >
       <AntdConfigProvider>
         <ErrorBoundary>

@@ -3,23 +3,21 @@
 import React from "react";
 import { useAuth } from "../../../context/AuthContext";
 import { useResponsive } from "../../../customHooks/responsive";
-import { UserOutlined, LogoutOutlined } from "@ant-design/icons";
+import { UserOutlined, LogoutOutlined, MenuOutlined } from "@ant-design/icons";
 import Link from "next/link";
 // import { Avatar, Dropdown, Menu } from "antd";
 import { handleLogout } from "../../../helpers/authHelper";
 import CustomDropdown from "../../common/CustomAntdDropdown/customAntdDropdown";
+import ThemeToggle from "../../common/ThemeToggle/ThemeToggle";
 import "./header.css";
 import texts from "../../../mockData/texts";
 
 interface HeaderProps {
   isOpen: boolean;
-  setIsOpen: (_isOpen: boolean) => void;
+  setIsOpen: (isOpen: boolean) => void;
 }
 
-const Header: React.FC<HeaderProps> = ({
-  isOpen: _isOpen,
-  setIsOpen: _setIsOpen,
-}) => {
+const Header: React.FC<HeaderProps> = ({ isOpen, setIsOpen }) => {
   const { user } = useAuth();
   const { isMobile, isTablet } = useResponsive();
 
@@ -41,10 +39,12 @@ const Header: React.FC<HeaderProps> = ({
   return (
     <header className="header">
       <div className="header-left">
-        {/* Sidebar toggle for all screen sizes */}
-        {/* <div className="hamburger-menu" onClick={() => setIsOpen(!isOpen)}>
-          <MenuOutlined style={{ fontSize: isMobile ? "18px" : "20px" }} />
-        </div> */}
+        {/* Sidebar toggle for mobile and tablet */}
+        {(isMobile || isTablet) && (
+          <div className="hamburger-menu" onClick={() => setIsOpen(!isOpen)}>
+            <MenuOutlined style={{ fontSize: isMobile ? "18px" : "20px" }} />
+          </div>
+        )}
         <div className="logo" style={{ fontSize: isMobile ? "18px" : "24px" }}>
           {texts.header.logoText}
         </div>
@@ -61,6 +61,7 @@ const Header: React.FC<HeaderProps> = ({
           </nav>
 
           <div className="header-actions">
+            <ThemeToggle />
             {!user ? (
               <Link href="/login" className="login">
                 {texts.header.loginText}
@@ -76,6 +77,7 @@ const Header: React.FC<HeaderProps> = ({
         </>
       ) : (
         <div className="header-actions">
+          <ThemeToggle />
           {!user ? (
             <Link href="/login" className="login">
               {texts.header.loginText}
@@ -88,5 +90,4 @@ const Header: React.FC<HeaderProps> = ({
     </header>
   );
 };
-
 export default Header;

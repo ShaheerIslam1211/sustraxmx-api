@@ -17,7 +17,6 @@
     "analyze": "ANALYZE=true next build",
     "test": "echo \"No tests configured\"",
     "test:watch": "echo \"No tests configured\"",
-    "prepare": "husky install || true",
     "postinstall": "echo 'Build scripts will be auto-approved via .pnpmrc'"
   },
   "dependencies": {
