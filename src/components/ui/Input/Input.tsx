@@ -6,7 +6,7 @@
 import React, { forwardRef } from "react";
 import { Input as AntInput, InputProps as AntInputProps } from "antd";
 import { EyeInvisibleOutlined, EyeTwoTone } from "@ant-design/icons";
-import classNames from "classnames";
+import { cn } from "@/utils/cn";
 import "./Input.css";
 
 export interface InputProps extends Omit<AntInputProps, "size" | "variant"> {
@@ -24,7 +24,7 @@ export interface InputProps extends Omit<AntInputProps, "size" | "variant"> {
 export const Input = forwardRef<any, InputProps>(
   (
     {
-      variant = "outlined",
+      variant = "default",
       size = "medium",
       label,
       error,
@@ -39,19 +39,26 @@ export const Input = forwardRef<any, InputProps>(
     },
     ref
   ) => {
-    const inputClasses = classNames(
-      "custom-input",
-      `custom-input--${variant}`,
-      `custom-input--${size}`,
-      {
-        "custom-input--error": error,
-        "custom-input--disabled": disabled,
-        "custom-input--full-width": fullWidth,
-        "custom-input--with-left-icon": leftIcon,
-        "custom-input--with-right-icon": rightIcon,
-      },
-      className
-    );
+    const getVariantClasses = () => {
+      const baseClasses = "custom-input";
+      const variantClasses = {
+        default: "custom-input--default",
+        filled: "custom-input--filled",
+        outlined: "custom-input--outlined",
+      };
+
+      return cn(baseClasses, variantClasses[variant]);
+    };
+
+    const getSizeClasses = () => {
+      const sizeClasses = {
+        small: "custom-input--small",
+        medium: "custom-input--medium",
+        large: "custom-input--large",
+      };
+
+      return sizeClasses[size];
+    };
 
     const getAntdSize = (): AntInputProps["size"] => {
       switch (size) {
@@ -63,6 +70,19 @@ export const Input = forwardRef<any, InputProps>(
           return "middle";
       }
     };
+
+    const inputClasses = cn(
+      getVariantClasses(),
+      getSizeClasses(),
+      {
+        "custom-input--error": !!error,
+        "custom-input--disabled": disabled,
+        "custom-input--full-width": fullWidth,
+        "custom-input--with-left-icon": !!leftIcon,
+        "custom-input--with-right-icon": !!rightIcon,
+      },
+      className
+    );
 
     const renderInput = () => {
       if (props.type === "password") {
@@ -104,13 +124,10 @@ export const Input = forwardRef<any, InputProps>(
 
         {renderInput()}
 
-        {(error || helperText) && (
-          <div className="custom-input-message">
-            {error && <span className="custom-input-error">{error}</span>}
-            {helperText && !error && (
-              <span className="custom-input-helper">{helperText}</span>
-            )}
-          </div>
+        {error && <div className="custom-input-error">{error}</div>}
+
+        {helperText && !error && (
+          <div className="custom-input-helper">{helperText}</div>
         )}
       </div>
     );

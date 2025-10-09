@@ -1,17 +1,15 @@
 /**
  * App Layout Component
- * Main application layout with header, sidebar, and content area
+ * Main application layout with sidebar and header
  */
 
 import React, { useState } from "react";
 import { Layout } from "antd";
-import { Header } from "../Header";
-import { Sidebar } from "../Sidebar";
-import { Content } from "../Content";
+import { Header } from "../Header/index";
+import { Sidebar } from "../Sidebar/index";
+import { Content } from "../Content/index";
 import { AppLayoutProvider } from "./AppLayoutContext";
 import "./AppLayout.css";
-
-const { Sider } = Layout;
 
 export interface AppLayoutProps {
   children: React.ReactNode;
@@ -39,37 +37,31 @@ export const AppLayout: React.FC<AppLayoutProps> = ({
     handleSidebarToggle(!sidebarCollapsed);
   };
 
+  const contextValue = {
+    sidebarCollapsed,
+    setSidebarCollapsed: handleSidebarToggle,
+    showSidebar,
+    showHeader,
+    collapsed: sidebarCollapsed,
+    toggleCollapsed,
+  };
+
   return (
-    <AppLayoutProvider
-      value={{
-        sidebarCollapsed,
-        setSidebarCollapsed: handleSidebarToggle,
-        showSidebar,
-        showHeader,
-        collapsed: sidebarCollapsed,
-        toggleCollapsed,
-      }}
-    >
+    <AppLayoutProvider value={contextValue}>
       <Layout className="app-layout">
-        {showHeader && (
-          <Header isOpen={!sidebarCollapsed} setIsOpen={handleSidebarToggle} />
+        {showSidebar && (
+          <Sidebar
+            isOpen={!sidebarCollapsed}
+            setIsOpen={(isOpen: boolean) => handleSidebarToggle(!isOpen)}
+          />
         )}
 
         <Layout className="app-layout-body">
-          {showSidebar && (
-            <Sider
-              collapsible
-              collapsed={sidebarCollapsed}
-              onCollapse={handleSidebarToggle}
-              className="app-layout-sidebar"
-              width={280}
-              collapsedWidth={80}
-            >
-              <Sidebar
-                isOpen={!sidebarCollapsed}
-                setIsOpen={handleSidebarToggle}
-              />
-            </Sider>
+          {showHeader && (
+            <Header
+              isOpen={!sidebarCollapsed}
+              setIsOpen={handleSidebarToggle}
+            />
           )}
 
           <Content>{children}</Content>

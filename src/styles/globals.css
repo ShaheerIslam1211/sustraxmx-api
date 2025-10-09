@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Import Design System */
+@import "./variables.css";
+@import "./design-system.css";
+@import "./components.css";
+
 /* Custom CSS Variables */
 :root {
   /* Light Mode Colors */

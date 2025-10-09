@@ -1,5 +1,5 @@
 import React from "react";
-import "./index.css";
+import "./customInputs.css";
 
 interface CustomInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   backgroundColor?: string;

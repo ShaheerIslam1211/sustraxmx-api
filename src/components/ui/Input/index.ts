@@ -1,6 +1,7 @@
 /**
- * Input Component Export
+ * Input Component Exports
  */
 
-export { Input, type InputProps } from "./Input";
+export { Input } from "./Input";
+export type { InputProps } from "./Input";
 export { default } from "./Input";

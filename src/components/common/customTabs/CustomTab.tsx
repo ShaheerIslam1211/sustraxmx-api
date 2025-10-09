@@ -1,6 +1,6 @@
 import React from "react";
 import { Tabs } from "antd";
-import "./index.css";
+import "./customTabs.css";
 
 interface TabData {
   key: string;

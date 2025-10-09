@@ -7,8 +7,8 @@ import { UserOutlined, LogoutOutlined } from "@ant-design/icons";
 import Link from "next/link";
 // import { Avatar, Dropdown, Menu } from "antd";
 import { handleLogout } from "../../../helpers/authHelper";
-import CustomDropdown from "../../common/customAntdDropdown";
-import "./Header.css";
+import CustomDropdown from "../../common/CustomAntdDropdown/customAntdDropdown";
+import "./header.css";
 import texts from "../../../mockData/texts";
 
 interface HeaderProps {

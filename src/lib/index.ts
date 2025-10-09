@@ -6,8 +6,13 @@
  */
 
 // Configuration utilities
-export { API_CONFIG, API_ENDPOINTS, getDisplayUrl } from "./config";
-export { default as config } from "./config";
+export {
+  API_CONFIG,
+  API_ENDPOINTS,
+  getDisplayUrl,
+  getCalculationUrl,
+} from "./constants";
+export { apiConfig, API_ENDPOINTS as API_ENDPOINTS_NEW } from "./config";
 
 // Country utilities
 export { getCountries } from "./countries";
@@ -25,6 +30,7 @@ export * from "./errors";
 export * from "./validation";
 export * from "./api";
 export * from "./logger";
+export * from "./debug";
 
 // Re-export types if any are defined in the future
 export type * from "./config";
