@@ -5,6 +5,7 @@ import {
   getFieldOptions,
 } from "../lib/firebase/emission-factors-service";
 import { formStore } from "../stores/FormStore";
+import { getFieldTypeConfig, validateFieldValue } from "../lib/fieldTypes";
 
 export class FormService {
   private static instance: FormService;
@@ -22,6 +23,15 @@ export class FormService {
     this.store.getState().setCurrentCategory(category);
   }
 
+  // Enhanced form clearing methods
+  clearFormOnly(): void {
+    this.store.getState().clearFormOnly();
+  }
+
+  clearFormAndResetCategory(): void {
+    this.store.getState().clearFormAndResetCategory();
+  }
+
   // Field management
   updateField(fieldName: string, value: any): void {
     this.store.getState().setFormValue(fieldName, value);
@@ -35,7 +45,7 @@ export class FormService {
     this.store.getState().clearForm();
   }
 
-  // Validation
+  // Enhanced validation using the new field type system
   validateField(
     field: EmissionDataField,
     value: any
@@ -49,25 +59,18 @@ export class FormService {
       return { isValid: false, error: `${field.title} is required` };
     }
 
-    // Type-specific validation
-    if (value && field.name.toLowerCase().includes("date")) {
-      const date = new Date(value);
-      if (isNaN(date.getTime())) {
-        return { isValid: false, error: "Please enter a valid date" };
-      }
+    // Skip validation for empty optional fields
+    if (!value && field.s_r === false) {
+      return { isValid: true };
     }
 
-    if (value && field.name.toLowerCase().includes("amount")) {
-      const num = Number(value);
-      if (isNaN(num) || num < 0) {
-        return {
-          isValid: false,
-          error: "Please enter a valid positive number",
-        };
-      }
-    }
+    // Get field type configuration
+    const fieldConfig = getFieldTypeConfig(field.name, field.title);
 
-    return { isValid: true };
+    // Use the new validation system
+    const validation = validateFieldValue(value, fieldConfig, field.name);
+
+    return validation;
   }
 
   // Field visibility
