@@ -15,7 +15,7 @@ import texts from "../../mockData/texts";
 import { API_CONFIG, getDisplayUrl } from "../../lib/constants";
 import { useEmissionData } from "../../context/EmissionDataContext";
 import styles from "../../styles/contants.json";
-import { CodeSnippets } from "../../js-helper/helpers";
+import { CodeSnippets } from "../../code_helper/code_helpers";
 
 const { Text, Title } = Typography;
 

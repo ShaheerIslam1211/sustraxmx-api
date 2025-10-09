@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import CommonLayout from "../../components/commonLayout/CommonLayout";
+import CommonLayout from "../../components/commonLayout/commonLayout";
 import ApiDetails from "../../components/apiDetails/apiDetails";
 
 const FormPage: React.FC = () => {

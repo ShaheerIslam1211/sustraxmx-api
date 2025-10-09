@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import CommonLayout from "../../components/commonLayout/CommonLayout";
+import CommonLayout from "../../components/commonLayout/commonLayout";
 import UserProfile from "../../components/userProfile/userProfile";
 
 const ProfilePage: React.FC = () => {
