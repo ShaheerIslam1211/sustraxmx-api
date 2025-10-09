@@ -28,23 +28,17 @@ const UnifiedFormHandlerV2: React.FC<UnifiedFormHandlerV2Props> = ({
   category,
   initialValues = {},
 }) => {
-  const {
-    handleFormSubmit,
-    clearForm,
-    getFormData,
-    isFormValid,
-    isSubmitting,
-    error,
-  } = useFormManager({
-    category,
-    onFormSubmit: onExecute,
-    onFieldChange: (fieldName, value) => {
-      if (onFieldChange) {
-        const allValues = getFormData();
-        onFieldChange(fieldName, value, allValues);
-      }
-    },
-  });
+  const { handleFormSubmit, getFormData, isFormValid, isSubmitting, error } =
+    useFormManager({
+      category,
+      onFormSubmit: onExecute,
+      onFieldChange: (fieldName, value) => {
+        if (onFieldChange) {
+          const allValues = getFormData();
+          onFieldChange(fieldName, value, allValues);
+        }
+      },
+    });
 
   // Handle form submission
   const handleSubmit = useCallback(async () => {
@@ -62,12 +56,6 @@ const UnifiedFormHandlerV2: React.FC<UnifiedFormHandlerV2Props> = ({
     }
   }, [handleFormSubmit, isFormValid, getFormData]);
 
-  // Handle form clearing
-  const handleClear = useCallback(() => {
-    clearForm();
-    message.info("Form cleared");
-  }, [clearForm]);
-
   return (
     <Card
       className="categoryFormWrapper"
@@ -78,6 +66,7 @@ const UnifiedFormHandlerV2: React.FC<UnifiedFormHandlerV2Props> = ({
       <FormRenderer
         fields={fields}
         onExecute={onExecute}
+        onFieldChange={onFieldChange}
         isLoading={isLoading || isSubmitting}
         category={category}
       />
@@ -99,14 +88,6 @@ const UnifiedFormHandlerV2: React.FC<UnifiedFormHandlerV2Props> = ({
           disabled={isLoading || isSubmitting}
         >
           {isLoading || isSubmitting ? "Executing..." : "Execute Query"}
-        </Button>
-
-        <Button
-          style={{ marginLeft: 8 }}
-          onClick={handleClear}
-          disabled={isLoading || isSubmitting}
-        >
-          Clear Form
         </Button>
       </div>
     </Card>
