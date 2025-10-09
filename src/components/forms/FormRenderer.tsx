@@ -6,10 +6,20 @@ import { InfoCircleOutlined } from "@ant-design/icons";
 import dayjs, { Dayjs } from "dayjs";
 import { EmissionDataField } from "../../types";
 import { useFormManager } from "../../hooks/useFormManager";
+import {
+  getFieldTypeConfig,
+  validateFieldValue,
+  getInputProps,
+} from "../../lib/fieldTypes";
 
 interface FormRendererProps {
   fields: EmissionDataField[];
   onExecute: (values: Record<string, string>) => void;
+  onFieldChange?: (
+    fieldName: string,
+    value: any,
+    allValues: Record<string, any>
+  ) => void;
   isLoading?: boolean;
   category: string;
 }
@@ -17,6 +27,7 @@ interface FormRendererProps {
 const FormRenderer: React.FC<FormRendererProps> = ({
   fields,
   onExecute,
+  onFieldChange,
   isLoading = false,
   category,
 }) => {
@@ -27,34 +38,34 @@ const FormRenderer: React.FC<FormRendererProps> = ({
     getFieldError,
     isFieldTouched,
     isFormValid,
+    getFormData,
+    clearForm,
   } = useFormManager({
     category,
     onFormSubmit: onExecute,
+    onFieldChange: (fieldName, value) => {
+      console.log("FormRenderer onFieldChange called:", { fieldName, value });
+      if (onFieldChange) {
+        const allValues = getFormData();
+        console.log("FormRenderer calling parent onFieldChange with:", {
+          fieldName,
+          value,
+          allValues,
+        });
+        onFieldChange(fieldName, value, allValues);
+      }
+    },
   });
 
-  // Determine field type based on field properties
-  const getFieldType = useCallback(
-    (field: EmissionDataField): "date" | "number" | "text" | "select" => {
-      const name = field.name?.toLowerCase() || "";
+  // Clear form when category changes
+  React.useEffect(() => {
+    clearForm();
+  }, [category, clearForm]);
 
-      if (name.includes("date") || name.includes("time")) return "date";
-      if (
-        name.includes("amount") ||
-        name.includes("quantity") ||
-        name.includes("value")
-      )
-        return "number";
-      if (
-        name.includes("type") ||
-        name.includes("category") ||
-        name.includes("unit")
-      )
-        return "select";
-
-      return "text";
-    },
-    []
-  );
+  // Get field type configuration using the new system
+  const getFieldConfig = useCallback((field: EmissionDataField) => {
+    return getFieldTypeConfig(field.name || "", field.title);
+  }, []);
 
   // Render field label with tooltip
   const renderFieldLabel = useCallback(
@@ -71,15 +82,26 @@ const FormRenderer: React.FC<FormRendererProps> = ({
     []
   );
 
-  // Handle field value changes
+  // Handle field value changes with validation
   const handleFieldValueChange = useCallback(
-    (fieldName: string, value: any) => {
+    (fieldName: string, value: any, fieldConfig?: any) => {
       // Convert dayjs to string for dates
       if (dayjs.isDayjs(value)) {
         handleFieldChange(fieldName, value.format("YYYY-MM-DD"));
-      } else {
-        handleFieldChange(fieldName, value);
+        return;
       }
+
+      // Validate the value if field config is provided
+      if (fieldConfig) {
+        const validation = validateFieldValue(value, fieldConfig, fieldName);
+        if (!validation.isValid) {
+          // Set error in form state
+          handleFieldChange(fieldName, value, validation.error);
+          return;
+        }
+      }
+
+      handleFieldChange(fieldName, value);
     },
     [handleFieldChange]
   );
@@ -89,11 +111,23 @@ const FormRenderer: React.FC<FormRendererProps> = ({
     (field: EmissionDataField) => {
       if (!field.name) return null;
 
-      const fieldType = getFieldType(field);
+      const fieldConfig = getFieldConfig(field);
       const isRequired = field.s_r !== false;
       const currentValue = getFieldValue(field.name);
       const fieldError = getFieldError(field.name);
       const isTouched = isFieldTouched(field.name);
+      const inputProps = getInputProps(fieldConfig);
+
+      // Custom validation rule for the field
+      const customValidator = (_: any, value: any) => {
+        if (!value && !isRequired) return Promise.resolve();
+
+        const validation = validateFieldValue(value, fieldConfig, field.name);
+        if (!validation.isValid) {
+          return Promise.reject(new Error(validation.error));
+        }
+        return Promise.resolve();
+      };
 
       return (
         <Form.Item
@@ -105,48 +139,63 @@ const FormRenderer: React.FC<FormRendererProps> = ({
               required: isRequired,
               message: `Please enter ${field.title}`,
             },
+            {
+              validator: customValidator,
+            },
           ]}
           validateStatus={isTouched && fieldError ? "error" : ""}
           help={isTouched && fieldError ? fieldError : ""}
           tooltip={field.desc}
         >
-          {fieldType === "date" ? (
+          {fieldConfig.inputType === "date" ? (
             <DatePicker
               style={{ width: "100%" }}
               placeholder={`Select ${field.title}`}
               format="YYYY-MM-DD"
               value={currentValue ? dayjs(currentValue) : undefined}
-              onChange={date => handleFieldValueChange(field.name, date)}
+              onChange={date =>
+                handleFieldValueChange(field.name, date, fieldConfig)
+              }
             />
-          ) : fieldType === "number" ? (
+          ) : fieldConfig.inputType === "number" ? (
             <Input
-              type="number"
+              {...inputProps}
               placeholder={`Enter ${field.title}`}
               value={currentValue || ""}
-              onChange={e => handleFieldValueChange(field.name, e.target.value)}
+              onChange={e =>
+                handleFieldValueChange(field.name, e.target.value, fieldConfig)
+              }
+              onBlur={e => {
+                // Additional validation on blur for better UX
+                const validation = validateFieldValue(
+                  e.target.value,
+                  fieldConfig,
+                  field.name
+                );
+                if (!validation.isValid) {
+                  handleFieldValueChange(
+                    field.name,
+                    e.target.value,
+                    fieldConfig
+                  );
+                }
+              }}
             />
-          ) : fieldType === "select" ? (
-            <Select
-              style={{ width: "100%" }}
-              placeholder={`Select ${field.title}`}
-              value={currentValue}
-              onChange={value => handleFieldValueChange(field.name, value)}
-              allowClear
-            >
-              {/* Options would be loaded from formService */}
-            </Select>
           ) : (
             <Input
+              {...inputProps}
               placeholder={`Enter ${field.title}`}
               value={currentValue || ""}
-              onChange={e => handleFieldValueChange(field.name, e.target.value)}
+              onChange={e =>
+                handleFieldValueChange(field.name, e.target.value, fieldConfig)
+              }
             />
           )}
         </Form.Item>
       );
     },
     [
-      getFieldType,
+      getFieldConfig,
       renderFieldLabel,
       getFieldValue,
       getFieldError,
@@ -161,7 +210,12 @@ const FormRenderer: React.FC<FormRendererProps> = ({
   }, [fields]);
 
   return (
-    <Form layout="vertical" onFinish={handleFormSubmit} disabled={isLoading}>
+    <Form
+      layout="vertical"
+      onFinish={handleFormSubmit}
+      disabled={isLoading}
+      key={category} // Force form re-render when category changes
+    >
       {visibleFields.map(renderField)}
     </Form>
   );

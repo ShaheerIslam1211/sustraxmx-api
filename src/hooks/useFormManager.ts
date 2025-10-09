@@ -34,10 +34,18 @@ export const useFormManager = (options: UseFormManagerOptions = {}) => {
     }
   }, [category, onCategoryChange]);
 
-  // Field change handler
+  // Field change handler with enhanced validation
   const handleFieldChange = useCallback(
-    (fieldName: string, value: any) => {
+    (fieldName: string, value: any, error?: string) => {
+      // Update the field value
       formService.updateField(fieldName, value);
+
+      // Set error if provided
+      if (error) {
+        // You might want to add error handling to the store
+        console.warn(`Field ${fieldName} validation error:`, error);
+      }
+
       onFieldChange?.(fieldName, value);
     },
     [onFieldChange]
@@ -60,6 +68,16 @@ export const useFormManager = (options: UseFormManagerOptions = {}) => {
   // Clear form
   const clearForm = useCallback(() => {
     formService.clearForm();
+  }, []);
+
+  // Clear form only (keep category)
+  const clearFormOnly = useCallback(() => {
+    formService.clearFormOnly();
+  }, []);
+
+  // Clear form and reset category
+  const clearFormAndResetCategory = useCallback(() => {
+    formService.clearFormAndResetCategory();
   }, []);
 
   // Clear specific field
@@ -131,6 +149,8 @@ export const useFormManager = (options: UseFormManagerOptions = {}) => {
     handleFieldChange,
     handleFormSubmit,
     clearForm,
+    clearFormOnly,
+    clearFormAndResetCategory,
     clearField,
 
     // Getters
