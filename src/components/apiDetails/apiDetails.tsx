@@ -5,17 +5,16 @@ import { useSearchParams } from "next/navigation";
 import { useEmissionData } from "../../context/EmissionDataContext";
 import { Row, Col, Card, Button, message } from "antd";
 import { EnvironmentOutlined } from "@ant-design/icons";
-import AuthorizationBlock from "../../components/authorizationBlock";
+import AuthorizationBlock from "../authorizationBlock/authorizationBlock";
 import { generateCodeSnippets, CodeSnippets } from "../../js-helper/helpers";
-import { getDisplayUrl, API_CONFIG } from "../../lib/config";
-import { DynamicFormProvider } from "../../context/DynamicFormContext";
+import { API_CONFIG, getDisplayUrl } from "../../lib/constants";
 import UnifiedFormHandlerV2 from "../forms/UnifiedFormHandlerV2";
 import {
   parseBackendError,
   extractErrorDetails,
   formatErrorForDisplay,
 } from "../../utils/errorParsing";
-import "./index.css";
+import "./apiDetails.css";
 
 interface InputValues {
   params: Record<string, string>;
@@ -46,7 +45,7 @@ const ApiDetails: React.FC = () => {
   const categoryData: CategoryData | undefined = name
     ? emissionsData[name]
     : undefined;
-  const baseUrl = getDisplayUrl(name || "");
+  const baseUrl = API_CONFIG.getDisplayUrl(name || "");
 
   const [inputValues, setInputValues] = useState<InputValues>({ params: {} });
   const [snippets, setSnippets] = useState<CodeSnippets>({
@@ -244,13 +243,25 @@ const ApiDetails: React.FC = () => {
     value: any,
     allValues: Record<string, any>
   ): void => {
+    console.log("handleFieldChange called:", { fieldName, value, allValues });
+
     // Handle clear all signal from form when category changes
     if (fieldName === "__clear_all__") {
       setInputValues({ params: {} });
       return;
     }
 
-    setInputValues({ params: allValues });
+    // Update inputValues with the current form data
+    // Convert all values to strings for the code snippets
+    const stringValues: Record<string, string> = {};
+    Object.entries(allValues).forEach(([key, val]) => {
+      if (val !== null && val !== undefined && val !== "") {
+        stringValues[key] = String(val);
+      }
+    });
+
+    console.log("Setting inputValues.params to:", stringValues);
+    setInputValues({ params: stringValues });
   };
 
   if (!categoryData) {
@@ -277,16 +288,14 @@ const ApiDetails: React.FC = () => {
           </div>
 
           {/* Use unified form handler for all forms */}
-          <DynamicFormProvider initialCategory={name || ""}>
-            <UnifiedFormHandlerV2
-              fields={categoryData.texts}
-              onExecute={executeQuery}
-              onFieldChange={handleFieldChange}
-              isLoading={isLoading}
-              category={name || ""}
-              initialValues={inputValues.params}
-            />
-          </DynamicFormProvider>
+          <UnifiedFormHandlerV2
+            fields={categoryData.texts}
+            onExecute={executeQuery}
+            onFieldChange={handleFieldChange}
+            isLoading={isLoading}
+            category={name || ""}
+            initialValues={inputValues.params}
+          />
         </Col>
         <Col xs={24} md={10} xxl={8}>
           <AuthorizationBlock

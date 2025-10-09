@@ -86,9 +86,7 @@ export const generateCodeSnippets = (
       username: '${credentials.username}',
       password: '${credentials.password}'
     },
-    ${Object.entries(params)
-      .map(([key, value]) => `${key}: '${value}'`)
-      .join(",\n    ")}
+    ...${JSON.stringify(params, null, 2)}
   })
 })
 .then(response => response.json())
@@ -102,9 +100,8 @@ const data = {
     username: '${credentials.username}',
     password: '${credentials.password}'
   },
-  ${Object.entries(params)
-    .map(([key, value]) => `${key}: '${value}'`)
-    .join(",\n    ")}};
+  ...${JSON.stringify(params, null, 2)}
+};
 
 axios.post('${baseUrl}', data, {
   headers: {
@@ -126,9 +123,7 @@ data = {
         'username': '${credentials.username}',
         'password': '${credentials.password}'
     },
-    ${Object.entries(params)
-      .map(([key, value]) => `${key}: '${value}'`)
-      .join(",\n    ")}
+    **${JSON.stringify(params, null, 2).replace(/"/g, "'")}
 }
 
 response = requests.post('${baseUrl}', json=data)
@@ -140,9 +135,7 @@ $data = array(
         'username' => '${credentials.username}',
         'password' => '${credentials.password}'
     ),
-    ${Object.entries(params)
-      .map(([key, value]) => `'${key}' => '${value}'`)
-      .join(",\n    ")}
+    ...${JSON.stringify(params, null, 2).replace(/"/g, "'")}
 );
 
 $options = array(
@@ -171,9 +164,7 @@ data = {
     username: '${credentials.username}',
     password: '${credentials.password}'
   },
-  ${Object.entries(params)
-    .map(([key, value]) => `${key}: '${value}'`)
-    .join(",\n  ")}
+  **${JSON.stringify(params, null, 2).replace(/"/g, "'")}
 }
 
 request = Net::HTTP::Post.new(uri)

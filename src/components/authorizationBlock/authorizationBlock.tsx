@@ -2,13 +2,17 @@ import React, { useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { Typography, Card, Space, Tag } from "antd";
 import { UserOutlined, KeyOutlined } from "@ant-design/icons";
-import LanguageCodeBlock from "../languageSelector";
+import { LanguageSelector as LanguageCodeBlock } from "../languageSelector";
 // import { useApiData } from "../../context/ApiDataContext";
-import { UserAuthInputs, SingleInput, CustomInput } from "../common/formInputs";
-import "./index.css";
+import {
+  UserAuthInputs,
+  SingleInput,
+  CustomInput,
+} from "../common/formInputs/formInput";
+import "./authorizationBlock.css";
 import { useAuth } from "../../context/AuthContext";
 import texts from "../../mockData/texts";
-import { getDisplayUrl } from "../../lib/config";
+import { API_CONFIG, getDisplayUrl } from "../../lib/constants";
 import { useEmissionData } from "../../context/EmissionDataContext";
 import styles from "../../styles/contants.json";
 import { CodeSnippets } from "../../js-helper/helpers";
@@ -42,7 +46,7 @@ const AuthorizationBlock: React.FC<AuthorizationBlockProps> = ({
   const name = searchParams.get("name");
 
   // Get the display URL for the current category
-  const displayUrl = name ? getDisplayUrl(name) : "";
+  const displayUrl = name ? API_CONFIG.getDisplayUrl(name) : "";
 
   // Render user information section
   const renderUserInfo = () => {
