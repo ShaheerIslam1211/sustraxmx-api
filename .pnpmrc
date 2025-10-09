@@ -1,0 +1,15 @@
+# Auto-approve build scripts for deployment
+auto-install-peers=true
+strict-peer-dependencies=false
+
+# Allow build scripts for these packages
+enable-pre-post-scripts=true
+
+# Ignore build script warnings for these packages
+ignored-build-scripts=@firebase/util,protobufjs,sharp,unrs-resolver
+
+# Enable build scripts
+enable-build-scripts=true
+
+# Auto-approve build scripts (for deployment)
+auto-approve-builds=true
