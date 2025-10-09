@@ -2,7 +2,7 @@
   border: 1px dotted var(--border-color);
   border-radius: 8px;
   padding: 20px;
-  margin-top: 20px;
+  /* margin-top: 20px; */
   background-color: var(--card-background);
 }
 
@@ -50,6 +50,10 @@
 .categoryInstruction-Description {
   color: var(--text-secondary);
   font-size: 12px;
+}
+
+.categoryInstructions {
+  margin-left: 8px;
 }
 
 .categoryFormWrapper {

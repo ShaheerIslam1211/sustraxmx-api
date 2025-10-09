@@ -24,19 +24,8 @@ import {
   formatErrorForDisplay,
 } from "../../utils/errorParsing";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import {
-  vscDarkPlus,
-  oneDark,
-  atomDark,
-  dracula,
-  okaidia as darkStyle,
-} from "react-syntax-highlighter/dist/esm/styles/prism";
-import {
-  oneLight as lightStyle,
-  vs,
-  ghcolors,
-  prism,
-} from "react-syntax-highlighter/dist/esm/styles/prism";
+import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { oneLight as lightStyle } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { useTheme } from "next-themes";
 
 const { Text } = Typography;
@@ -97,21 +86,7 @@ const languageNames: Record<string, string> = {
   curl: "cURL",
 };
 
-// Theme configurations
-const darkThemes = {
-  vscDarkPlus: vscDarkPlus,
-  oneDark: oneDark,
-  atomDark: atomDark,
-  dracula: dracula,
-  okaidia: darkStyle,
-};
-
-const lightThemes = {
-  oneLight: lightStyle,
-  vs: vs,
-  ghcolors: ghcolors,
-  prism: prism,
-};
+// Simplified theme configuration - only auto theme based on system preference
 
 interface InputValues {
   params: Record<string, string>;
@@ -162,7 +137,7 @@ const ApiResponseDisplay: React.FC<{
 }> = ({ data, isLoading }) => {
   const { resolvedTheme } = useTheme();
   const isDark = resolvedTheme === "dark";
-  const syntaxStyle = isDark ? darkStyle : lightStyle;
+  const syntaxStyle = isDark ? vscDarkPlus : lightStyle;
   if (isLoading) {
     return (
       <Card
@@ -430,18 +405,12 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = ({
 }) => {
   const [activeLanguage, setActiveLanguage] = useState("javascript");
   const [copied, setCopied] = useState(false);
-  const [selectedTheme, setSelectedTheme] = useState("auto");
   const { resolvedTheme } = useTheme();
   const isDark = resolvedTheme === "dark";
 
-  // Get the appropriate syntax highlighting style
+  // Get the appropriate syntax highlighting style based on system theme
   const getSyntaxStyle = () => {
-    if (selectedTheme === "auto") {
-      return isDark ? vscDarkPlus : lightStyle;
-    }
-    return isDark
-      ? darkThemes[selectedTheme as keyof typeof darkThemes] || vscDarkPlus
-      : lightThemes[selectedTheme as keyof typeof lightThemes] || lightStyle;
+    return isDark ? vscDarkPlus : lightStyle;
   };
 
   const handleCopy = () => {
@@ -490,44 +459,6 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = ({
                 ))}
               </Select>
             </div>
-
-            <div className="theme-selector">
-              <Text
-                strong
-                style={{
-                  marginRight: 8,
-                  color: isDark ? "#bfbfbf" : "#595959",
-                }}
-              >
-                Theme:
-              </Text>
-              <Select
-                value={selectedTheme}
-                onChange={setSelectedTheme}
-                style={{ width: 110 }}
-                suffixIcon={<DownOutlined />}
-                size="small"
-                className={isDark ? "select-dark" : "select-light"}
-              >
-                <Option value="auto">Auto</Option>
-                {isDark ? (
-                  <>
-                    <Option value="vscDarkPlus">VS Dark</Option>
-                    <Option value="oneDark">One Dark</Option>
-                    <Option value="atomDark">Atom</Option>
-                    <Option value="dracula">Dracula</Option>
-                    <Option value="okaidia">Okaidia</Option>
-                  </>
-                ) : (
-                  <>
-                    <Option value="oneLight">One Light</Option>
-                    <Option value="vs">VS Light</Option>
-                    <Option value="ghcolors">GitHub</Option>
-                    <Option value="prism">Prism</Option>
-                  </>
-                )}
-              </Select>
-            </div>
           </div>
 
           <div className="code-header-right">
@@ -542,7 +473,7 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = ({
               className={`copy-button ${isDark ? "copy-button-dark" : "copy-button-light"}`}
               size="small"
             >
-              {/* {copied ? "Copied!" : "Copy"} */}
+              {copied ? "Copied!" : "Copy"}
             </Button>
           </div>
         </div>
@@ -558,6 +489,16 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = ({
             borderRadius: "0 0 8px 8px",
             fontSize: "13px",
             lineHeight: "1.4",
+            background: isDark ? "#1e1e1e" : "#ffffff",
+            color: isDark ? "#d4d4d4" : "#24292e",
+            fontFamily: "'Monaco', 'Menlo', 'Ubuntu Mono', monospace",
+          }}
+          codeTagProps={{
+            style: {
+              fontFamily: "'Monaco', 'Menlo', 'Ubuntu Mono', monospace",
+              fontSize: "13px",
+              lineHeight: "1.4",
+            },
           }}
         >
           {snippets[activeLanguage]?.replace(

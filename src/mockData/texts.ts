@@ -5,9 +5,9 @@ const texts = {
     },
   },
   login: {
-    loginTitle: "Login to sustraxAPI",
+    loginTitle: "Login to Sustraxmx-API",
     loginDescription:
-      "Explore Sustrax API for seamless integration and efficient data management. Explore Sustrax API for seamless integration and efficient data management.  ",
+      "Explore Sustraxmx API for seamless integration and efficient data management. Explore Sustraxmx API for seamless integration and efficient data management.",
     userNameValidation: "Please input your username!",
     userPasswordValidation: "Please input your password!",
     logInBtnTxt: "log in",
@@ -16,9 +16,9 @@ const texts = {
     linkTxt: "or regsiter with us",
   },
   signup: {
-    signupTitle: "Register to sustraxAPI",
+    signupTitle: "Register to Sustraxmx-API",
     signupDescription:
-      "Explore Sustrax API for seamless integration and efficient data management. Explore Sustrax API for seamless integration and efficient data management. ",
+      "Explore Sustraxmx API for seamless integration and efficient data management. Explore Sustraxmx API for seamless integration and efficient data management.",
     userNameValidation: "Please input your username!",
     userEmailValidation: "",
     userPasswordValidation: "Please input your password!",
@@ -50,7 +50,7 @@ const texts = {
     searchPlaceholder: "jump to...",
   },
   header: {
-    logoText: "SustraxAPI",
+    logoText: "Sustraxmx-API",
     menuItems: [
       { name: "Guides", link: "#guides" },
       { name: "API Reference", link: "#api-reference" },
@@ -63,11 +63,11 @@ const texts = {
     profileTitle: "Profile",
     userName: {
       nameTitle: "Name",
-      exampleName: "eg. john",
+      exampleName: "eg. John Doe",
     },
     userEmail: {
       emailTitle: "Email",
-      exampleEmail: "eg. abc@gmail.com",
+      exampleEmail: "eg. johndoe@gmail.com",
     },
 
     updateBtnTxt: "Update",
