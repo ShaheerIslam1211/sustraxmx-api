@@ -17,7 +17,7 @@ import {
   Select,
   Button,
 } from "antd";
-import "./index.css";
+import "./languageSelector.css";
 import { copyToClipboard, CodeSnippets } from "../../js-helper/helpers";
 import {
   parseBackendError,
@@ -42,6 +42,34 @@ import { useTheme } from "next-themes";
 const { Text } = Typography;
 const { Panel } = Collapse;
 const { Option } = Select;
+
+// Function to format values based on programming language
+const formatValueForLanguage = (value: string, language: string): string => {
+  if (!value) return '""';
+
+  // For string values, add appropriate quotes based on language
+  switch (language) {
+    case "javascript":
+    case "nodejs":
+      return `"${value}"`;
+    case "python":
+      return `"${value}"`;
+    case "php":
+      return `"${value}"`;
+    case "ruby":
+      return `"${value}"`;
+    case "go":
+      return `"${value}"`;
+    case "java":
+      return `"${value}"`;
+    case "csharp":
+      return `"${value}"`;
+    case "curl":
+      return value; // cURL doesn't need quotes for most parameters
+    default:
+      return `"${value}"`;
+  }
+};
 
 // Language mapping for syntax highlighter
 const languageMap: Record<string, string> = {
@@ -534,7 +562,11 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = ({
         >
           {snippets[activeLanguage]?.replace(
             /\$\{([^}]+)\}/g,
-            (_: string, match: string) => inputValues.params[match] || ""
+            (_: string, match: string) => {
+              const value = inputValues.params[match] || "";
+              // Format the value based on the programming language
+              return formatValueForLanguage(value, activeLanguage);
+            }
           ) || "// No code available for this language"}
         </SyntaxHighlighter>
       </div>
