@@ -13,7 +13,7 @@ import {
 import { useAuth } from "../../context/AuthContext";
 import { useRouter } from "next/navigation";
 import { useIsMobile } from "../../hooks/useIsMobile";
-import { SSO } from "./SSO";
+import { SSO } from "./SSO/sso";
 import { sendPasswordResetEmail } from "../../lib/firebase/auth.register.enhanced";
 import { redirect } from "next/navigation";
 

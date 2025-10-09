@@ -6,7 +6,7 @@ import { useAuth } from "../../context/AuthContext";
 import { useRouter } from "next/navigation";
 import { useIsMobile } from "../../hooks/useIsMobile";
 import { getCountries } from "../../lib/countries";
-import { SSO } from "./SSO";
+import { SSO } from "./SSO/sso";
 import { signInNewUser } from "../../lib/firebase/auth.register.enhanced";
 import { redirect } from "next/navigation";
 
