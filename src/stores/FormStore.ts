@@ -26,6 +26,8 @@ interface FormState {
   setFormValue: (fieldName: string, value: any) => void;
   setFormValues: (values: Record<string, any>) => void;
   clearForm: () => void;
+  clearFormOnly: () => void;
+  clearFormAndResetCategory: () => void;
   clearField: (fieldName: string) => void;
 
   // Data actions
@@ -61,6 +63,8 @@ class FormStore {
       setFormValue: this.setFormValue.bind(this),
       setFormValues: this.setFormValues.bind(this),
       clearForm: this.clearForm.bind(this),
+      clearFormOnly: this.clearFormOnly.bind(this),
+      clearFormAndResetCategory: this.clearFormAndResetCategory.bind(this),
       clearField: this.clearField.bind(this),
       setEmissionData: this.setEmissionData.bind(this),
       setEmissionFactors: this.setEmissionFactors.bind(this),
@@ -97,6 +101,23 @@ class FormStore {
       }
       return { currentCategory: category };
     });
+  }
+
+  // Enhanced form clearing with category reset
+  clearFormAndResetCategory() {
+    this.setState(() => ({
+      currentCategory: "",
+      formValues: {},
+      error: null,
+    }));
+  }
+
+  // Clear form but keep current category
+  clearFormOnly() {
+    this.setState(state => ({
+      formValues: {},
+      error: null,
+    }));
   }
 
   // Form value management

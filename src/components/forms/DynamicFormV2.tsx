@@ -27,6 +27,8 @@ const DynamicFormV2: React.FC<DynamicFormV2Props> = ({
     getAvailableCategories,
     handleFieldChange,
     clearForm,
+    clearFormOnly,
+    clearFormAndResetCategory,
   } = useFormManager({
     category: categoryKey,
     onFieldChange: (fieldName, value) => {
@@ -44,9 +46,19 @@ const DynamicFormV2: React.FC<DynamicFormV2Props> = ({
   const handleCategoryChange = useCallback(
     (category: string) => {
       // Category change is handled by useFormManager
-      clearForm();
+      // Clear form when switching categories to ensure fresh data entry
+      clearFormOnly();
     },
-    [clearForm]
+    [clearFormOnly]
+  );
+
+  // Wrapper function to match the expected signature for UnifiedFormHandlerV2
+  const handleFieldChangeWrapper = useCallback(
+    (fieldName: string, value: any, allValues: Record<string, any>) => {
+      // Call the original handleFieldChange without the error parameter
+      handleFieldChange(fieldName, value);
+    },
+    [handleFieldChange]
   );
 
   const handleExecute = useCallback((values: Record<string, string>) => {
@@ -65,9 +77,14 @@ const DynamicFormV2: React.FC<DynamicFormV2Props> = ({
   }, []);
 
   const handleClearForm = useCallback(() => {
-    clearForm();
+    clearFormOnly();
     message.info("Form cleared");
-  }, [clearForm]);
+  }, [clearFormOnly]);
+
+  const handleResetForm = useCallback(() => {
+    clearFormAndResetCategory();
+    message.info("Form reset and category cleared");
+  }, [clearFormAndResetCategory]);
 
   if (isLoading) {
     return (
@@ -168,7 +185,7 @@ const DynamicFormV2: React.FC<DynamicFormV2Props> = ({
         <UnifiedFormHandlerV2
           fields={fields}
           onExecute={handleExecute}
-          onFieldChange={handleFieldChange}
+          onFieldChange={handleFieldChangeWrapper}
           isLoading={false}
           category={currentCategory}
         />
