@@ -6,7 +6,7 @@
 import React from "react";
 import { Button as AntButton, ButtonProps as AntButtonProps } from "antd";
 import { LoadingOutlined } from "@ant-design/icons";
-import classNames from "classnames";
+import { cn } from "@/utils/cn";
 import "./Button.css";
 
 export interface ButtonProps
@@ -37,17 +37,29 @@ export const Button: React.FC<ButtonProps> = ({
   disabled,
   ...props
 }) => {
-  const buttonClasses = classNames(
-    "custom-button",
-    `custom-button--${variant}`,
-    `custom-button--${size}`,
-    {
-      "custom-button--loading": loading,
-      "custom-button--full-width": fullWidth,
-      "custom-button--disabled": disabled,
-    },
-    className
-  );
+  const getVariantClasses = () => {
+    const baseClasses = "custom-button";
+    const variantClasses = {
+      primary: "custom-button--primary",
+      secondary: "custom-button--secondary",
+      outline: "custom-button--outline",
+      ghost: "custom-button--ghost",
+      danger: "custom-button--danger",
+      success: "custom-button--success",
+    };
+
+    return cn(baseClasses, variantClasses[variant]);
+  };
+
+  const getSizeClasses = () => {
+    const sizeClasses = {
+      small: "custom-button--small",
+      medium: "custom-button--medium",
+      large: "custom-button--large",
+    };
+
+    return sizeClasses[size];
+  };
 
   const getAntdType = (): AntButtonProps["type"] => {
     switch (variant) {
@@ -57,13 +69,11 @@ export const Button: React.FC<ButtonProps> = ({
       case "danger":
         return "primary";
       case "secondary":
-        return "default";
       case "outline":
-        return "default";
       case "ghost":
-        return "text";
-      default:
         return "default";
+      default:
+        return "primary";
     }
   };
 
@@ -78,6 +88,17 @@ export const Button: React.FC<ButtonProps> = ({
     }
   };
 
+  const buttonClasses = cn(
+    getVariantClasses(),
+    getSizeClasses(),
+    {
+      "custom-button--loading": loading,
+      "custom-button--disabled": disabled,
+      "custom-button--full-width": fullWidth,
+    },
+    className
+  );
+
   return (
     <AntButton
       type={getAntdType()}
@@ -85,11 +106,16 @@ export const Button: React.FC<ButtonProps> = ({
       loading={loading}
       disabled={disabled || loading}
       className={buttonClasses}
-      icon={loading ? <LoadingOutlined /> : leftIcon}
       {...props}
     >
+      {!loading && leftIcon && (
+        <span className="custom-button__left-icon">{leftIcon}</span>
+      )}
+      {loading && <LoadingOutlined className="custom-button__loading-icon" />}
       {children}
-      {rightIcon && !loading && rightIcon}
+      {!loading && rightIcon && (
+        <span className="custom-button__right-icon">{rightIcon}</span>
+      )}
     </AntButton>
   );
 };

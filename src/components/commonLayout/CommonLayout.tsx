@@ -3,7 +3,7 @@
 import React, { useState, ReactNode, useEffect } from "react";
 import { Header, Sidebar } from "@/components";
 import { useResponsive } from "@/customHooks";
-import "./index.css";
+import "./commonLayout.css";
 
 interface CommonLayoutProps {
   children: ReactNode;

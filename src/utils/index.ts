@@ -23,6 +23,9 @@ export * from "./clipboard";
 // Constants
 export * from "./constants";
 
+// Class name utilities
+export * from "./cn";
+
 // Re-export commonly used utilities with shorter names
 export {
   validateEmail,

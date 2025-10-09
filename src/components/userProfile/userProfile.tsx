@@ -3,13 +3,13 @@
 import React, { useState, useEffect } from "react";
 import { Row, Col, Button, Input } from "antd";
 import { useAuth } from "../../context/AuthContext";
-import Loader from "../../components/common/antdSpin";
+import Loader from "../../components/common/AntdSpin/AntdSpin";
 import { useResponsive } from "../../customHooks/responsive";
-import "./index.css";
+import "./userProfile.css";
 import { Helmet } from "react-helmet";
 import texts from "../../mockData/texts";
 import { CustomInput } from "../common/formInputs";
-import CustomTabs from "../common/customTabs/CustomTab";
+import CustomTabs from "../common/CustomTabs/CustomTab";
 
 interface TabData {
   key: string;

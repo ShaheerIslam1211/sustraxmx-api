@@ -4,10 +4,10 @@ import React, { useState } from "react";
 import { Row, Col, message, Input, Button } from "antd";
 import { Helmet } from "react-helmet";
 import texts from "../../mockData/texts";
-import "./index.css";
+import "./contactUs.css";
 import { useResponsive } from "../../customHooks/responsive";
 import { addContactMessage } from "../../lib/firebase/contactMessage.firebase";
-import { CustomInput } from "../common/formInputs";
+import { CustomInput } from "../common/formInputs/formInput";
 
 interface FormData {
   name: string;

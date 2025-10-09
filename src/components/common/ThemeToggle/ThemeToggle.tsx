@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
 import { SunOutlined, MoonOutlined } from "@ant-design/icons";
 import { Button, Tooltip } from "antd";
-import "./index.css";
+import "./themeToggle.css";
 
 const ThemeToggle: React.FC = () => {
   const { theme, setTheme, resolvedTheme } = useTheme();
