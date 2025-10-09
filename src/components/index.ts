@@ -6,23 +6,23 @@
  */
 
 // Layout Components
-export { Sidebar } from "./layout/Sidebar/index";
-export { Header } from "./layout/Header/index";
-export { default as CommonLayout } from "./commonLayout/CommonLayout";
+export { Sidebar } from "./layout/sidebar/index";
+export { Header } from "./layout/header/index";
+export { default as CommonLayout } from "./commonLayout/commonLayout";
 
 // Auth Components
-export { default as LoginForm } from "./auth/LoginForm";
-export { default as SignUpForm } from "./auth/SignupForm";
+export { default as LoginForm } from "./auth/loginForm/loginForm";
+export { default as SignUpForm } from "./auth/signupForm/signupForm";
 export { SSO } from "./auth/SSO";
 
 // Common Components
 export { UserAuthInputs, CustomInput, SingleInput } from "./common/formInputs";
 export { Logo } from "./common/Logo/logo";
-export { default as ThemeToggle } from "./common/ThemeToggle/ThemeToggle";
-export { default as AntdSpin } from "./common/AntdSpin/AntdSpin";
+export { default as ThemeToggle } from "./common/themeToggle/themeToggle";
+export { default as AntdSpin } from "./common/antdSpin/antdSpin";
 export { default as CustomAntdDropdown } from "./common/CustomAntdDropdown/customAntdDropdown";
 export { default as CustomInputs } from "./common/customInputs/customInputs";
-export { default as CustomTab } from "./common/CustomTabs/CustomTab";
+export { default as CustomTab } from "./common/customTabs/customTab";
 export { default as ErrorBoundary } from "./common/ErrorBoundary";
 
 // Feature Components
@@ -46,4 +46,4 @@ export * from "./ui";
 export * from "./layout/AppLayout/index";
 
 // Re-export types
-export type { SidebarProps } from "./layout/Sidebar/index";
+export type { SidebarProps } from "./layout/sidebar/index";

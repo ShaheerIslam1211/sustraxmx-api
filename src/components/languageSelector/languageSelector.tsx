@@ -18,7 +18,7 @@ import {
   Button,
 } from "antd";
 import "./languageSelector.css";
-import { copyToClipboard, CodeSnippets } from "../../js-helper/helpers";
+import { copyToClipboard, CodeSnippets } from "../../code_helper/code_helpers";
 import {
   parseBackendError,
   formatErrorForDisplay,

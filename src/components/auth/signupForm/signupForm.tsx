@@ -2,12 +2,12 @@
 
 import React, { useState } from "react";
 import { Button, Form, Input, Select, Typography, message } from "antd";
-import { useAuth } from "../../context/AuthContext";
+import { useAuth } from "../../../context/AuthContext";
 import { useRouter } from "next/navigation";
-import { useIsMobile } from "../../hooks/useIsMobile";
-import { getCountries } from "../../lib/countries";
-import { SSO } from "./SSO/sso";
-import { signInNewUser } from "../../lib/firebase/auth.register.enhanced";
+import { useIsMobile } from "../../../hooks/useIsMobile";
+import { getCountries } from "../../../lib/countries";
+import { SSO } from "../SSO/sso";
+import { signInNewUser } from "../../../lib/firebase/auth.register.enhanced";
 import { redirect } from "next/navigation";
 
 const { Title, Text, Link } = Typography;

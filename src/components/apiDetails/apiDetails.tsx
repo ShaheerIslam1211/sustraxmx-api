@@ -6,7 +6,10 @@ import { useEmissionData } from "../../context/EmissionDataContext";
 import { Row, Col, Card, Button, message } from "antd";
 import { EnvironmentOutlined } from "@ant-design/icons";
 import AuthorizationBlock from "../authorizationBlock/authorizationBlock";
-import { generateCodeSnippets, CodeSnippets } from "../../js-helper/helpers";
+import {
+  generateCodeSnippets,
+  CodeSnippets,
+} from "../../code_helper/code_helpers";
 import { API_CONFIG, getDisplayUrl } from "../../lib/constants";
 import UnifiedFormHandlerV2 from "../forms/unifiedFormHandlerV2";
 import {

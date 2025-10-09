@@ -10,11 +10,11 @@ import {
   message,
   Modal,
 } from "antd";
-import { useAuth } from "../../context/AuthContext";
+import { useAuth } from "../../../context/AuthContext";
 import { useRouter } from "next/navigation";
-import { useIsMobile } from "../../hooks/useIsMobile";
-import { SSO } from "./SSO/sso";
-import { sendPasswordResetEmail } from "../../lib/firebase/auth.register.enhanced";
+import { useIsMobile } from "../../../hooks/useIsMobile";
+import { SSO } from "../SSO/sso";
+import { sendPasswordResetEmail } from "../../../lib/firebase/auth.register.enhanced";
 import { redirect } from "next/navigation";
 
 const { Title, Text, Link } = Typography;
