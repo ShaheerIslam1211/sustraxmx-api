@@ -5,7 +5,7 @@
 
 import React from "react";
 import { Form, FormItemProps } from "antd";
-import { Input } from "@/components/ui/Input";
+import { Input } from "@/components/ui/input";
 import { cn } from "@/utils";
 import "./FormField.css";
 

@@ -17,7 +17,7 @@ export { SSO } from "./auth/SSO";
 
 // Common Components
 export { UserAuthInputs, CustomInput, SingleInput } from "./common/formInputs";
-export { Logo } from "./common/Logo/logo";
+export { Logo } from "./common/logo/logo";
 export { default as ThemeToggle } from "./common/themeToggle/themeToggle";
 export { default as AntdSpin } from "./common/antdSpin/antdSpin";
 export { default as CustomAntdDropdown } from "./common/CustomAntdDropdown/customAntdDropdown";
