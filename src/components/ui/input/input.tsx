@@ -7,7 +7,7 @@ import React, { forwardRef } from "react";
 import { Input as AntInput, InputProps as AntInputProps } from "antd";
 import { EyeInvisibleOutlined, EyeTwoTone } from "@ant-design/icons";
 import { cn } from "@/utils/cn";
-import "./Input.css";
+import "./input.css";
 
 export interface InputProps extends Omit<AntInputProps, "size" | "variant"> {
   variant?: "default" | "filled" | "outlined";
