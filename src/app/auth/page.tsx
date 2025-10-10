@@ -11,7 +11,7 @@ import SignupForm from "../../components/auth/signupForm/signupForm";
 import CompleteRegistrationForm from "../../components/auth/CompleteRegistrationForm";
 import AuthCodeForm from "../../components/auth/AuthCodeForm";
 import "./auth.css";
-import { Logo } from "@/components/common/Logo/logo";
+import { Logo } from "@/components/common/logo/logo";
 
 type AuthMode = "login" | "signup" | "complete-registration" | "auth-code";
 
