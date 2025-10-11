@@ -29,7 +29,6 @@ import { oneLight as lightStyle } from "react-syntax-highlighter/dist/esm/styles
 import { useTheme } from "next-themes";
 
 const { Text } = Typography;
-const { Panel } = Collapse;
 const { Option } = Select;
 
 // Function to format values based on programming language
@@ -155,7 +154,9 @@ const ApiResponseDisplay: React.FC<{
     );
   }
 
-  if (!data) {
+  // Only show "No Data" if data is truly null/undefined/empty
+  // Don't show "No Data" if there's actual API response data (even if it's an error)
+  if (!data || (typeof data === "object" && Object.keys(data).length === 0)) {
     return (
       <Card
         title={
@@ -175,12 +176,20 @@ const ApiResponseDisplay: React.FC<{
   }
 
   // Determine if this is a success or error response
-  const isSuccess = !data.error && (data.result !== undefined || data.success);
+  const isSuccess =
+    data.success === true ||
+    (data.success !== false &&
+      !data.error &&
+      !data.status &&
+      (data.data || data.result || data.calculation));
+
   const hasValidationErrors =
     data.validationErrors && data.validationErrors.length > 0;
   const responseMessage =
     data.message ||
-    (isSuccess ? "Calculation completed successfully" : data.error);
+    (isSuccess
+      ? "Calculation completed successfully"
+      : data.error || "An error occurred");
 
   // Extract detailed error information
   const isDetailedError =
@@ -352,47 +361,53 @@ const ApiResponseDisplay: React.FC<{
         />
       )}
 
-      <Collapse>
-        <Panel header="Raw Response Data" key="1">
-          <div style={{ position: "relative" }}>
-            <SyntaxHighlighter
-              language="json"
-              style={syntaxStyle}
-              customStyle={{
-                margin: 0,
-                borderRadius: "8px",
-                fontSize: "13px",
-                maxHeight: "400px",
-                overflow: "auto",
-              }}
-              showLineNumbers={true}
-              wrapLines={true}
-            >
-              {JSON.stringify(data, null, 2)}
-            </SyntaxHighlighter>
-            <CopyOutlined
-              style={{
-                position: "absolute",
-                top: "8px",
-                right: "8px",
-                cursor: "pointer",
-                color: "var(--text-secondary)",
-                fontSize: "16px",
-                padding: "4px",
-                backgroundColor: "var(--background-secondary)",
-                borderRadius: "4px",
-                transition: "all 0.2s ease",
-              }}
-              onClick={() =>
-                copyToClipboard(
-                  JSON.stringify(data, null, 2),
-                  "Response copied to clipboard!"
-                )
-              }
-            />
-          </div>
-        </Panel>
-      </Collapse>
+      <Collapse
+        items={[
+          {
+            key: "1",
+            label: "Raw Response Data",
+            children: (
+              <div style={{ position: "relative" }}>
+                <SyntaxHighlighter
+                  language="json"
+                  style={syntaxStyle}
+                  customStyle={{
+                    margin: 0,
+                    borderRadius: "8px",
+                    fontSize: "13px",
+                    maxHeight: "400px",
+                    overflow: "auto",
+                  }}
+                  showLineNumbers={true}
+                  wrapLines={true}
+                >
+                  {JSON.stringify(data, null, 2)}
+                </SyntaxHighlighter>
+                <CopyOutlined
+                  style={{
+                    position: "absolute",
+                    top: "8px",
+                    right: "8px",
+                    cursor: "pointer",
+                    color: "var(--text-secondary)",
+                    fontSize: "16px",
+                    padding: "4px",
+                    backgroundColor: "var(--background-secondary)",
+                    borderRadius: "4px",
+                    transition: "all 0.2s ease",
+                  }}
+                  onClick={() =>
+                    copyToClipboard(
+                      JSON.stringify(data, null, 2),
+                      "Response copied to clipboard!"
+                    )
+                  }
+                />
+              </div>
+            ),
+          },
+        ]}
+      />
     </Card>
   );
 };

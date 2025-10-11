@@ -136,6 +136,7 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json({
       success: true,
+      result: mappedResponse,
       data: {
         category,
         calculation: mappedResponse,
