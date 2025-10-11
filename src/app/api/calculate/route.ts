@@ -9,7 +9,7 @@ import {
 const BACKEND_API_URL =
   process.env.REACT_APP_BE ||
   process.env.SUSTRAX_API_URL ||
-  "https://sustrax-node.vercel.app";
+  "https://sustraxmx-backend.onrender.com";
 
 interface CalculationRequest {
   category: string;
