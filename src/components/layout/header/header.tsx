@@ -5,7 +5,6 @@ import { useAuth } from "../../../context/AuthContext";
 import { useResponsive } from "../../../customHooks/responsive";
 import { UserOutlined, LogoutOutlined, MenuOutlined } from "@ant-design/icons";
 import Link from "next/link";
-// import { Avatar, Dropdown, Menu } from "antd";
 import { handleLogout } from "../../../helpers/authHelper";
 import CustomDropdown from "../../common/CustomAntdDropdown/customAntdDropdown";
 import ThemeToggle from "../../common/themeToggle/themeToggle";
@@ -63,7 +62,7 @@ const Header: React.FC<HeaderProps> = ({ isOpen, setIsOpen }) => {
           <div className="header-actions">
             <ThemeToggle />
             {!user ? (
-              <Link href="/login" className="login">
+              <Link href="/auth?type=login" className="login">
                 {texts.header.loginText}
               </Link>
             ) : (
@@ -79,7 +78,7 @@ const Header: React.FC<HeaderProps> = ({ isOpen, setIsOpen }) => {
         <div className="header-actions">
           <ThemeToggle />
           {!user ? (
-            <Link href="/login" className="login">
+            <Link href="/auth?type=login" className="login">
               {texts.header.loginText}
             </Link>
           ) : (

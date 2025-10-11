@@ -126,8 +126,26 @@ const ApiDetails: React.FC = () => {
       message.destroy();
 
       if (response.ok) {
-        setApiResponse(data);
-        message.success("Query executed successfully!");
+        // Check if the response data indicates success
+        if (data.success === true || (data.success !== false && !data.error)) {
+          setApiResponse({
+            ...data,
+            success: true,
+            timestamp: new Date().toISOString(),
+            endpoint: API_CONFIG.getCalculationUrl(name),
+          });
+          message.success("Query executed successfully!");
+        } else {
+          // Response is OK but contains error data
+          setApiResponse({
+            ...data,
+            error: true,
+            status: response.status,
+            timestamp: new Date().toISOString(),
+            endpoint: API_CONFIG.getCalculationUrl(name),
+          });
+          message.error(data.message || "Query failed");
+        }
       } else {
         // Parse the backend error to extract specific error details
         const errorDetails = extractErrorDetails(data);
@@ -188,16 +206,28 @@ const ApiDetails: React.FC = () => {
       const errorMessage =
         error instanceof Error ? error.message : "Network error occurred";
 
+      // Check if it's a backend connection error
+      const isBackendUnavailable =
+        errorMessage.includes("fetch") ||
+        errorMessage.includes("Failed to fetch") ||
+        errorMessage.includes("ERR_CONNECTION_REFUSED") ||
+        errorMessage.includes("ERR_NETWORK") ||
+        errorMessage.includes("NetworkError");
+
       // Create detailed error response for network/parsing errors
       const detailedError = {
         error: true,
-        type: "NetworkError",
-        message: errorMessage,
+        type: isBackendUnavailable ? "BackendUnavailable" : "NetworkError",
+        message: isBackendUnavailable
+          ? "Backend server is not available"
+          : errorMessage,
         originalError:
           error instanceof Error ? error.toString() : String(error),
         timestamp: new Date().toISOString(),
         endpoint: API_CONFIG.getCalculationUrl(name),
         requestData: dataToSend,
+        status: isBackendUnavailable ? 0 : undefined,
+        statusText: isBackendUnavailable ? "Connection Failed" : undefined,
       };
 
       setApiResponse(detailedError);
@@ -206,10 +236,18 @@ const ApiDetails: React.FC = () => {
       message.error({
         content: (
           <div>
-            <div style={{ fontWeight: "bold" }}>Network Error</div>
-            <div>{errorMessage}</div>
+            <div style={{ fontWeight: "bold" }}>
+              {isBackendUnavailable ? "Backend Not Available" : "Network Error"}
+            </div>
+            <div>
+              {isBackendUnavailable
+                ? "Cannot connect to the backend server. Please check if the server is running."
+                : errorMessage}
+            </div>
             <div style={{ fontSize: "12px", color: "#666", marginTop: "4px" }}>
-              Check API response details below for more information
+              {isBackendUnavailable
+                ? "Make sure the backend server is running on the correct port"
+                : "Check API response details below for more information"}
             </div>
           </div>
         ),
