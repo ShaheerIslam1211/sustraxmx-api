@@ -42,13 +42,15 @@ export const useFormManager = (options: UseFormManagerOptions = {}) => {
 
       // Set error if provided
       if (error) {
-        // You might want to add error handling to the store
-        console.warn(`Field ${fieldName} validation error:`, error);
+        store.setFieldError(fieldName, error);
+      } else {
+        // Clear error if validation passes
+        store.setFieldError(fieldName, undefined);
       }
 
       onFieldChange?.(fieldName, value);
     },
-    [onFieldChange]
+    [onFieldChange, store]
   );
 
   // Form submission handler
@@ -135,6 +137,34 @@ export const useFormManager = (options: UseFormManagerOptions = {}) => {
     return Object.keys(emissionData);
   }, [store]);
 
+  // Validate field with real-time feedback
+  const validateField = useCallback(
+    (fieldName: string, value: any, fieldConfig?: any) => {
+      if (!fieldConfig) return { isValid: true };
+
+      // Import validation function dynamically to avoid circular dependencies
+      const { validateFieldValue } = require("../lib/fieldTypes");
+      const validation = validateFieldValue(value, fieldConfig, fieldName);
+
+      if (!validation.isValid) {
+        store.setFieldError(fieldName, validation.error);
+      } else {
+        store.setFieldError(fieldName, undefined);
+      }
+
+      return validation;
+    },
+    [store]
+  );
+
+  // Mark field as touched
+  const markFieldTouched = useCallback(
+    (fieldName: string) => {
+      store.setFieldTouched(fieldName, true);
+    },
+    [store]
+  );
+
   return {
     // State
     currentCategory: store.currentCategory,
@@ -152,6 +182,8 @@ export const useFormManager = (options: UseFormManagerOptions = {}) => {
     clearFormOnly,
     clearFormAndResetCategory,
     clearField,
+    validateField,
+    markFieldTouched,
 
     // Getters
     getFieldValue,
