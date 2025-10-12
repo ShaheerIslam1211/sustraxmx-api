@@ -1,4 +1,11 @@
-import { collection, doc, getDoc, getDocs, query, where } from "firebase/firestore";
+import {
+  collection,
+  doc,
+  getDoc,
+  getDocs,
+  query,
+  where,
+} from "firebase/firestore";
 import { db } from "./firebase";
 
 // Firebase collection names
@@ -18,14 +25,19 @@ async function getConfigDoc(type: string) {
     if (isServerSide) {
       // Use Firebase Admin on server-side with dynamic import
       const { default: FirebaseAdmin } = await import("./firebase-admin");
-      const docData = await FirebaseAdmin.getDocument(FIRESTORE_COLLECTIONS.config, type);
+      const docData = await FirebaseAdmin.getDocument(
+        FIRESTORE_COLLECTIONS.config,
+        type
+      );
       if (docData && (docData as any).data) {
         return JSON.parse((docData as any).data);
       }
       return null;
     } else {
       // Use client SDK on client-side
-      const updateDoc = await getDoc(doc(db, FIRESTORE_COLLECTIONS.config, type));
+      const updateDoc = await getDoc(
+        doc(db, FIRESTORE_COLLECTIONS.config, type)
+      );
       if (updateDoc.exists()) {
         return JSON.parse(updateDoc.data().data);
       }
@@ -64,7 +76,7 @@ export async function fetchAppConfig() {
       const q = query(collectionRef, where("__name__", "in", docsToGet));
       const docs = await getDocs(q);
 
-      docs.forEach((doc) => {
+      docs.forEach(doc => {
         try {
           formsdata[doc.id] = JSON.parse(doc.data().data);
         } catch (error) {
