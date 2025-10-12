@@ -11,6 +11,7 @@ import {
   validateFieldValue,
   getInputProps,
 } from "../../lib/fieldTypes";
+import { parseDDMMYYYY } from "../../utils/formatting";
 
 interface FormRendererProps {
   fields: EmissionDataField[];
@@ -87,7 +88,7 @@ const FormRenderer: React.FC<FormRendererProps> = ({
     (fieldName: string, value: any, fieldConfig?: any) => {
       // Convert dayjs to string for dates
       if (dayjs.isDayjs(value)) {
-        handleFieldChange(fieldName, value.format("YYYY-MM-DD"));
+        handleFieldChange(fieldName, value.format("DD/MM/YYYY"));
         return;
       }
 
@@ -102,6 +103,44 @@ const FormRenderer: React.FC<FormRendererProps> = ({
       }
 
       handleFieldChange(fieldName, value);
+    },
+    [handleFieldChange]
+  );
+
+  // Handle real-time validation on input change
+  const handleInputChange = useCallback(
+    (fieldName: string, value: any, fieldConfig?: any) => {
+      // Update the field value immediately
+      handleFieldChange(fieldName, value);
+
+      // Validate in real-time if field config is provided
+      if (fieldConfig) {
+        const validation = validateFieldValue(value, fieldConfig, fieldName);
+        if (!validation.isValid) {
+          // Set error immediately for real-time feedback
+          handleFieldChange(fieldName, value, validation.error);
+        } else {
+          // Clear error if validation passes
+          handleFieldChange(fieldName, value);
+        }
+      }
+    },
+    [handleFieldChange]
+  );
+
+  // Handle field blur for additional validation
+  const handleFieldBlur = useCallback(
+    (fieldName: string, value: any, fieldConfig?: any) => {
+      // Mark field as touched
+      // This will be handled by the form manager
+
+      // Additional validation on blur
+      if (fieldConfig) {
+        const validation = validateFieldValue(value, fieldConfig, fieldName);
+        if (!validation.isValid) {
+          handleFieldChange(fieldName, value, validation.error);
+        }
+      }
     },
     [handleFieldChange]
   );
@@ -130,68 +169,51 @@ const FormRenderer: React.FC<FormRendererProps> = ({
       };
 
       return (
-        <Form.Item
-          key={field.name}
-          name={field.name}
-          label={renderFieldLabel(field.title, field.desc)}
-          rules={[
-            {
-              required: isRequired,
-              message: `Please enter ${field.title}`,
-            },
-            {
-              validator: customValidator,
-            },
-          ]}
-          validateStatus={isTouched && fieldError ? "error" : ""}
-          help={isTouched && fieldError ? fieldError : ""}
-          tooltip={field.desc}
-        >
-          {fieldConfig.inputType === "date" ? (
-            <DatePicker
-              style={{ width: "100%" }}
-              placeholder={`Select ${field.title}`}
-              format="YYYY-MM-DD"
-              value={currentValue ? dayjs(currentValue) : undefined}
-              onChange={date =>
-                handleFieldValueChange(field.name, date, fieldConfig)
-              }
-            />
-          ) : fieldConfig.inputType === "number" ? (
-            <Input
-              {...inputProps}
-              placeholder={`Enter ${field.title}`}
-              value={currentValue || ""}
-              onChange={e =>
-                handleFieldValueChange(field.name, e.target.value, fieldConfig)
-              }
-              onBlur={e => {
-                // Additional validation on blur for better UX
-                const validation = validateFieldValue(
-                  e.target.value,
-                  fieldConfig,
-                  field.name
-                );
-                if (!validation.isValid) {
-                  handleFieldValueChange(
-                    field.name,
-                    e.target.value,
-                    fieldConfig
-                  );
+        <div key={field.name}>
+          <Form.Item
+            name={field.name}
+            label={renderFieldLabel(field.title, field.desc)}
+            rules={[
+              {
+                required: isRequired,
+                message: `Please enter ${field.title}`,
+              },
+              {
+                validator: customValidator,
+              },
+            ]}
+            tooltip={field.desc}
+          >
+            {fieldConfig.inputType === "date" ? (
+              <DatePicker
+                style={{ width: "100%" }}
+                placeholder={`Select ${field.title}`}
+                format="DD/MM/YYYY"
+                value={
+                  currentValue
+                    ? typeof currentValue === "string"
+                      ? dayjs(parseDDMMYYYY(currentValue) || currentValue)
+                      : dayjs(currentValue)
+                    : undefined
                 }
-              }}
-            />
-          ) : (
-            <Input
-              {...inputProps}
-              placeholder={`Enter ${field.title}`}
-              value={currentValue || ""}
-              onChange={e =>
-                handleFieldValueChange(field.name, e.target.value, fieldConfig)
-              }
-            />
-          )}
-        </Form.Item>
+                onChange={date =>
+                  handleFieldValueChange(field.name, date, fieldConfig)
+                }
+              />
+            ) : (
+              <Input
+                {...inputProps}
+                value={currentValue || ""}
+                onChange={e =>
+                  handleInputChange(field.name, e.target.value, fieldConfig)
+                }
+                onBlur={e =>
+                  handleFieldBlur(field.name, e.target.value, fieldConfig)
+                }
+              />
+            )}
+          </Form.Item>
+        </div>
       );
     },
     [
@@ -201,6 +223,8 @@ const FormRenderer: React.FC<FormRendererProps> = ({
       getFieldError,
       isFieldTouched,
       handleFieldValueChange,
+      handleInputChange,
+      handleFieldBlur,
     ]
   );
 
