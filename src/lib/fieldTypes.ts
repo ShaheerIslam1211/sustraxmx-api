@@ -103,7 +103,7 @@ const DATE_FIELD_PATTERNS = [
   /end.*date/i,
   /from.*date/i,
   /to.*date/i,
-  /departure/i,
+  /departure.*date/i,
   /arrival/i,
   /check.*in/i,
   /check.*out/i,
@@ -128,6 +128,18 @@ const PHONE_FIELD_PATTERNS = [
  * URL field patterns
  */
 const URL_FIELD_PATTERNS = [/url/i, /website/i, /link/i, /uri/i];
+
+/**
+ * Distance unit field names that should accept string input
+ */
+const DISTANCE_UNIT_FIELD_PATTERNS = [
+  /distance.*unit/i,
+  /distance.*uom/i,
+  /unit.*distance/i,
+  /uom.*distance/i,
+  /distance.*measure/i,
+  /measure.*distance/i,
+];
 
 /**
  * Determines the field type configuration based on field name and properties
@@ -183,6 +195,27 @@ export function getFieldTypeConfig(
     };
   }
 
+  // Check for distance unit fields - treat as simple text
+  if (DISTANCE_UNIT_FIELD_PATTERNS.some(pattern => pattern.test(combined))) {
+    return {
+      inputType: "text",
+      isInteger: false,
+      allowDecimals: false,
+      errorMessage: "Please enter a valid value",
+    };
+  }
+
+  // Special handling for q1 and q2 fields - treat as text
+  if (fieldName === "q1" || fieldName === "q2") {
+    console.log(`🔍 Field ${fieldName} detected as TEXT field`);
+    return {
+      inputType: "text",
+      isInteger: false,
+      allowDecimals: false,
+      errorMessage: "Please enter a valid value",
+    };
+  }
+
   // Check for integer fields (strict whole numbers)
   if (INTEGER_FIELD_PATTERNS.some(pattern => pattern.test(combined))) {
     return {
@@ -221,10 +254,15 @@ export function validateFieldValue(
   value: any,
   config: FieldTypeConfig,
   fieldName: string
-): { isValid: boolean; error?: string } {
+): { isValid: boolean; error?: string; correctedValue?: string } {
+  // Debug logging for q1 field
+  if (fieldName === "q1") {
+    console.log(`🔍 Validating q1 field:`, { value, config, fieldName });
+  }
+
   // Handle empty values
   if (!value && value !== 0) {
-    return { isValid: true }; // Let required validation handle empty values
+    return { isValid: true, correctedValue: value }; // Let required validation handle empty values
   }
 
   const stringValue = String(value).trim();
@@ -257,12 +295,12 @@ export function validateFieldValue(
 function validateDateValue(
   value: string,
   fieldName: string
-): { isValid: boolean; error?: string } {
+): { isValid: boolean; error?: string; correctedValue?: string } {
   const date = new Date(value);
   if (isNaN(date.getTime())) {
     return { isValid: false, error: "Please enter a valid date" };
   }
-  return { isValid: true };
+  return { isValid: true, correctedValue: value };
 }
 
 /**
@@ -272,14 +310,14 @@ function validateEmailValue(
   value: string,
   config: FieldTypeConfig,
   fieldName: string
-): { isValid: boolean; error?: string } {
+): { isValid: boolean; error?: string; correctedValue?: string } {
   if (config.pattern && !config.pattern.test(value)) {
     return {
       isValid: false,
       error: config.errorMessage || "Please enter a valid email address",
     };
   }
-  return { isValid: true };
+  return { isValid: true, correctedValue: value };
 }
 
 /**
@@ -289,14 +327,14 @@ function validatePhoneValue(
   value: string,
   config: FieldTypeConfig,
   fieldName: string
-): { isValid: boolean; error?: string } {
+): { isValid: boolean; error?: string; correctedValue?: string } {
   if (config.pattern && !config.pattern.test(value)) {
     return {
       isValid: false,
       error: config.errorMessage || "Please enter a valid phone number",
     };
   }
-  return { isValid: true };
+  return { isValid: true, correctedValue: value };
 }
 
 /**
@@ -306,44 +344,44 @@ function validateUrlValue(
   value: string,
   config: FieldTypeConfig,
   fieldName: string
-): { isValid: boolean; error?: string } {
+): { isValid: boolean; error?: string; correctedValue?: string } {
   if (config.pattern && !config.pattern.test(value)) {
     return {
       isValid: false,
       error: config.errorMessage || "Please enter a valid URL",
     };
   }
-  return { isValid: true };
+  return { isValid: true, correctedValue: value };
 }
 
 /**
  * Validates number values with integer/decimal restrictions
+ * Allows string input but shows appropriate errors for integer fields
  */
 function validateNumberValue(
   value: string,
   config: FieldTypeConfig,
   fieldName: string
-): { isValid: boolean; error?: string } {
+): { isValid: boolean; error?: string; correctedValue?: string } {
+  // Allow empty values
+  if (!value || value.trim() === "") {
+    return { isValid: true, correctedValue: value };
+  }
+
   // Check if value is a valid number
   const numValue = Number(value);
   if (isNaN(numValue)) {
-    return { isValid: false, error: "Please enter a valid number" };
-  }
-
-  // Check for integer constraint
-  if (config.isInteger && !Number.isInteger(numValue)) {
     return {
       isValid: false,
-      error:
-        config.errorMessage || "Only whole numbers are allowed (no decimals)",
+      error: "Please enter a valid number",
     };
   }
 
-  // Check for decimal constraint
-  if (!config.allowDecimals && value.includes(".")) {
+  // For integer fields, check if it's a whole number
+  if (config.isInteger && !Number.isInteger(numValue)) {
     return {
       isValid: false,
-      error: "Decimal values are not allowed for this field",
+      error: "Please enter a whole number (no decimals)",
     };
   }
 
@@ -363,7 +401,7 @@ function validateNumberValue(
     };
   }
 
-  return { isValid: true };
+  return { isValid: true, correctedValue: numValue.toString() };
 }
 
 /**
@@ -372,15 +410,45 @@ function validateNumberValue(
 function validateTextValue(
   value: string,
   fieldName: string
-): { isValid: boolean; error?: string } {
+): { isValid: boolean; error?: string; correctedValue?: string } {
   // Basic text validation - can be extended as needed
   if (value.length > 1000) {
     return {
       isValid: false,
       error: "Text is too long (maximum 1000 characters)",
+      correctedValue: value.substring(0, 1000),
     };
   }
-  return { isValid: true };
+  return { isValid: true, correctedValue: value };
+}
+
+/**
+ * Gets appropriate placeholder text based on field type configuration
+ */
+function getPlaceholderText(config: FieldTypeConfig): string {
+  switch (config.inputType) {
+    case "number":
+      if (config.isInteger) {
+        return "Enter whole number only";
+      }
+      return "Enter number (decimals allowed)";
+
+    case "date":
+      return "Select date";
+
+    case "email":
+      return "Enter email address";
+
+    case "tel":
+      return "Enter phone number";
+
+    case "url":
+      return "Enter website URL";
+
+    case "text":
+    default:
+      return "Enter text";
+  }
 }
 
 /**
@@ -388,17 +456,15 @@ function validateTextValue(
  */
 export function getInputProps(config: FieldTypeConfig) {
   const baseProps = {
-    placeholder: `Enter value`,
+    placeholder: getPlaceholderText(config),
   };
 
   switch (config.inputType) {
     case "number":
+      // Always use text input to allow string input, validation will handle the rest
       return {
         ...baseProps,
-        type: "number" as const,
-        step: config.allowDecimals ? "any" : "1",
-        min: config.min,
-        max: config.max,
+        type: "text" as const,
       };
 
     case "date":
