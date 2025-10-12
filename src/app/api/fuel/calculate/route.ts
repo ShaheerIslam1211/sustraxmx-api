@@ -9,7 +9,7 @@ import {
 const BACKEND_API_URL =
   process.env.REACT_APP_BE ||
   process.env.SUSTRAX_API_URL ||
-  "https://sustrax-node.vercel.app";
+  "https://sustraxmx-backend.onrender.com";
 
 interface FuelCalculationRequest {
   type: string;
@@ -83,8 +83,19 @@ export async function POST(request: NextRequest) {
 
     if (!backendResponse.ok) {
       const errorData = await backendResponse.json().catch(() => ({}));
-      throw new Error(
-        errorData.message || `Backend API error: ${backendResponse.status}`
+
+      // Return detailed error information from backend
+      return NextResponse.json(
+        {
+          success: false,
+          error: "Backend calculation failed",
+          message:
+            errorData.message || `Backend API error: ${backendResponse.status}`,
+          backendError: errorData,
+          status: backendResponse.status,
+          statusText: backendResponse.statusText,
+        },
+        { status: backendResponse.status }
       );
     }
 
@@ -97,6 +108,7 @@ export async function POST(request: NextRequest) {
           error: "Backend calculation failed",
           message: backendData.message || "Unknown backend error",
           backendError: backendData.error,
+          status: 500,
         },
         { status: 500 }
       );

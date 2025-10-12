@@ -30,6 +30,7 @@ export const API_ENDPOINTS = {
   INGREDIENTS: "/api/ingredients/calculate",
   PAPER: "/api/paper/calculate",
   HOMEWORKERS: "/api/homeworkers/calculate",
+  HOME_WORKERS: "/api/homeworkers/calculate",
   SPENDINGS: "/api/spendings/calculate",
   PRODUCT: "/api/product/calculate",
 } as const;
