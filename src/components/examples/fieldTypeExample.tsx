@@ -20,6 +20,7 @@ import {
   getInputProps,
 } from "../../lib/fieldTypes";
 import dayjs from "dayjs";
+import { parseDDMMYYYY } from "../../utils/formatting";
 
 const { Title, Text } = Typography;
 
@@ -106,10 +107,16 @@ const FieldTypeExample: React.FC = () => {
           <DatePicker
             style={{ width: "100%" }}
             placeholder={`Select ${field.title}`}
-            format="YYYY-MM-DD"
-            value={field.value ? dayjs(field.value) : undefined}
+            format="DD/MM/YYYY"
+            value={
+              field.value
+                ? typeof field.value === "string"
+                  ? dayjs(parseDDMMYYYY(field.value) || field.value)
+                  : dayjs(field.value)
+                : undefined
+            }
             onChange={date =>
-              handleFieldChange(field.name, date?.format("YYYY-MM-DD"))
+              handleFieldChange(field.name, date?.format("DD/MM/YYYY"))
             }
           />
         ) : (

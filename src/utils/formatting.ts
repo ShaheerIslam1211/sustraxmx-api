@@ -8,7 +8,7 @@
 // Date formatting
 export const formatDate = (
   date: Date | string,
-  format: "short" | "long" | "iso" = "short"
+  format: "short" | "long" | "iso" | "dd/mm/yyyy" = "short"
 ): string => {
   const dateObj = typeof date === "string" ? new Date(date) : date;
 
@@ -27,6 +27,11 @@ export const formatDate = (
       });
     case "iso":
       return dateObj.toISOString().split("T")[0];
+    case "dd/mm/yyyy":
+      const day = dateObj.getDate().toString().padStart(2, "0");
+      const month = (dateObj.getMonth() + 1).toString().padStart(2, "0");
+      const year = dateObj.getFullYear();
+      return `${day}/${month}/${year}`;
     default:
       return dateObj.toLocaleDateString();
   }
@@ -255,4 +260,31 @@ export const formatJson = (obj: any, indent: number = 2): string => {
   } catch {
     return "Invalid JSON";
   }
+};
+
+// Parse DD/MM/YYYY date format
+export const parseDDMMYYYY = (dateString: string): Date | null => {
+  if (!dateString) return null;
+
+  // Handle DD/MM/YYYY format
+  const ddMMyyyyPattern = /^(\d{2})\/(\d{2})\/(\d{4})$/;
+  const match = dateString.match(ddMMyyyyPattern);
+
+  if (match) {
+    const [, day, month, year] = match;
+    const date = new Date(parseInt(year), parseInt(month) - 1, parseInt(day));
+
+    // Validate the date is correct (handles invalid dates like 32/13/2023)
+    if (
+      date.getDate() === parseInt(day) &&
+      date.getMonth() === parseInt(month) - 1 &&
+      date.getFullYear() === parseInt(year)
+    ) {
+      return date;
+    }
+  }
+
+  // Fallback to standard Date parsing for other formats
+  const fallbackDate = new Date(dateString);
+  return isNaN(fallbackDate.getTime()) ? null : fallbackDate;
 };
