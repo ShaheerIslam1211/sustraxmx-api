@@ -87,8 +87,20 @@ export async function POST(request: NextRequest) {
       freighting: "/api/freighting/calculate",
       waste: "/api/waste/calculate",
       flight: "/api/flight/calculate",
-      other_travels: "/api/travel/calculate",
+      other_travels: "/api/othertravels/calculate",
       electricity: "/api/electricity/calculate",
+      home_workers: "/api/homeworkers/calculate",
+      hotel: "/api/hotel/calculate",
+      refrigerator: "/api/refrigerator/calculate",
+      water: "/api/water/calculate",
+      ingredients: "/api/ingredients/calculate",
+      paper: "/api/paper/calculate",
+      spendings: "/api/spendings/calculate",
+      product: "/api/product/calculate",
+      bulk_material: "/api/bulkMaterial/calculate",
+      commuting: "/api/commuting/calculate",
+      natural_gas: "/api/naturalgas/calculate",
+      heat_and_steam: "/api/heatandsteam/calculate",
     };
 
     const backendEndpoint =
@@ -109,8 +121,19 @@ export async function POST(request: NextRequest) {
 
     if (!backendResponse.ok) {
       const errorData = await backendResponse.json().catch(() => ({}));
-      throw new Error(
-        errorData.message || `Backend API error: ${backendResponse.status}`
+
+      // Return detailed error information from backend
+      return NextResponse.json(
+        {
+          success: false,
+          error: "Backend calculation failed",
+          message:
+            errorData.message || `Backend API error: ${backendResponse.status}`,
+          backendError: errorData,
+          status: backendResponse.status,
+          statusText: backendResponse.statusText,
+        },
+        { status: backendResponse.status }
       );
     }
 
@@ -123,6 +146,7 @@ export async function POST(request: NextRequest) {
           error: "Backend calculation failed",
           message: backendData.message || "Unknown backend error",
           backendError: backendData.error,
+          status: 500,
         },
         { status: 500 }
       );
