@@ -182,7 +182,6 @@ const FormRenderer: React.FC<FormRendererProps> = ({
                 validator: customValidator,
               },
             ]}
-            tooltip={field.desc}
           >
             {fieldConfig.inputType === "date" ? (
               <DatePicker
@@ -210,6 +209,7 @@ const FormRenderer: React.FC<FormRendererProps> = ({
                 onBlur={e =>
                   handleFieldBlur(field.name, e.target.value, fieldConfig)
                 }
+                placeholder={`Enter ${field.title.toLowerCase()}`}
               />
             )}
           </Form.Item>

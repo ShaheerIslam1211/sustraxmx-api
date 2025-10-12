@@ -94,7 +94,6 @@ const FieldTypeExample: React.FC = () => {
         key={field.name}
         label={field.title}
         validateStatus={hasError ? "error" : ""}
-        help={hasError}
         extra={
           <Text type="secondary" style={{ fontSize: "12px" }}>
             Type: {config.inputType} | Integer:{" "}
