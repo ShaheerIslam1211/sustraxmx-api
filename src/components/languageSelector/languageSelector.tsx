@@ -446,7 +446,7 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = ({
     <div className="language-selector-container">
       {/* Code Block with Integrated Header */}
       <div className="code-block-container">
-        <div className="code-header">
+        <div className="code-header base-url-block">
           <div className="code-header-left">
             <div className="language-dropdown-container">
               <Text
@@ -504,8 +504,6 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = ({
             borderRadius: "0 0 8px 8px",
             fontSize: "13px",
             lineHeight: "1.4",
-            background: isDark ? "#1e1e1e" : "#ffffff",
-            color: isDark ? "#d4d4d4" : "#24292e",
             fontFamily: "'Monaco', 'Menlo', 'Ubuntu Mono', monospace",
           }}
           codeTagProps={{
@@ -528,7 +526,7 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = ({
       </div>
 
       {/* API Response Display Below Code */}
-      <div className="api-response-section">
+      <div className="api-response-section base-url-block">
         <ApiResponseDisplay
           data={apiResponse || {}}
           isLoading={isLoading || false}
