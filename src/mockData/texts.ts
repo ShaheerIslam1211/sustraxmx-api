@@ -40,7 +40,7 @@ const texts = {
   AuthorizationBlock: {
     AuthorizationText: "Authorization",
     loginPrompt: "log in to obtain the username and password",
-    urlText: "URL",
+    urlText: "BASE URL",
   },
   languageSelector: {
     apiRequestText: "API REQUEST",
