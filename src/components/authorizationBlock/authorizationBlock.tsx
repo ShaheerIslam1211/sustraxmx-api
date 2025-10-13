@@ -153,16 +153,106 @@ const AuthorizationBlock: React.FC<AuthorizationBlockProps> = ({
 
           <UserAuthInputs updateCredentials={updateCredentials} />
 
-          <div style={{ marginTop: "20px" }}>
-            <p
+          <div
+            className="base-url-block"
+            style={{
+              marginTop: "24px",
+              padding: "20px",
+              background: "linear-gradient(135deg, #f8fafc, #f1f5f9)",
+              borderRadius: "12px",
+              border: "1px solid #e2e8f0",
+              boxShadow: "0 2px 8px rgba(0, 0, 0, 0.05)",
+              transition: "all 0.3s ease",
+            }}
+            onMouseEnter={e => {
+              e.currentTarget.style.boxShadow = "0 4px 16px rgba(0, 0, 0, 0.1)";
+              e.currentTarget.style.transform = "translateY(-2px)";
+            }}
+            onMouseLeave={e => {
+              e.currentTarget.style.boxShadow = "0 2px 8px rgba(0, 0, 0, 0.05)";
+              e.currentTarget.style.transform = "translateY(0)";
+            }}
+          >
+            <div
               style={{
-                fontSize: styles.fontSize.smallFont,
-                color: "var(--text-secondary)",
+                display: "flex",
+                alignItems: "center",
+                gap: "8px",
+                marginBottom: "12px",
               }}
             >
-              {texts.AuthorizationBlock.urlText}
-            </p>
-            <CustomInput readOnly={true} value={displayUrl} />
+              <div
+                style={{
+                  width: "8px",
+                  height: "8px",
+                  borderRadius: "50%",
+                  background: "var(--primary-color)",
+                  boxShadow: "0 0 8px rgba(52, 211, 153, 0.5)",
+                }}
+              />
+              <p
+                style={{
+                  fontSize: "14px",
+                  fontWeight: "600",
+                  color: "var(--text-primary)",
+                  margin: 0,
+                  textTransform: "uppercase",
+                  letterSpacing: "0.5px",
+                }}
+              >
+                {texts.AuthorizationBlock.urlText}
+              </p>
+            </div>
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: "12px",
+                flexWrap: "wrap",
+              }}
+            >
+              <span
+                style={{
+                  background:
+                    "linear-gradient(135deg, var(--primary-color), #10b981)",
+                  color: "white",
+                  padding: "12px 16px",
+                  borderRadius: "8px",
+                  fontSize: "13px",
+                  fontWeight: "bold",
+                  minWidth: "60px",
+                  textAlign: "center",
+                  flexShrink: 0,
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  height: "44px",
+                  boxShadow: "0 2px 4px rgba(52, 211, 153, 0.3)",
+                  border: "2px solid transparent",
+                  transition: "all 0.3s ease",
+                  position: "relative",
+                  overflow: "hidden",
+                }}
+                onMouseEnter={e => {
+                  e.currentTarget.style.borderColor =
+                    "rgba(255, 255, 255, 0.3)";
+                  e.currentTarget.style.transform = "translateY(-1px)";
+                  e.currentTarget.style.boxShadow =
+                    "0 4px 8px rgba(52, 211, 153, 0.4)";
+                }}
+                onMouseLeave={e => {
+                  e.currentTarget.style.borderColor = "transparent";
+                  e.currentTarget.style.transform = "translateY(0)";
+                  e.currentTarget.style.boxShadow =
+                    "0 2px 4px rgba(52, 211, 153, 0.3)";
+                }}
+              >
+                POST
+              </span>
+              <div style={{ flex: 1, minWidth: "200px" }}>
+                <CustomInput readOnly={true} value={displayUrl} />
+              </div>
+            </div>
           </div>
         </header>
 
