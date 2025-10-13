@@ -365,29 +365,40 @@
 /* Responsive Design */
 @media (max-width: 768px) {
   .code-header {
-    align-items: stretch;
+    align-items: center;
     gap: 12px;
-    padding: 16px;
+    padding: 12px 16px;
+    flex-wrap: nowrap;
   }
 
   .code-header-left {
-    flex-direction: column;
+    display: flex;
+    align-items: center;
     gap: 12px;
+    flex: 1;
   }
 
   .code-header-right {
-    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    gap: 8px;
   }
 
-  .language-dropdown-container,
-  .theme-selector {
-    justify-content: space-between;
+  /* Hide language text on small screens */
+  .language-dropdown-container .ant-typography {
+    display: none !important;
   }
 
-  .language-dropdown-container .ant-select,
-  .theme-selector .ant-select {
+  .language-dropdown-container {
+    display: flex;
+    align-items: center;
+    gap: 0;
+  }
+
+  .language-dropdown-container .ant-select {
     flex: 1;
-    max-width: 200px;
+    min-width: 120px;
+    border-radius: 6px !important;
   }
 
   .code-block-container {
@@ -396,9 +407,15 @@
 
   .copy-button {
     font-size: 11px;
-    padding: 6px 12px;
+    padding: 6px 8px;
     height: 32px;
     min-height: 32px;
+    flex-shrink: 0;
+  }
+
+  /* Hide copy button text on small screens */
+  .copy-button .anticon + span {
+    display: none !important;
   }
 
   .language-dropdown-container .ant-select-selector {
@@ -414,6 +431,56 @@
 
   .language-dropdown-container .ant-select-arrow {
     font-size: 10px !important;
+  }
+}
+
+/* Extra small screens (iPhone 6, etc) */
+@media (max-width: 375px) {
+  .code-header {
+    padding: 8px 12px;
+    gap: 8px;
+  }
+
+  .code-header-left {
+    gap: 8px;
+  }
+
+  .code-header-right {
+    gap: 6px;
+  }
+
+  .language-dropdown-container .ant-select {
+    min-width: 100px;
+  }
+
+  .language-dropdown-container .ant-select-selector {
+    height: 28px !important;
+    min-height: 28px !important;
+    padding: 4px 8px !important;
+    font-size: 11px !important;
+  }
+
+  .copy-button {
+    font-size: 10px;
+    padding: 4px 6px;
+    height: 28px;
+    min-height: 28px;
+  }
+
+  /* Hide copy button text on extra small screens */
+  .copy-button .anticon + span {
+    display: none !important;
+  }
+
+  .code-block-container {
+    font-size: 10px;
+  }
+}
+
+/* Show copy button text on larger screens */
+@media (min-width: 769px) {
+  .copy-button .anticon + span {
+    display: inline !important;
   }
 }
 
@@ -766,66 +833,159 @@
 /* Responsive Design */
 @media (max-width: 768px) {
   .api-response-container {
-    padding: 16px;
-    min-height: 300px;
+    padding: 12px;
+    min-height: 200px;
+    border-radius: 8px;
   }
 
   .success-header {
-    padding: 16px;
+    padding: 12px;
     flex-direction: column;
     text-align: center;
-    gap: 12px;
+    gap: 8px;
   }
 
   .success-icon {
-    font-size: 24px;
+    font-size: 20px;
   }
 
   .emission-details {
     padding-left: 0;
-    margin-top: 16px;
+    margin-top: 12px;
   }
 
   .detail-item {
     justify-content: space-between;
+    padding: 8px 0;
   }
 
   .detail-value {
     margin-left: 0;
+    font-size: 13px;
   }
 
   .json-container {
-    border-radius: 8px;
+    border-radius: 6px;
+    margin-top: 12px;
   }
 
   .copy-json-btn {
-    top: 8px;
-    right: 8px;
-    padding: 6px;
-    font-size: 12px;
+    top: 6px;
+    right: 6px;
+    padding: 4px;
+    font-size: 11px;
   }
 
   .api-response-section {
-    margin-top: 16px;
-    padding-top: 16px;
+    margin-top: 12px;
+    padding-top: 12px;
   }
 }
 
 @media (max-width: 576px) {
   .api-response-container {
-    padding: 12px;
+    padding: 8px;
+    min-height: 150px;
   }
 
   .success-header {
-    padding: 12px;
+    padding: 8px;
+    gap: 6px;
+  }
+
+  .success-icon {
+    font-size: 18px;
+  }
+
+  .emission-details {
+    margin-top: 8px;
+  }
+
+  .detail-item {
+    padding: 6px 0;
+    font-size: 12px;
+  }
+
+  .detail-value {
+    font-size: 12px;
+  }
+
+  .json-container {
+    margin-top: 8px;
+  }
+
+  .copy-json-btn {
+    top: 4px;
+    right: 4px;
+    padding: 3px;
+    font-size: 10px;
   }
 
   .empty-icon {
-    font-size: 48px;
+    font-size: 40px;
   }
 
   .loading-skeleton {
-    padding: 16px;
+    padding: 12px;
+  }
+
+  .api-response-section {
+    margin-top: 14px;
+    padding-top: 8px;
+  }
+}
+
+/* Extra small screens (iPhone 6, etc) */
+@media (max-width: 375px) {
+  .api-response-container {
+    padding: 6px;
+    min-height: 120px;
+  }
+
+  .success-header {
+    padding: 6px;
+    gap: 4px;
+  }
+
+  .success-icon {
+    font-size: 16px;
+  }
+
+  .emission-details {
+    margin-top: 6px;
+  }
+
+  .detail-item {
+    padding: 4px 0;
+    font-size: 11px;
+  }
+
+  .detail-value {
+    font-size: 11px;
+  }
+
+  .json-container {
+    margin-top: 6px;
+  }
+
+  .copy-json-btn {
+    top: 3px;
+    right: 3px;
+    padding: 2px;
+    font-size: 9px;
+  }
+
+  .empty-icon {
+    font-size: 36px;
+  }
+
+  .loading-skeleton {
+    padding: 8px;
+  }
+
+  .api-response-section {
+    margin-top: 12px;
+    padding-top: 6px;
   }
 }
 
@@ -879,5 +1039,29 @@
     font-size: 14px;
     top: 8px;
     right: 8px;
+  }
+}
+
+@media (max-width: 576px) {
+  .response-container {
+    min-height: 120px;
+  }
+
+  .copy-icon {
+    top: 6px;
+    right: 6px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 375px) {
+  .response-container {
+    min-height: 100px;
+  }
+
+  .copy-icon {
+    top: 4px;
+    right: 4px;
+    font-size: 10px;
   }
 }
