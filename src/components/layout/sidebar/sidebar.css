@@ -35,15 +35,43 @@
   visibility: visible;
 }
 
-@media (max-width: 1024px) {
+/* Small Mobile (iPhone 6, etc) - 0-375px */
+@media (max-width: 375px) {
   .container {
+    position: fixed;
+    left: -280px;
+    top: 0;
     width: 280px;
-    min-width: 280px;
-    max-width: 280px;
+    height: 100vh;
+    background: var(--sidebar-background);
+    transition: left 0.3s ease;
+    z-index: 1002;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.15);
+    padding-top: 60px;
+    transform: translateX(-100%);
+  }
+
+  .container.open {
+    left: 0;
+    transform: translateX(0);
+  }
+
+  .mobile-container {
+    padding: 15px 10px;
+  }
+
+  .mobile-title {
+    font-size: 18px;
+  }
+
+  .mobile-nav-link {
+    padding: 12px 15px;
+    font-size: 14px;
   }
 }
 
-@media (max-width: 768px) {
+/* Mobile - 376-768px */
+@media (min-width: 376px) and (max-width: 768px) {
   .container {
     position: fixed;
     left: -300px;
@@ -54,92 +82,50 @@
     transition: left 0.3s ease;
     z-index: 1002;
     box-shadow: 2px 0 8px rgba(0, 0, 0, 0.15);
-    padding-top: 80px;
+    padding-top: 70px;
+    transform: translateX(-100%);
   }
 
   .container.open {
     left: 0;
+    transform: translateX(0);
   }
 
-  /* Mobile-specific container styling */
   .mobile-container {
     padding: 20px 15px;
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    overflow-y: auto;
-  }
-
-  /* Mobile header */
-  .mobile-header {
-    margin-bottom: 20px;
-    padding-bottom: 15px;
-    border-bottom: 1px solid var(--border-color);
   }
 
   .mobile-title {
-    margin: 0;
     font-size: 20px;
-    font-weight: 600;
-    color: var(--text-color);
-    text-align: center;
-  }
-
-  /* Mobile search */
-  .mobile-search {
-    margin-bottom: 25px;
-  }
-
-  /* Mobile navigation list */
-  .mobile-nav-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    flex: 1;
-    overflow-y: auto;
-  }
-
-  .mobile-nav-item {
-    margin-bottom: 8px;
   }
 
   .mobile-nav-link {
-    display: block;
     padding: 15px 20px;
-    text-decoration: none;
-    color: var(--sidebar-text);
-    background-color: transparent;
-    border-radius: 8px;
-    transition: all 0.2s ease;
     font-size: 16px;
-    font-weight: 500;
-    border: 1px solid transparent;
-  }
-
-  .mobile-nav-item.active .mobile-nav-link {
-    background-color: var(--primary-color);
-    color: white;
-    font-weight: 600;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-
-  .mobile-nav-link:hover {
-    background-color: var(--background-secondary);
-    color: var(--primary-color);
-    border-color: var(--primary-color);
-    transform: translateX(5px);
-  }
-
-  .mobile-nav-item.active .mobile-nav-link:hover {
-    background-color: var(--primary-color);
-    color: white;
-    transform: translateX(0);
-    border-color: transparent;
   }
 }
 
-/* Tablet-specific adjustments */
-@media (min-width: 481px) and (max-width: 768px) {
+/* Tablet - 769-1024px */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .container {
+    position: fixed;
+    left: -320px;
+    top: 0;
+    width: 320px;
+    height: 100vh;
+    background: var(--sidebar-background);
+    transition: left 0.3s ease;
+    z-index: 1002;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.15);
+    padding-top: 75px;
+    transform: translateX(-100%);
+  }
+
+  .container.open {
+    left: 0;
+    transform: translateX(0);
+  }
+
   .mobile-container {
     padding: 25px 20px;
   }
@@ -152,10 +138,78 @@
     padding: 18px 25px;
     font-size: 17px;
   }
+}
 
-  .mobile-nav-item {
-    margin-bottom: 10px;
-  }
+/* Mobile-specific container styling */
+.mobile-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+/* Mobile header */
+.mobile-header {
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.mobile-title {
+  margin: 0;
+  font-weight: 600;
+  color: var(--text-color);
+  text-align: center;
+}
+
+/* Mobile search */
+.mobile-search {
+  margin-bottom: 25px;
+}
+
+/* Mobile navigation list */
+.mobile-nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.mobile-nav-item {
+  margin-bottom: 8px;
+}
+
+.mobile-nav-link {
+  display: block;
+  text-decoration: none;
+  color: var(--sidebar-text);
+  background-color: transparent;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  font-weight: 500;
+  border: 1px solid transparent;
+}
+
+.mobile-nav-item.active .mobile-nav-link {
+  background-color: var(--primary-color);
+  color: white;
+  font-weight: 600;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.mobile-nav-link:hover {
+  background-color: var(--background-secondary);
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+  transform: translateX(5px);
+}
+
+.mobile-nav-item.active .mobile-nav-link:hover {
+  background-color: var(--primary-color);
+  color: white;
+  transform: translateX(0);
+  border-color: transparent;
 }
 
 @media (min-width: 769px) {
