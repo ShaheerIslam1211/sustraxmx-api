@@ -38,55 +38,162 @@
   color: #f0f0f0;
 }
 
-/* Select Component Dark Theme Support */
-.dark .ant-select {
-  background: #2d2d2d;
-  border-color: #404040;
-  color: #f0f0f0;
+/* Language Dropdown Styling - Professional Green Theme */
+.language-dropdown-container .ant-select {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+  border: 1px solid #047857 !important;
+  border-radius: 8px !important;
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.2) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  position: relative !important;
+  overflow: hidden !important;
+  display: table;
 }
 
-.dark .ant-select:hover {
-  border-color: var(--primary-color);
-  background: #333333;
+.language-dropdown-container .ant-select::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.15),
+    transparent
+  );
+  transition: left 0.6s ease;
 }
 
-.dark .ant-select-selector {
-  background: #2d2d2d !important;
-  border-color: #404040 !important;
-  color: #f0f0f0 !important;
+.language-dropdown-container .ant-select:hover::before {
+  left: 100%;
+}
+
+.language-dropdown-container .ant-select:hover {
+  border-color: #065f46 !important;
+  box-shadow: 0 4px 16px rgba(16, 185, 129, 0.3) !important;
+  transform: translateY(-1px) !important;
+  background: linear-gradient(135deg, #059669 0%, #047857 100%) !important;
+}
+
+.language-dropdown-container .ant-select-selector {
+  background: transparent !important;
+  border: none !important;
+  color: #ffffff !important;
+  font-weight: 600 !important;
+  font-size: 13px !important;
+  padding: 8px 12px !important;
+  height: 36px !important;
+  min-height: 36px !important;
+  box-sizing: border-box !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+}
+
+.language-dropdown-container .ant-select-arrow {
+  color: #ffffff !important;
   transition: all 0.3s ease !important;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2)) !important;
+  font-size: 12px !important;
 }
 
-.dark .ant-select-selector:hover {
-  border-color: var(--primary-color) !important;
-  background: #333333 !important;
+.language-dropdown-container .ant-select:hover .ant-select-arrow {
+  color: #f0fdf4 !important;
+  transform: rotate(180deg) !important;
+  filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.3)) !important;
 }
 
-.dark .ant-select-dropdown {
-  background: #2d2d2d;
-  border-color: #404040;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+/* Dark mode language dropdown - Green Theme */
+.dark .language-dropdown-container .ant-select {
+  background: linear-gradient(135deg, #065f46 0%, #047857 100%) !important;
+  border-color: #064e3b !important;
+  box-shadow: 0 2px 8px rgba(6, 95, 70, 0.3) !important;
 }
 
-.dark .ant-select-item {
-  color: #f0f0f0;
-  transition: all 0.2s ease;
+.dark .language-dropdown-container .ant-select:hover {
+  border-color: #022c22 !important;
+  box-shadow: 0 4px 16px rgba(6, 95, 70, 0.4) !important;
+  transform: translateY(-1px) !important;
+  background: linear-gradient(135deg, #047857 0%, #064e3b 100%) !important;
 }
 
-.dark .ant-select-item:hover {
-  background: #404040;
-  color: #ffffff;
+.dark .language-dropdown-container .ant-select-selector {
+  color: #ffffff !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) !important;
 }
 
-.dark .ant-select-item-option-selected {
-  background: var(--primary-color);
-  color: #ffffff;
-  font-weight: 500;
+.dark .language-dropdown-container .ant-select-arrow {
+  color: #ffffff !important;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3)) !important;
 }
 
-.dark .ant-select-item-option-active {
-  background: #404040;
-  color: #ffffff;
+.dark .language-dropdown-container .ant-select:hover .ant-select-arrow {
+  color: #f0fdf4 !important;
+  transform: rotate(180deg) !important;
+  filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.4)) !important;
+}
+
+/* Dropdown menu styling - Professional Green Theme */
+.language-dropdown-container .ant-select-dropdown {
+  background: #ffffff !important;
+  border: 1px solid #d1fae5 !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.15) !important;
+  padding: 6px !important;
+  margin-top: 4px !important;
+}
+
+.dark .language-dropdown-container .ant-select-dropdown {
+  background: #1f2937 !important;
+  border-color: #064e3b !important;
+  box-shadow: 0 4px 12px rgba(6, 95, 70, 0.3) !important;
+}
+
+.language-dropdown-container .ant-select-item {
+  border-radius: 6px !important;
+  margin: 1px 0 !important;
+  padding: 8px 12px !important;
+  transition: all 0.2s ease !important;
+  color: #374151 !important;
+  font-weight: 500 !important;
+  font-size: 13px !important;
+}
+
+.dark .language-dropdown-container .ant-select-item {
+  color: #e5e7eb !important;
+}
+
+.language-dropdown-container .ant-select-item:hover {
+  background: #ecfdf5 !important;
+  color: #047857 !important;
+  transform: translateX(2px) !important;
+  box-shadow: 0 1px 3px rgba(16, 185, 129, 0.1) !important;
+}
+
+.dark .language-dropdown-container .ant-select-item:hover {
+  background: #064e3b !important;
+  color: #10b981 !important;
+  box-shadow: 0 1px 3px rgba(6, 95, 70, 0.2) !important;
+}
+
+.language-dropdown-container .ant-select-item-option-selected {
+  background: #10b981 !important;
+  color: #ffffff !important;
+  font-weight: 600 !important;
+  box-shadow: 0 2px 4px rgba(16, 185, 129, 0.3) !important;
+}
+
+.language-dropdown-container .ant-select-item-option-active {
+  background: #ecfdf5 !important;
+  color: #047857 !important;
+}
+
+.dark .language-dropdown-container .ant-select-item-option-active {
+  background: #064e3b !important;
+  color: #10b981 !important;
 }
 
 .code-header-left {
@@ -123,39 +230,77 @@
 .copy-button {
   display: flex;
   align-items: center;
-  gap: 4px;
-  padding: 4px 8px;
-  border-radius: 4px;
-  font-size: 12px;
-  font-weight: 500;
-  transition: all 0.2s ease;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  height: 36px;
+  min-height: 36px;
+  box-sizing: border-box;
 }
 
 .copy-button-light {
-  color: #595959;
-  background: #ffffff;
-  border: 1px solid #d9d9d9;
+  color: #ffffff;
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  box-shadow: 0 2px 4px rgba(59, 130, 246, 0.3);
 }
 
 .copy-button-light:hover {
-  color: #1890ff;
-  border-color: #1890ff;
-  background: #f0f8ff;
+  background: linear-gradient(135deg, #1d4ed8, #1e40af);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+  transform: translateY(-2px);
+}
+
+.copy-button-light:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(59, 130, 246, 0.3);
 }
 
 .copy-button-dark {
-  color: #f0f0f0;
-  background: #2d2d2d;
-  border: 1px solid #404040;
+  color: #ffffff;
+  background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+  box-shadow: 0 2px 4px rgba(139, 92, 246, 0.3);
   transition: all 0.3s ease;
 }
 
 .copy-button-dark:hover {
-  color: #ffffff;
-  border-color: var(--primary-color);
-  background: var(--primary-color);
-  transform: translateY(-1px);
-  box-shadow: 0 2px 8px rgba(52, 211, 153, 0.3);
+  background: linear-gradient(135deg, #7c3aed, #6d28d9);
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.4);
+  transform: translateY(-2px);
+}
+
+.copy-button-dark:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(139, 92, 246, 0.3);
+}
+
+/* Copy button icon animation */
+.copy-button .anticon {
+  transition: all 0.3s ease;
+}
+
+.copy-button:hover .anticon {
+  transform: scale(1.1);
+}
+
+.copy-button:active .anticon {
+  transform: scale(0.95);
+}
+
+/* Success state for copy button */
+.copy-button.copied {
+  background: linear-gradient(135deg, #10b981, #059669) !important;
+  box-shadow: 0 2px 4px rgba(16, 185, 129, 0.3) !important;
+}
+
+.copy-button.copied:hover {
+  background: linear-gradient(135deg, #059669, #047857) !important;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4) !important;
 }
 
 /* Legacy copy icon support */
@@ -182,73 +327,44 @@
   font-family: "Monaco", "Menlo", "Ubuntu Mono", monospace !important;
   border-radius: 0 0 8px 8px !important;
   overflow-x: auto !important;
+  padding: 20px !important;
 }
 
-/* Ensure syntax highlighting colors are preserved in dark mode */
+/* Let syntax highlighter handle colors naturally - Remove all overrides */
+
+/* Ensure syntax highlighter works properly */
+.code-block-content {
+  background: transparent !important;
+}
+
+.code-block-content pre {
+  background: transparent !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.code-block-content pre code {
+  background: transparent !important;
+  color: inherit !important;
+}
+
+/* Dark mode specific */
 .dark .code-block-content {
   background: transparent !important;
 }
 
-/* Preserve syntax highlighting token colors in dark mode */
-.dark .code-block-content .token.comment,
-.dark .code-block-content .token.prolog,
-.dark .code-block-content .token.doctype,
-.dark .code-block-content .token.cdata {
-  color: #6a9955 !important;
+.dark .code-block-content pre {
+  background: transparent !important;
 }
 
-.dark .code-block-content .token.punctuation {
-  color: #d4d4d4 !important;
-}
-
-.dark .code-block-content .token.property,
-.dark .code-block-content .token.tag,
-.dark .code-block-content .token.boolean,
-.dark .code-block-content .token.number,
-.dark .code-block-content .token.constant,
-.dark .code-block-content .token.symbol,
-.dark .code-block-content .token.deleted {
-  color: #b5cea8 !important;
-}
-
-.dark .code-block-content .token.selector,
-.dark .code-block-content .token.attr-name,
-.dark .code-block-content .token.string,
-.dark .code-block-content .token.char,
-.dark .code-block-content .token.builtin,
-.dark .code-block-content .token.inserted {
-  color: #ce9178 !important;
-}
-
-.dark .code-block-content .token.operator,
-.dark .code-block-content .token.entity,
-.dark .code-block-content .token.url,
-.dark .code-block-content .language-css .token.string,
-.dark .code-block-content .style .token.string {
-  color: #d4d4d4 !important;
-}
-
-.dark .code-block-content .token.atrule,
-.dark .code-block-content .token.attr-value,
-.dark .code-block-content .token.keyword {
-  color: #569cd6 !important;
-}
-
-.dark .code-block-content .token.function,
-.dark .code-block-content .token.class-name {
-  color: #dcdcaa !important;
-}
-
-.dark .code-block-content .token.regex,
-.dark .code-block-content .token.important,
-.dark .code-block-content .token.variable {
-  color: #d16969 !important;
+.dark .code-block-content pre code {
+  background: transparent !important;
+  color: inherit !important;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
   .code-header {
-    flex-direction: column;
     align-items: stretch;
     gap: 12px;
     padding: 16px;
@@ -280,7 +396,24 @@
 
   .copy-button {
     font-size: 11px;
-    padding: 3px 6px;
+    padding: 6px 12px;
+    height: 32px;
+    min-height: 32px;
+  }
+
+  .language-dropdown-container .ant-select-selector {
+    height: 32px !important;
+    min-height: 32px !important;
+    padding: 6px 10px !important;
+    font-size: 12px !important;
+  }
+
+  .language-dropdown-container .ant-select {
+    border-radius: 6px !important;
+  }
+
+  .language-dropdown-container .ant-select-arrow {
+    font-size: 10px !important;
   }
 }
 
@@ -623,7 +756,7 @@
 .api-response-section {
   margin-top: 24px;
   border-top: 1px solid #f0f0f0;
-  padding-top: 24px;
+  padding-top: 8px;
 }
 
 .dark .api-response-section {
@@ -747,8 +880,4 @@
     top: 8px;
     right: 8px;
   }
-}
-
-.code-block-content {
-  padding: 20px;
 }
