@@ -10,15 +10,15 @@ interface CommonLayoutProps {
 }
 
 const CommonLayout: React.FC<CommonLayoutProps> = ({ children }) => {
-  const { isMobile, isTablet } = useResponsive();
+  const { isSmallMobile, isMobile, isTablet, isDesktop } = useResponsive();
   const [isOpen, setIsOpen] = useState(false);
   const [isInitialized, setIsInitialized] = useState(false);
 
   // Set sidebar open by default on desktop, closed on mobile/tablet
   useEffect(() => {
-    setIsOpen(true); // Always open on desktop, controlled by mobile logic
+    setIsOpen(isDesktop); // Open only on desktop, closed on mobile/tablet
     setIsInitialized(true);
-  }, [isMobile, isTablet]);
+  }, [isSmallMobile, isMobile, isTablet, isDesktop]);
 
   // Prevent layout shift during initialization
   if (!isInitialized) {
@@ -49,7 +49,7 @@ const CommonLayout: React.FC<CommonLayoutProps> = ({ children }) => {
       <div style={{ display: "flex" }}>
         <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} />
         {/* Only show overlay on mobile/tablet when sidebar is open */}
-        {(isMobile || isTablet) && (
+        {!isDesktop && (
           <div
             className={`overlay ${!isOpen && "overlayHidden"} ${
               isOpen && "overlayOpen"
@@ -61,9 +61,15 @@ const CommonLayout: React.FC<CommonLayoutProps> = ({ children }) => {
         <div
           className="main-content"
           style={{
-            padding: isMobile ? "10px" : "10px 20px",
-            width: !isMobile && !isTablet ? "calc(100% - 300px)" : "100%",
-            marginLeft: !isMobile && !isTablet ? "300px" : "0",
+            padding: isSmallMobile
+              ? "8px"
+              : isMobile
+                ? "10px"
+                : isTablet
+                  ? "15px"
+                  : "20px",
+            width: isDesktop ? "calc(100% - 300px)" : "100%",
+            marginLeft: isDesktop ? "300px" : "0",
             transition: isInitialized
               ? "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)"
               : "none",

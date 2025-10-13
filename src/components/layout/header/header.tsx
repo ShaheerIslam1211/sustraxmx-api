@@ -18,7 +18,7 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ isOpen, setIsOpen }) => {
   const { user } = useAuth();
-  const { isMobile, isTablet } = useResponsive();
+  const { isSmallMobile, isMobile, isTablet, isDesktop } = useResponsive();
 
   const userMenuItems = [
     {
@@ -39,17 +39,26 @@ const Header: React.FC<HeaderProps> = ({ isOpen, setIsOpen }) => {
     <header className="header">
       <div className="header-left">
         {/* Sidebar toggle for mobile and tablet */}
-        {(isMobile || isTablet) && (
+        {!isDesktop && (
           <div className="hamburger-menu" onClick={() => setIsOpen(!isOpen)}>
-            <MenuOutlined style={{ fontSize: isMobile ? "18px" : "20px" }} />
+            <MenuOutlined
+              style={{
+                fontSize: isSmallMobile ? "16px" : isMobile ? "18px" : "20px",
+              }}
+            />
           </div>
         )}
-        <div className="logo" style={{ fontSize: isMobile ? "18px" : "24px" }}>
+        <div
+          className="logo"
+          style={{
+            fontSize: isSmallMobile ? "16px" : isMobile ? "18px" : "24px",
+          }}
+        >
           {texts.header.logoText}
         </div>
       </div>
 
-      {!isTablet && !isMobile ? (
+      {isDesktop ? (
         <>
           <nav className="menu">
             {texts.header.menuItems.map((item: any) => (

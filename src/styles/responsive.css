@@ -1,0 +1,385 @@
+/* Responsive Layout Styles */
+
+/* Small Mobile (iPhone 6, etc) - 0-375px */
+@media (max-width: 375px) {
+  .main-content {
+    padding: 8px !important;
+  }
+
+  /* Form adjustments */
+  .ant-form-item {
+    margin-bottom: 12px;
+  }
+
+  .ant-input,
+  .ant-select-selector {
+    height: 36px !important;
+    font-size: 14px;
+  }
+
+  .ant-btn {
+    height: 36px;
+    font-size: 14px;
+    padding: 0 16px;
+  }
+
+  /* Code block adjustments */
+  .code-block-container {
+    font-size: 11px;
+  }
+
+  .code-header {
+    padding: 8px 12px;
+    min-height: 40px;
+  }
+
+  .language-dropdown-container .ant-select {
+    width: 120px !important;
+  }
+
+  /* API details adjustments */
+  .authorization-container {
+    padding: 12px;
+  }
+
+  .authorization-header {
+    padding: 12px;
+  }
+
+  /* Theme toggle adjustments */
+  .theme-toggle-slider {
+    width: 45px;
+    height: 22px;
+  }
+
+  .slider-thumb {
+    width: 18px;
+    height: 18px;
+  }
+
+  .theme-toggle-slider.dark .slider-thumb {
+    transform: translateX(23px);
+  }
+
+  .slider-icon {
+    font-size: 10px;
+  }
+}
+
+/* Mobile - 376-768px */
+@media (min-width: 376px) and (max-width: 768px) {
+  .main-content {
+    padding: 10px !important;
+  }
+
+  /* Form adjustments */
+  .ant-form-item {
+    margin-bottom: 16px;
+  }
+
+  .ant-input,
+  .ant-select-selector {
+    height: 40px !important;
+    font-size: 15px;
+  }
+
+  .ant-btn {
+    height: 40px;
+    font-size: 15px;
+    padding: 0 20px;
+  }
+
+  /* Code block adjustments */
+  .code-block-container {
+    font-size: 12px;
+  }
+
+  .code-header {
+    padding: 12px 16px;
+    min-height: 44px;
+  }
+
+  .language-dropdown-container .ant-select {
+    width: 130px !important;
+  }
+
+  /* API details adjustments */
+  .authorization-container {
+    padding: 16px;
+  }
+
+  .authorization-header {
+    padding: 16px;
+  }
+
+  /* Theme toggle adjustments */
+  .theme-toggle-slider {
+    width: 50px;
+    height: 25px;
+  }
+
+  .slider-thumb {
+    width: 21px;
+    height: 21px;
+  }
+
+  .theme-toggle-slider.dark .slider-thumb {
+    transform: translateX(25px);
+  }
+
+  .slider-icon {
+    font-size: 12px;
+  }
+}
+
+/* Tablet - 769-1024px */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .main-content {
+    padding: 15px !important;
+  }
+
+  /* Form adjustments */
+  .ant-form-item {
+    margin-bottom: 18px;
+  }
+
+  .ant-input,
+  .ant-select-selector {
+    height: 42px !important;
+    font-size: 16px;
+  }
+
+  .ant-btn {
+    height: 42px;
+    font-size: 16px;
+    padding: 0 24px;
+  }
+
+  /* Code block adjustments */
+  .code-block-container {
+    font-size: 13px;
+  }
+
+  .code-header {
+    padding: 14px 18px;
+    min-height: 48px;
+  }
+
+  .language-dropdown-container .ant-select {
+    width: 140px !important;
+  }
+
+  /* API details adjustments */
+  .authorization-container {
+    padding: 20px;
+  }
+
+  .authorization-header {
+    padding: 20px;
+  }
+
+  /* Theme toggle adjustments */
+  .theme-toggle-slider {
+    width: 55px;
+    height: 28px;
+  }
+
+  .slider-thumb {
+    width: 24px;
+    height: 24px;
+  }
+
+  .theme-toggle-slider.dark .slider-thumb {
+    transform: translateX(27px);
+  }
+
+  .slider-icon {
+    font-size: 13px;
+  }
+}
+
+/* Desktop - 1025px+ */
+@media (min-width: 1025px) {
+  .main-content {
+    padding: 20px !important;
+  }
+
+  /* Form adjustments */
+  .ant-form-item {
+    margin-bottom: 20px;
+  }
+
+  .ant-input,
+  .ant-select-selector {
+    height: 44px !important;
+    font-size: 16px;
+  }
+
+  .ant-btn {
+    height: 44px;
+    font-size: 16px;
+    padding: 0 24px;
+  }
+
+  /* Code block adjustments */
+  .code-block-container {
+    font-size: 13px;
+  }
+
+  .code-header {
+    padding: 16px 20px;
+    min-height: 52px;
+  }
+
+  .language-dropdown-container .ant-select {
+    width: 150px !important;
+  }
+
+  /* API details adjustments */
+  .authorization-container {
+    padding: 24px;
+  }
+
+  .authorization-header {
+    padding: 24px;
+  }
+
+  /* Theme toggle adjustments */
+  .theme-toggle-slider {
+    width: 60px;
+    height: 30px;
+  }
+
+  .slider-thumb {
+    width: 26px;
+    height: 26px;
+  }
+
+  .theme-toggle-slider.dark .slider-thumb {
+    transform: translateX(30px);
+  }
+
+  .slider-icon {
+    font-size: 14px;
+  }
+}
+
+/* Large Desktop - 1440px+ */
+@media (min-width: 1440px) {
+  .main-content {
+    padding: 24px !important;
+  }
+
+  /* Form adjustments */
+  .ant-form-item {
+    margin-bottom: 24px;
+  }
+
+  .ant-input,
+  .ant-select-selector {
+    height: 48px !important;
+    font-size: 17px;
+  }
+
+  .ant-btn {
+    height: 48px;
+    font-size: 17px;
+    padding: 0 28px;
+  }
+
+  /* Code block adjustments */
+  .code-block-container {
+    font-size: 14px;
+  }
+
+  .code-header {
+    padding: 18px 24px;
+    min-height: 56px;
+  }
+
+  .language-dropdown-container .ant-select {
+    width: 160px !important;
+  }
+
+  /* API details adjustments */
+  .authorization-container {
+    padding: 28px;
+  }
+
+  .authorization-header {
+    padding: 28px;
+  }
+
+  /* Theme toggle adjustments */
+  .theme-toggle-slider {
+    width: 65px;
+    height: 32px;
+  }
+
+  .slider-thumb {
+    width: 28px;
+    height: 28px;
+  }
+
+  .theme-toggle-slider.dark .slider-thumb {
+    transform: translateX(33px);
+  }
+
+  .slider-icon {
+    font-size: 15px;
+  }
+}
+
+/* Responsive grid layout for forms */
+@media (max-width: 768px) {
+  .ant-row {
+    flex-direction: column;
+  }
+
+  .ant-col {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: none !important;
+  }
+}
+
+/* Responsive spacing adjustments */
+@media (max-width: 375px) {
+  .ant-space {
+    gap: 8px !important;
+  }
+
+  .ant-space-item {
+    margin-bottom: 8px;
+  }
+}
+
+@media (min-width: 376px) and (max-width: 768px) {
+  .ant-space {
+    gap: 12px !important;
+  }
+
+  .ant-space-item {
+    margin-bottom: 12px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .ant-space {
+    gap: 16px !important;
+  }
+
+  .ant-space-item {
+    margin-bottom: 16px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .ant-space {
+    gap: 20px !important;
+  }
+
+  .ant-space-item {
+    margin-bottom: 20px;
+  }
+}

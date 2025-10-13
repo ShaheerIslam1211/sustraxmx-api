@@ -14,7 +14,7 @@ export interface SidebarProps {
 }
 
 const Sidebar: React.FC<SidebarProps> = ({ isOpen, setIsOpen }) => {
-  const { isMobile } = useResponsive();
+  const { isSmallMobile, isMobile, isTablet, isDesktop } = useResponsive();
   const router = useRouter();
   const searchParams = useSearchParams();
   const { emissionData } = useEmissionData();
@@ -49,7 +49,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, setIsOpen }) => {
     </Menu>
   );
 
-  if (isMobile) {
+  if (!isDesktop) {
     return (
       <>
         {/* Overlay for mobile */}
