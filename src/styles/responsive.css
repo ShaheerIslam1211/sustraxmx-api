@@ -40,6 +40,7 @@
   /* API details adjustments */
   .authorization-container {
     padding: 12px;
+    margin-top: 10px;
   }
 
   .authorization-header {
@@ -106,6 +107,7 @@
   /* API details adjustments */
   .authorization-container {
     padding: 16px;
+    margin-top: 10px;
   }
 
   .authorization-header {
@@ -172,6 +174,7 @@
   /* API details adjustments */
   .authorization-container {
     padding: 20px;
+    /* margin-top: 10px; */
   }
 
   .authorization-header {
